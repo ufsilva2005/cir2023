@@ -35,6 +35,7 @@
 			$tipoOpcao = "idModelo";								
 			foreach ($modeloDAO->ListarOpcao2($nomeTabela, $tipoOpcao, $modeloImpressoraBd) as $res)
 				{
+					$idModelo = $res->idModelo;
 					$modeloImpressora = $res->modeloImpressora;
 				}       
 			$dataCadastroA = $imp->dataCadastro;	

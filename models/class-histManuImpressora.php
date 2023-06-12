@@ -11,7 +11,7 @@
 			private $respFechaPedido;
 			private $dataFechaPedido;
 			private $idImpressora;
-			private $PedidoFechado;
+			private $pedidoFechado;
 			 // Recebe dados como parametros
 			public function __construct ($idConserto = "", $dataPedido = null, $respPedido = null, $defeito = null, $emailEnviado = null,  $obs = null, $servExecutado = null, $respFechaPedido = null, $dataFechaPedido = null, $idImpressora = null, $PedidoFechado = null) 
 			

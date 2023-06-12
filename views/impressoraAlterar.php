@@ -102,8 +102,8 @@
 
                                             <div class="col px-md-1 col-md-3">
                                                 <label for="inputSuccess" class="control-label">Modelo: </label>                                                    
-                                                <select class="form-control" name = "modelo" required>
-                                                    <option> <?=$modeloImpressora; $_SESSION['antModelImp']=$modeloImpressora?> </option>
+                                                <select class="form-control" id = "modelo" name = "modelo" >
+                                                    <option value="<?php echo $idModelo; $_SESSION['antModelImp'] = $idModelo;?>"> <?php echo $modeloImpressora;?></option>
                                                     <option  value=""> </option> 
                                                     <?php
                                                         include_once "../dao/DAO-controleCir.php";                                    

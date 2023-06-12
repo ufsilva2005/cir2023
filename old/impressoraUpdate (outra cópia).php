@@ -240,6 +240,13 @@
          { 
              $idSetor = $local->idSetor;				          
          }
+
+    echo "<br>modeloAlt - 1 => " . $modeloAlt;
+    echo "<br>modeloImpressoraAnt - 1 => " . $modeloImpressoraAnt;
+    echo "<br>aux - 1 => " . $aux;
+    echo "<br>auxLocal - 1 => " . $auxLocal;
+    echo "<br>hitorico - 1 => " . $hitorico;
+
     
     if( $aux != 0 || $auxLocal != 0)
         {
@@ -262,10 +269,11 @@
 
                     if($idSetor == 0)
                         {
+                            echo "<br>divisaoBd - 1 => " . $divisaoBd;
                             $local1 = new Setor($idSetor, $divisaoBd, $localizacaoBd, $ramalBd, $respSetBd, $nomeLocalBd);	
-                            //echo "<br>";				
-                            //$local1->exibir();
-                            //echo "<br>";		
+                            echo "<br>";				
+                            $local1->exibir();
+                            echo "<br>";		
                             $local = new ControleCirDAO();	
                             $local->CadastrarSetor($local1);
 
@@ -284,32 +292,30 @@
                             $impressora = new Impressora($idImpressora, $nomeImpressora,  $numSerie, $ipImpressora, $macImpressora, $tipoToner, 
                             $statusImpressora, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $obsImpressoraAnt,
                             $_SESSION['idFuncionario'] , $idSetor);
-                            //echo "<br>dados impressora <br>";		
-                            //$impressora->exibir();
-                            //echo "<br>";
+                            echo "<br>dados impressora <br>";		
+                            $impressora->exibir();
+                            echo "<br>";
                             $impressoraDAO = new ControleCirDAO();
                             $impressoraDAO->UpdateImpre($impressora);
                         }                       
                 }
             else
                 {
+                    echo "<br>id Divisao => " . $_SESSION['antDivisao'];
+                    echo "<br>id Localizacao => " . $_SESSION['antLocalizacao']; 
+                    echo "<br>id Localizacao => " . $_SESSION['idSetor'];
+                    echo "<br>id idImpressora => " . $idImpressora;
                     $impressora = new Impressora($idImpressora, $nomeImpressora,  $numSerie, $ipImpressora, $macImpressora, $tipoToner, 
                     $statusImpressora, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $obsImpressoraAnt,
                     $_SESSION['idFuncionario'] , $idSetor);
-                    
+                    echo "<br>dados impressora <br>";		
+                    $impressora->exibir();
+                    echo "<br>";
                     $impressoraDAO = new ControleCirDAO();
                     $impressoraDAO->UpdateImpre($impressora);
                 }
-
-            //criar historico e salvar o texto em nomeAlteracoes
-            $idComputador = 0;
-            $historico = new Historico($idHistorico, $nomeAlteracoes, $dateAltCadastro, $funcionarioAltCadastro,  $idComputador,  $idImpressora);
-            echo "<br>dados  Historico<br>";		
-            $historico->exibir();
-            echo "<br>"; 
-
-            //echo "<script type='text/javascript'>alert('valor(es)  alterado(s)');</script>";
-            //echo "<script>location = '../views/impressorasListar.php';</script>";   
+            echo "<script type='text/javascript'>alert('valor(es)  alterado(s)');</script>";
+            echo "<script>location = '../views/impressorasListar.php';</script>";   
         }
    
     else
@@ -317,4 +323,131 @@
             echo "<script type='text/javascript'>alert('nenhum valor(es)  alterado(s), portanto nada a ser salvo');</script>";
             echo "<script>location = '../views/impressorasListar.php';</script>";   
         }
+   
+   	//coverter letras do nome para maiuscula
+    //$nomLocComp = converteMaiuscula($nomeLocalAltBd);
+    //$respSetCompAltBd1 = converteMaiuscula($respSetCompAltBd);/*
+
+    /*echo '</br>';
+    echo '</br><==== teste 01 ====> ';
+    echo '</br> nomLocComp => ' . $nomLocComp;
+    echo '</br> localizacaoAltBd => ' . $localizacaoAltBd;
+    echo '</br> divisaoAltBd => ' . $divisaoAltBd . '<br>';*/
+
+    
+    //$verificaLocal = VerificaLocal2($divisaoAltBd,$localizacaoAltBd,$nomLocComp);
+    //$idLocal = $_SESSION['localid'];
+    
+    /*echo '</br>';
+    echo '</br><==== teste 02 ====> ';
+    echo '</br> verificaLocal => ' . $verificaLocal . '<br>';
+    echo '</br> idLocal => ' . $idLocal . '<br>';
+    echo '</br> aux => ' . $aux . '<br>';*/
+
+       /*
+    if($aux == 16)
+        {
+            
+        }
+
+    else
+        {       
+            $dataAltCadastro= formatarData($dAlteraAntigo);
+                        
+            //salvando historico no banco
+            
+			$HistoricoUpdate = new Historico($idHistorico, $teste, $obsAltBd, $dataAltCadastro, $respAlteraAntigo, $idimpressoraAlt);
+            $HistoricoUpdate->exibir();
+            $historicoDAO = new CadastroCirDAO();
+			$historicoDAO->CadastrarHistoricoComp($HistoricoUpdate);
+			
+			
+            // se ja existirem retorna a tela de cadastro e avisa
+            if ($verificaLocal != 0)
+                //fazendo update na tabela impressora			
+                {	
+                    $idimpressora = $idimpressoraAlt;
+                    $numCir = $numCirAlt;
+                    $numPatrimonio = $numPatrimonioAltBd; 
+                    $nomeimpressora = $nomeimpressoraAltBd;
+                    $dataCadastro1 = $dCadastroAntigo; 
+                    $respCadastro = $respCadastroAntigo;
+                    $respAltCadastro = $respAlteraAntigo;
+                    $dataAltCadastro1 = $dAlteraAntigo;
+                    $so = $sistemaOperaAltBd;
+                    $modelMaquina = $modelMaquinaAltBd;
+                    $tipProcessador = $tipProcessadorAltBd;
+                    $memoria = $memoriaAltBd;
+                    $numIp = $numIpAltBd;
+                    $numMac = $numMacAltBd; 
+                    $capHD = $capHDAltBd; 
+                    $statusComp = $statusCompAltBd; 
+                    $obsComp = $obsAltBd; 
+                    $idLocal = $_SESSION['localid'];
+                    
+                    $dataCadastro = formatarData($dataCadastro1);
+                    $dataAltCadastro = formatarData($dataAltCadastro1);
+                    
+                    $impressora1 = new impressora($idimpressora, $numCir, $numPatrimonio, $nomeimpressora, $dataCadastro, $respCadastro, $respAltCadastro, $dataAltCadastro, $so, $modelMaquina, $tipProcessador, $memoria, $numIp, $numMac, $capHD, $statusComp,$obsComp,  $idLocal);
+                    $impressora1->exibir();
+                    //$impressoraDAO = new CadastroCirDAO();
+                    //$impressoraDAO->impressoraUpdate($impressora1);
+                    
+                    //header("Location: ../views/impressoraEditar.php");
+                    
+                }
+            else 
+                { 
+                    $idLocalimpressora = "";
+                    //$idLocalimpressora = $_SESSION['localid'];
+                    $divComp = $divisaoAltBd;
+                    $localComp = $localizacaoAltBd;
+                    $ramalComp = $ramalAltBd;
+                    $respSetComp = $respSetCompAltBd1;
+                    $nomLocComp = $nomLocComp1;
+                
+                    $local1 = new Local($idLocalimpressora, $divComp, $localComp, $ramalComp, $respSetComp, $nomLocComp);
+                    $local1->exibir();
+                    //$local = new CadastroCirDAO();	
+                    //$local->CadastrarLocal($local1);
+
+                    session_start();
+                    $idLocalimpressora = $_SESSION['localid']; 
+
+                    $idimpressora = $idimpressoraAlt;
+                    $numCir = $numCirAlt;
+                    $numPatrimonio = $numPatrimonioAltBd; 
+                    $nomeimpressora = $nomeimpressoraAltBd;
+                    $dataCadastro1 = $dCadastroAntigo; 
+                    $respCadastro = $respCadastroAntigo;
+                    $respAltCadastro = $respAlteraAntigo;
+                    $dataAltCadastro1 = $dAlteraAntigo;
+                    $so = $sistemaOperaAltBd;
+                    $modelMaquina = $modelMaquinaAltBd;
+                    $tipProcessador = $tipProcessadorAltBd;
+                    $memoria = $memoriaAltBd;
+                    $numIp = $numIpAltBd;
+                    $numMac = $numMacAltBd; 
+                    $capHD = $capHDAltBd; 
+                    $statusComp = $statusCompAltBd; 
+                    $obsComp = $obsAltBd; 
+                    $idLocal = $idLocalimpressora;
+                    
+                    $dataCadastro = formatarData($dataCadastro1);
+                    $dataAltCadastro = formatarData($dataAltCadastro1);
+                    
+                    $impressora1 = new impressora($idimpressora, $numCir, $numPatrimonio, $nomeimpressora, $dataCadastro, $respCadastro, $respAltCadastro, $dataAltCadastro,$so,  $modelMaquina, $tipProcessador, $memoria,  $numIp, $numMac, $capHD, $statusComp, $obsComp, $idLocal);
+                    $impressora1->exibir();
+                    //$impressora = new CadastroCirDAO();
+                    //$impressora->impressoraUpdate($impressora1);
+                    
+                    //header("Location: ../views/impressoraEditar.php");
+                }
+        }*/
+
+    //apagar depois    
+    //$dataAltCadastro= formatarData($dAlteraAntigo);
+    //$HistoricoUpdate = new Historico($idHistorico, $teste, $obsAltBd, $dataAltCadastro, $respAlteraAntigo, $idimpressoraAlt);
+    //$HistoricoUpdate->exibir();
+		
 ?>
