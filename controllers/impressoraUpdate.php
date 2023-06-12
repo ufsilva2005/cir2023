@@ -302,6 +302,18 @@
                 }
 
             //criar historico e salvar o texto em nomeAlteracoes
+            //nome dos arquivos historico
+            /*$dataConsulta2 = soNumero($date);
+            $nome = "A" . $idAgenda . "D". $dataConsulta2 . "C" . $idConsulta .  "P".$idPaciente1."M".$idMedico1.".txt";
+            $caminho = "../anamneses/";
+            //nome dos arquivos nonce
+            $nomeNonce = "Non" . $idAgenda . "D". $dataConsulta2 . "C" . $idConsulta .  "P".$idPaciente1."M".$idMedico1.".txt";
+            $descricaoNonce = $caminho . "anamneses-" . $nomeNonce;
+            $output2 = fopen($descricaoNonce, 'wb');
+            //salva arquivo nonce
+            fwrite($output2, $nonce);
+            fclose($output2); */
+
             $idComputador = 0;
             $historico = new Historico($idHistorico, $nomeAlteracoes, $dateAltCadastro, $funcionarioAltCadastro,  $idComputador,  $idImpressora);
             echo "<br>dados  Historico<br>";		
