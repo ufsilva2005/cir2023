@@ -54,7 +54,7 @@
                 <div class="btn-group">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">MATERIAL</button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="../views/naoImplementada.php">Cadastrar</a></li>
+                        <li><a class="dropdown-item" href="../views/materialCadastrar.php">Cadastrar</a></li>
                         <li><a class="dropdown-item" href="../views/naoImplementada.php">Gerenciar</a></li>
                     </ul>
                 </div>  

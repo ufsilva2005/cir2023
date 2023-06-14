@@ -32,10 +32,10 @@
                 { 	
                     $funcionarios = $resp->gerenFuncionarios;
                     $cargos = $resp->gerenCargos;
-                    $entMaterial = $resp->gereEntMaterial;
+                    $entMaterial = $resp->gerenEntMaterial;
                     $saiMaterial = $resp->gerenSaiMaterial;
                     $relaMaterial = $resp->gerenRelaMaterial;
-                    $computador = $resp->gernComputador;
+                    $computador = $resp->gerenComputador;
                     $impressora = $resp->gerenImpressora;
                 }
             $_SESSION['funcionarios'] = $funcionarios;
@@ -50,18 +50,18 @@
 
             header("Location: ../template/menuPrincipal.php");  
             
-            //echo "<br>funcionarios => " . $funcionarios; 
-            //echo "<br>cargos => " . $cargos; 
-            //echo "<br>entMaterial => " .  $entMaterial; 
-            //echo "<br>saiMaterial => " . $saiMaterial; 
-            //echo "<br>relaMaterial => " .  $relaMaterial; 
-            //echo "<br>computador => " .  $computador; 
-            //echo "<br>impressora => " .  $impressora; 
+            //echo "<br>funcionarios => " . $_SESSION['funcionarios']; 
+            //echo "<br>cargos => " . $_SESSION['cargos']; 
+            //echo "<br>entMaterial => " .  $_SESSION['entMaterial']; 
+            //echo "<br>saiMaterial => " . $_SESSION['saiMaterial']; 
+            //echo "<br>relaMaterial => " .  $_SESSION['relaMaterial']; 
+            //echo "<br>computador => " .  $_SESSION['computador']; 
+            //echo "<br>impressora => " .  $_SESSION['impressora']; 
         }
 
     else
         {
             echo "<script type='text/javascript'>alert('USUÁRIO OU SENHA INVÁLIDO(S) ');</script>";
-            //echo "<script>location = '../index.php';</script>";     
+            echo "<script>location = '../index.php';</script>";     
         }
 ?>
