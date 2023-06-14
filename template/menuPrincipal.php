@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">COMPUTADOR</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">COMPUTADORES</button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="../views/naoImplementada.php">Pesquisar</a></li>
                         <li><a class="dropdown-item" href="../views/naoImplementada.php">Cadastrar</a></li>
@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">MATERIAL</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">MATERIAIS</button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="../views/materialCadastrar.php">Cadastrar</a></li>
                         <li><a class="dropdown-item" href="../views/naoImplementada.php">Gerenciar</a></li>

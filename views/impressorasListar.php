@@ -17,31 +17,44 @@
                     <div class="col-md-12">	     
 						<h3 class="text-success">Menu Opção:</h3>
                         <div class="panel-header">
-                            <i class="icon-list-alt icon-blue"></i>
-                            
-                            <div class="btn-group pull-left" >&nbsp
-                                <a class="btn btn-small btn-warning table-edit">Alterar<i class="icon-edit"></i></a>
-                            </div>
-                            
-                            <div class="btn-group pull-left">&nbsp
-                                <a class="btn btn-primary">Historico<i class="icon-remove"></i></a>
-                            </div>
-                                
-                            <div class="btn-group pull-left">&nbsp
-                                <a class="btn btn-info">Detalhes<i class="icon-remove"></i></a>
-                            </div>
-                                
-                            <div class="btn-group pull-left">&nbsp
-                                <a class="btn btn-small btn-danger">eXcluir<i class="icon-remove"></i></a>
-                            </div>
+							<table class="table table-borderless">
+								<thead>
+									<tr>
+										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
+										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
+										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
+										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
+										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;</th>
+										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
+											<div class="btn-group pull-left" >
+												<a class="btn btn-small btn-warning table-edit">Alterar<i class="icon-edit"></i></a>
+											</div>
+											
+											<div class="btn-group pull-left">
+												<a class="btn btn-primary">Historico<i class="icon-remove"></i></a>
+											</div>
+												
+											<div class="btn-group pull-left">
+												<a class="btn btn-info">Detalhes<i class="icon-remove"></i></a>
+											</div>
+												
+											<div class="btn-group pull-left">
+												<a class="btn btn-small btn-danger">dEsativar<i class="icon-remove"></i></a>
+											</div>
 
-							<div class="btn-group pull-left">&nbsp
-                                <a class="btn btn-small btn-ufs">Imprimir<i class="icon-remove"></i></a>
-                            </div>
+											<div class="btn-group pull-left">
+												<a class="btn btn-small btn-ufs">Imprimir<i class="icon-remove"></i></a>
+											</div>
 
-                            <div class="btn-group pull-left">&nbsp
-                                <a class='nav-link' href='./pesquisaImpressoras.php'><button type='button' class='btn btn-outline-warning'>voltar</button> </a>
-                            </div>
+											<div class="btn-group pull-left">
+												<a class='nav-link' href='./pesquisaImpressoras.php'><button type='button' class='btn btn-outline-warning'>voltar</button> </a>
+											</div>
+										</th>
+									</tr>
+
+								</thead>   
+							</table>    
+                           
                         </div> 
 
 						<table class="table table-striped table-bordered table-condensed">
@@ -52,6 +65,7 @@
 									<th>Divisão</th>
 									<th>Setor da Máquina</th>
 									<th>Localização</th>
+									<th>Status</th>
 									<th>OPÇÃO</th>
 								</tr>
 
@@ -95,7 +109,8 @@
 													?>
 												</td>															
 												<td><?php echo $nomeLocal1?></td>	
-												<td><?php echo $localizacao1?></td>				
+												<td><?php echo $localizacao1?></td>		
+												<td><?php echo $imp->statusImpressora?></td>
 												<td class='operations'>
                                                     <div class="btn-group pull-left" >
                                                         <a href="./impressoraAlterar.php?action=1&id=<?php echo $imp->idImpressora;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>
@@ -107,7 +122,7 @@
                                                         <a href="./.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
-                                                        <a href="../.php?action=2&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-danger">X<i class="icon-remove"></i></a>
+                                                        <a href="../.php?action=2&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-danger">E<i class="icon-remove"></i></a>
                                                     </div>
 													<div class="btn-group pull-left">
                                                         <a href="../.php?action=2&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-ufs">I<i class="icon-remove"></i></a>

@@ -56,7 +56,28 @@
                                         </div>
 											
                                         <hr>
-										<div class="row">         
+										<div class="row">      
+                                             <div class="col px-md-1 col-md-3">
+                                                <label for="toner1" class="control-label">Modelo:</label>
+                                                <select class="form-control" name = "modelo" required>
+                                                    <option  value=""> </option> 
+                                                    <?php
+                                                        include_once "../dao/DAO-controleCir.php";                                    
+                                                        $impreDAO = new ControleCirDAO();   
+                                                        $nomeTabela = "modeloImpressora";
+                                                        $tipoOpcao = "statusModelo";
+                                                        $valorOpcao = "ativo";
+                                                                                    
+                                                        foreach ($impreDAO->ListarOpcao($nomeTabela, $tipoOpcao, $valorOpcao) as $res)
+                                                            {
+                                                                ?>     
+                                                                    <option value="<?php echo $res->idModelo;?>"> <?php echo $res->modeloImpressora;?> </option> 
+                                                                <?php      
+                                                            }                                          
+                                                    ?>
+                                                </select>
+                                            </div>
+                                               
                                             <div class="col px-md-1 col-md-3">
                                                 <label class="control-label">Tipo do Tonner:</label>
                                                 <select class="form-control" name = "tonner" required>
@@ -88,28 +109,7 @@
                                                     <input class="form-check-input" type="radio" name="statusImp" id="status2" value="inativo">
                                                     <label class="form-check-label" for="status2">Inativo</label>
                                                 </div>
-											</div>
-
-                                            <div class="col px-md-1 col-md-3">
-                                                <label for="toner1" class="control-label">Modelo:</label>
-                                                <select class="form-control" name = "modelo" required>
-                                                    <option  value=""> </option> 
-                                                    <?php
-                                                        include_once "../dao/DAO-controleCir.php";                                    
-                                                        $impreDAO = new ControleCirDAO();   
-                                                        $nomeTabela = "modeloImpressora";
-                                                        $tipoOpcao = "statusModelo";
-                                                        $valorOpcao = "ativo";
-                                                                                    
-                                                        foreach ($impreDAO->ListarOpcao($nomeTabela, $tipoOpcao, $valorOpcao) as $res)
-                                                            {
-                                                                ?>     
-                                                                    <option value="<?php echo $res->idModelo;?>"> <?php echo $res->modeloImpressora;?> </option> 
-                                                                <?php      
-                                                            }                                          
-                                                    ?>
-                                                </select>
-                                            </div>
+											</div>                                           
 										</div>
 											
 										<hr>
