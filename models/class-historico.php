@@ -7,9 +7,10 @@
 			private $respAlteracoes;
 			private $idComputador;
 			private $idImpressora;
-			
+			private $idFuncionario;
+
 			 // Recebe dados como parametros
-			public function __construct ($idHistorico = "", $nomeAlteracoes = null, $dataAltera = null, $respAlteracoes = null,  $idComputador = null,  $idImpressora = null) 
+			public function __construct ($idHistorico = "", $nomeAlteracoes = null, $dataAltera = null, $respAlteracoes = null,  $idComputador = null,  $idImpressora = null, $idFuncionario = null) 
 			
 				{
 					$this->idHistorico 	  = $idHistorico;
@@ -18,7 +19,7 @@
 					$this->respAlteracoes = $respAlteracoes;
 					$this->idComputador   = $idComputador;
 					$this->idImpressora   = $idImpressora;
-					
+					$this->idFuncionario   = $idFuncionario;
 				}
 				
 			//metodos get
@@ -52,7 +53,11 @@
 					return $this->idImpressora;
 				}
 		 
-			
+			public function getIdFuncionario() 
+				{
+					return $this->idFuncionario;
+				}
+
 			//metodos set
 			public function setIdHistorico($idHistorico) 
 				{     
@@ -84,7 +89,11 @@
 					 $this->idImpressora = $idImpressora;
 				}
 		 
-			
+			public function setIdFuncionario($idFuncionario) 
+				{
+					 $this->idFuncionario = $idFuncionario;
+				}
+		 			
 			// Método para exibir
 			public function exibir() 
 				{
@@ -105,6 +114,9 @@
 
 					echo '</br>idImpressora:</br> ';
 					echo $this->idImpressora . '<br>';
+
+					echo '</br>idFuncionario:</br> ';
+					echo $this->idFuncionario . '<br>';
 
 					echo '</br>  </br>';
 				}

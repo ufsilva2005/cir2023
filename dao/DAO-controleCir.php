@@ -491,6 +491,34 @@
             //FIM DAS FUNÇÕES RELACIONADAS AOS MATERIAIS
 
             //INÍCIO DAS FUNÇÕES RELACIONADAS AO HISTORICO
+            public function HitoricoCadastrar($historico) 
+                {
+                    $conn = Database::connect();					
+                    $conn->exec('SET CHARACTER SET utf8');
+                    $prepara = $conn->prepare("INSERT INTO historico (nomeAlteracoes, dataAltera,  respAlteracoes, idComputador, 
+                    idImpressora, idFuncionario)
+                    VALUES(:BdnomeAlteracoes, :BddataAltera, :BdrespAlteracoes, :BdidComputador, :BdidImpressora,:BdidFuncionario)");   
+
+                    //$BdidHistorico    = $hitorico ->getIdHistorico();
+                    $BdnomeAlteracoes = $historico ->getNomeAlteracoes();
+                    $BddataAltera     = $historico ->getDataAltera();
+                    $BdrespAlteracoes = $historico ->getRespAlteracoes();
+                    $BdidComputador   = $historico ->getIdComputador();
+                    $BdidImpressora   = $historico ->getIdImpressora();
+                    $BdidFuncionario  = $historico ->getIdFuncionario();  
+                   
+
+                    //$prepara->bindParam(":BdIdHistorico ",$BdIdHistorico);
+                    $prepara->bindParam(":BdnomeAlteracoes",$BdnomeAlteracoes);
+                    $prepara->bindParam(":BddataAltera",$BddataAltera);
+                    $prepara->bindParam(":BdrespAlteracoes",$BdrespAlteracoes);
+                    $prepara->bindParam(":BdidComputador",$BdidComputador);
+                    $prepara->bindParam(":BdidImpressora",$BdidImpressora);
+                    $prepara->bindParam(":BdidFuncionario",$BdidFuncionario);                    
+                    
+                    $prepara->execute();       
+                    $conn = null;
+                }
             //FIM DAS FUNÇÕES RELACIONADAS AO HISTORICO   
         }
 ?>

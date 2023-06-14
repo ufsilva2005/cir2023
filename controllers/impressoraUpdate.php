@@ -263,11 +263,11 @@
                     if($idSetor == 0)
                         {
                             $local1 = new Setor($idSetor, $divisaoBd, $localizacaoBd, $ramalBd, $respSetBd, $nomeLocalBd);	
-                            //echo "<br>";				
-                            //$local1->exibir();
-                            //echo "<br>";		
-                            $local = new ControleCirDAO();	
-                            $local->CadastrarSetor($local1);
+                            echo "<br>";				
+                            $local1->exibir();
+                            echo "<br>";		
+                            //$local = new ControleCirDAO();	
+                            //$local->CadastrarSetor($local1);
 
                             $idSetor = $_SESSION['localid'];      
                         }
@@ -284,11 +284,11 @@
                             $impressora = new Impressora($idImpressora, $nomeImpressora,  $numSerie, $ipImpressora, $macImpressora, $tipoToner, 
                             $statusImpressora, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $obsImpressoraAnt,
                             $_SESSION['idFuncionario'] , $idSetor);
-                            //echo "<br>dados impressora <br>";		
-                            //$impressora->exibir();
-                            //echo "<br>";
-                            $impressoraDAO = new ControleCirDAO();
-                            $impressoraDAO->UpdateImpre($impressora);
+                            echo "<br>dados impressora <br>";		
+                            $impressora->exibir();
+                            echo "<br>";
+                            //$impressoraDAO = new ControleCirDAO();
+                            //$impressoraDAO->UpdateImpre($impressora);
                         }                       
                 }
             else
@@ -297,28 +297,36 @@
                     $statusImpressora, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $obsImpressoraAnt,
                     $_SESSION['idFuncionario'] , $idSetor);
                     
-                    $impressoraDAO = new ControleCirDAO();
-                    $impressoraDAO->UpdateImpre($impressora);
+                    //$impressoraDAO = new ControleCirDAO();
+                    //$impressoraDAO->UpdateImpre($impressora);
                 }
 
-            //criar historico e salvar o texto em nomeAlteracoes
+            //criar historico e salvar
             //nome dos arquivos historico
-            /*$dataConsulta2 = soNumero($date);
-            $nome = "A" . $idAgenda . "D". $dataConsulta2 . "C" . $idConsulta .  "P".$idPaciente1."M".$idMedico1.".txt";
-            $caminho = "../anamneses/";
-            //nome dos arquivos nonce
-            $nomeNonce = "Non" . $idAgenda . "D". $dataConsulta2 . "C" . $idConsulta .  "P".$idPaciente1."M".$idMedico1.".txt";
-            $descricaoNonce = $caminho . "anamneses-" . $nomeNonce;
-            $output2 = fopen($descricaoNonce, 'wb');
-            //salva arquivo nonce
-            fwrite($output2, $nonce);
-            fclose($output2); */
+            $data2 = soNumero($dateAltCadastro);
+            $hora = soNumero(date('H:i:s'));
+            $nomeHist = "Imp" . $idImpressora . "D". $data2 . "h" . $hora ."F" . $_SESSION['idFuncionario'].".txt";
+            $caminho = "../historico/";
+            $desHist = $caminho . "hist-" . $nomeHist;
+            
+            echo "<br>Nome  Historico<br>" . $nomeHist;
+            echo "<br>dados  Historico<br>" . $hitorico;
+            echo "<br>Nome  idFuncionario<br>" .  $_SESSION['idFuncionario'];
+            echo "<br>Nome  desHist<br>" .  $desHist;
+            
+            
+            $output2 = fopen($desHist, 'wb');
+            //salva arquivo 
+            fwrite($output2, $hitorico);
+            fclose($output2); 
 
-            $idComputador = 0;
-            $historico = new Historico($idHistorico, $nomeAlteracoes, $dateAltCadastro, $funcionarioAltCadastro,  $idComputador,  $idImpressora);
+            $idComputador = null;
+            $historico = new Historico($idHistorico, $desHist, $dateAltCadastro, $funcionarioAltCadastro,  $idComputador,  $idImpressora, $_SESSION['idFuncionario']);
             echo "<br>dados  Historico<br>";		
             $historico->exibir();
             echo "<br>"; 
+            $historicoDAO = new ControleCirDAO();
+            $historicoDAO->HitoricoCadastrar($historico);
 
             //echo "<script type='text/javascript'>alert('valor(es)  alterado(s)');</script>";
             //echo "<script>location = '../views/impressorasListar.php';</script>";   

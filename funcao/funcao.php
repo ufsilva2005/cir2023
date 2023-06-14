@@ -47,5 +47,5 @@
 		{
 			$rData2 = implode("/",array_reverse(explode("-",$BdAltdataNascimento1)));  
 			return $rData2;
-		}	
+		}
 ?>
