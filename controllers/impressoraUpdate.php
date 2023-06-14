@@ -18,7 +18,7 @@
 	$nomeImpAlt = $_POST['nomeImp'];
 	$numSerieAlt = $_POST['numSerie'];	
     $ipImpressoraAlt = $_POST['ipImpressora'];
-    $numMacAlt = $_POST['numMac'];  
+    $numMacAlt = converteMaiuscula($_POST['numMac']);  
     $tipoTonnerAlt = converteMaiuscula($_POST['tipoTonner']);      
     $impStatusAlt =  $_POST['impStatus'];
     $modeloAlt = $_POST['modelo'];   
@@ -156,7 +156,6 @@
             $aux++;
             $hitorico .= 'MODELO DA IMPRESSORA ALTERADO DE: '. $descModelAnt .' PARA => '. $desModelAlt .'</br>';
         }
-
     //local
     if ($divisaoAlt == "" || $divisaoAlt == $divisaoAnt)
         {
@@ -282,7 +281,7 @@
                     else
                         {
                             $impressora = new Impressora($idImpressora, $nomeImpressora,  $numSerie, $ipImpressora, $macImpressora, $tipoToner, 
-                            $statusImpressora, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $obsImpressoraAnt,
+                            $statusImpressora, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $ObsImpAlt,
                             $_SESSION['idFuncionario'] , $idSetor);
                             //echo "<br>dados impressora <br>";		
                             //$impressora->exibir();
@@ -294,11 +293,13 @@
             else
                 {
                     $impressora = new Impressora($idImpressora, $nomeImpressora,  $numSerie, $ipImpressora, $macImpressora, $tipoToner, 
-                    $statusImpressora, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $obsImpressoraAnt,
+                    $statusImpressora, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $ObsImpAlt,
                     $_SESSION['idFuncionario'] , $idSetor);
-                    
-                    //$impressoraDAO = new ControleCirDAO();
-                    //$impressoraDAO->UpdateImpre($impressora);
+                    //echo "<br>dados impressora <br>";		
+                    //$impressora->exibir();
+                    //echo "<br>";
+                    $impressoraDAO = new ControleCirDAO();
+                    $impressoraDAO->UpdateImpre($impressora);
                 }
 
             //criar historico e salvar
