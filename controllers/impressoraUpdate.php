@@ -4,7 +4,7 @@
     include "../dao/DAO-controleCir.php";
     include "../models/class-setor.php";
 	include "../models/class-impressora.php";
-    //include "../models/class-impressoraHistorico.php";
+    include "../models/class-historico.php";
 	
     //pegar ip do modelo e nao o nome
 	
