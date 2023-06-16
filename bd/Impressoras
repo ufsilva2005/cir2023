@@ -1,0 +1,491 @@
+####### Sub-Solo
+#
+####### Rede 10.0
+	host prnanat	{hardware ethernet 00:25:36:61:23:1c; fixed-address 10.0.0.21;}
+	host prnanat2	{hardware ethernet 30:05:5c:8a:6a:c7; fixed-address 10.0.0.22;}
+	host prnsintu	{hardware ethernet 00:17:c8:6b:fe:b5; fixed-address 10.0.0.23;}
+	host prnlabmult2{hardware ethernet 00:25:36:ee:10:e0; fixed-address 10.0.0.24;}
+	host prnengclin {hardware ethernet 00:25:36:ee:10:e0; fixed-address 10.0.0.25;} #NÃO MUDAR IP, REGRAS DE ACESSO NO WIFI
+
+######## Rede 10.1
+	host prnpadi	{hardware ethernet 00:25:36:ee:44:97; fixed-address 10.1.0.21;}
+	host prnlabimrm	{hardware ethernet 1c:c1:de:34:ae:51; fixed-address 10.1.0.22;}
+	host prntomo	{hardware ethernet 00:80:91:ba:c4:9b; fixed-address 10.1.0.23;} #8OKI 5502
+	host prnpetscan	{hardware ethernet 00:80:91:ac:27:7c; fixed-address 10.1.0.24;}
+	host prnnuclear	{hardware ethernet 00:17:a4:8f:19:a1; fixed-address 10.1.0.25;}
+	host prnlaudorm	{hardware ethernet 00:25:36:ee:78:c9; fixed-address 10.1.0.26;}
+	host prnfarma   {hardware ethernet 00:25:36:ee:44:25; fixed-address 10.1.0.27;}
+	host prnraiox	{hardware ethernet 00:25:36:e1:1e:5c; fixed-address 10.1.0.28;}
+	host prnlbfarm	{hardware ethernet 00:25:36:ee:c4:80; fixed-address 10.1.0.29;}
+	host prnradiofarm {hardware ethernet 00:25:36:ee:44:8b; fixed-address 10.1.0.30;}
+	host prncoordpi  {hardware ethernet 00:25:36:11:0a:e5; fixed-address 10.1.0.31;}
+	host prncomplexo  {hardware ethernet 00:80:91:ac:25:20; fixed-address 10.1.0.32;}
+	host prncintilografia  {hardware ethernet 00:25:36:ee:21:ea; fixed-address 10.1.0.33;}
+
+#### Rede 10.2 
+
+	host prndegsecret {hardware ethernet 00:80:91:ac:f6:82; fixed-address 10.2.0.21;}
+	host prnspl	  {hardware ethernet 00:25:36:76:b9:07; fixed-address 10.2.0.22;}
+	host prndegproj	  {hardware ethernet 00:25:36:8e:78:ad; fixed-address 10.2.0.23;}
+#	host  {hardware ethernet ; fixed-address 10.2.0.24;}
+	host prndeg2	  {hardware ethernet 00:25:36:2e:1c:ae; fixed-address 10.2.0.25;}
+	host prndegseb	  {hardware ethernet 00:25:36:ee:11:f2; fixed-address 10.2.0.26;}
+	host prndegseb2	  {hardware ethernet 00:80:91:ba:c7:34; fixed-address 10.2.0.27;}
+	host prndegsom    {hardware ethernet 00:25:36:ee:f8:b0; fixed-address 10.2.0.28;}
+
+####### Rede 10.3
+	host prnalmox	   {hardware ethernet 00:17:c8:e7:fc:77; fixed-address 10.3.0.21;} #Kyocera 3655 IDN
+	host prnpatrimonio {hardware ethernet 00:80:91:b0:3b:a0; fixed-address 10.3.0.22;}
+	host prnlabmult	   {hardware ethernet a0:b3:cc:a1:c3:40; fixed-address 10.3.0.23;}
+	host prnzeladoria  {hardware ethernet 00:00:74:f2:f2:cd; fixed-address 10.3.0.24;}
+	host prnzeladoria2 {hardware ethernet 00:80:91:ac:68:9d; fixed-address 10.3.0.25;}
+
+####### Rede 10.4
+	host prnemerg	      {hardware ethernet 00:25:36:61:23:5c; fixed-address 10.4.0.21;}
+	host prnemergsm	      {hardware ethernet 00:25:36:76:3a:d4; fixed-address 10.4.0.22;}
+	host prnemergrcp      {hardware ethernet 00:25:36:ee:44:b9; fixed-address 10.4.0.23;}
+	host prnemercon2      {hardware ethernet 00:25:36:ee:f8:84; fixed-address 10.4.0.24;}
+	host prnssemerg       {hardware ethernet 00:25:36:91:4a:89; fixed-address 10.4.0.25;}
+	host prnsicc	{hardware ethernet 00:25:36:ee:f8:48; fixed-address 10.4.0.26;}
+	
+
+####### Rede 10.11
+#	host 	{hardware ethernet ; fixed-address 10.11.0.22;}
+#	host 	    {hardware ethernet 00:25:36:ee:f8:48; fixed-address 10.11.0.23;}
+	host prnchefraddiag {hardware ethernet 00:25:36:ee:78:25; fixed-address 10.11.0.24;}
+	host prncamararx    {hardware ethernet 08:00:66:81:98:a6; fixed-address 10.11.0.25;}
+	host prnadmemerg    {hardware ethernet 00:80:91:b3:e6:96; fixed-address 10.11.0.26;}
+	host prnmamalaudo    {hardware ethernet 00:25:36:ee:c4:28; fixed-address 10.11.0.27;}
+	host prnmamografia  {hardware ethernet 00:25:36:76:da:f7; fixed-address 10.11.0.28;}
+
+
+####### Rede 10.205
+	host prnsintufrj {hardware ethernet 9c:93:4e:16:97:5c; fixed-address 10.205.0.22;}
+#	host prngrafica2 {hardware ethernet 00:26:73:b7:43:00; fixed-address 10.205.0.23;}
+#	host prngrafica2 {hardware ethernet 9c:93:4e:54:ec:90; fixed-address 10.205.0.23;}
+#	host prngrafica  {hardware ethernet 00:26:73:6c:aa:a3; fixed-address 10.205.0.24;}
+#	host prngrafica4 {hardware ethernet 1c:7d:22:2b:01:69; fixed-address 10.205.0.25;}
+#	host prngrafica3 {hardware ethernet 00:25:36:81:68:a9; fixed-address 10.205.0.26;}
+#	host prngrafica5 {hardware ethernet 1c:7d:22:2b:10:55; fixed-address 10.205.0.27;}
+
+
+
+####### 1º ANDAR
+#
+####### Rede 10.1
+	host prnradioterapia {hardware ethernet 00:80:91:ac:23:ab; fixed-address 10.1.10.21;}
+	host prnradioterap   {hardware ethernet 00:25:36:a1:e2:81; fixed-address 10.1.10.22;}
+
+####### Rede 10.10
+	host prncentrmarc {hardware ethernet 00:80:91:ba:c5:b2; fixed-address 10.10.10.21;}
+	host prnadmin	  {hardware ethernet 00:80:91:ac:27:9a; fixed-address 10.10.10.22;}
+	host prnsermat4	  {hardware ethernet 00:25:36:61:23:8c; fixed-address 10.10.10.23;}
+	host prnatec	  {hardware ethernet 00:25:36:ee:78:73; fixed-address 10.10.10.24;}
+	host prnouvidoria {hardware ethernet 00:80:91:b0:ad:40; fixed-address 10.10.10.25;}
+#	host prnchefamb	  {hardware ethernet 00:80:91:ab:7e:94; fixed-address 10.10.10.26;}
+#	host prnnir	  {hardware ethernet 00:80:91:ac:25:75; fixed-address 10.10.10.27;}
+	host prnatec2	  {hardware ethernet 00:80:91:af:45:5d; fixed-address 10.10.10.29;}
+	host prnfarmamb	  {hardware ethernet 00:25:36:ee:44:ff; fixed-address 10.10.10.30;}
+	host prnlicitacao {hardware ethernet 00:80:91:ba:c5:8a; fixed-address 10.10.10.31;}
+	host prncpl       {hardware ethernet 00:80:91:ba:c4:e2; fixed-address 10.10.10.32;}
+	host prncmrchef   {hardware ethernet 00:25:36:be:e0:d1; fixed-address 10.10.10.33;}
+	host prnassejuri	  {hardware ethernet 00:80:91:b8:e2:86; fixed-address 10.10.10.34;}
+
+####### Rede 10.11
+#	host              {hardware ethernet                  ; fixed-address 10.11.10.21;}
+#	host           	  {hardware ethernet                  ; fixed-address 10.11.10.22;}
+	host prntriagem1  {hardware ethernet 00:25:36:ee:78:ab; fixed-address 10.11.10.23;}
+	host prnsermat2	  {hardware ethernet 00:17:a4:8f:e9:49; fixed-address 10.11.10.24;}
+	host prnsermat3	  {hardware ethernet 00:25:36:ee:10:50; fixed-address 10.11.10.27;}
+	host prnchefamb2  {hardware ethernet 00:25:36:be:f8:90; fixed-address 10.11.10.29;}
+#	host prncpl	  {hardware ethernet 00:80:91:ba:c4:e2; fixed-address 10.11.10.30;}
+#	host prnlicitacao {hardware ethernet 00:80:91:ba:c5:8a; fixed-address 10.11.10.32;}
+	host prndgidt	  {hardware ethernet 00:80:91:ac:f6:93; fixed-address 10.11.10.33;}
+	host prnchefamb	  {hardware ethernet 00:80:91:ab:7e:94; fixed-address 10.11.10.34;}
+
+####### Rede 10.12
+	host prndg	   {hardware ethernet 00:17:c8:e7:fc:92; fixed-address 10.12.10.21;} #Kyocera 3655 IDM
+	host prncolordg	   {hardware ethernet 00:25:36:8e:78:75; fixed-address 10.12.10.22;} #oki C831
+	host prnslcchefia  {hardware ethernet 00:80:91:ba:c4:de; fixed-address 10.12.10.23;}
+	host prndrhsind	   {hardware ethernet 00:25:36:ee:44:cb; fixed-address 10.12.10.24;}
+#	host {hardware ethernet ; fixed-address 10.12.10.25;}
+	host prncseat	   {hardware ethernet 00:25:36:11:fa:d5; fixed-address 10.12.10.26;}
+	host prncolordrh   {hardware ethernet 00:25:36:76:25:0b; fixed-address 10.12.10.27;}
+	host prncopem      {hardware ethernet 00:80:91:ba:c8:05; fixed-address 10.12.10.28;}
+	host prnsepag      {hardware ethernet 00:80:91:ac:26:80; fixed-address 10.12.10.29;}
+	host prndfn	   {hardware ethernet 00:25:36:e1:1e:0c; fixed-address 10.12.10.30;}
+	host prndfnorc	   {hardware ethernet 00:80:91:b9:c8:f1; fixed-address 10.12.10.31;}
+	host prndfntes	   {hardware ethernet 00:25:36:ee:78:19; fixed-address 10.12.10.32;}
+####### Rede 10.15
+
+#	host prnamb132	{hardware ethernet 00:25:36:91:06:f9; fixed-address 10.15.10.21;}
+
+
+####### Rede 10.201 - CIR REDE
+	host prncolorcir {hardware ethernet 00:25:36:76:25:c7; fixed-address 10.201.10.21;} #oki c831
+
+####### Rede 10.13
+#	host prnmanutencao {hardware ethernet 00:80:91:ac:f5:3b; fixed-address 10.13.10.22;} #oki 5502
+	host prncir	   {hardware ethernet 00:80:91:ba:c7:16; fixed-address 10.13.10.23;} #oki 5502
+	host prndag	   {hardware ethernet 00:80:91:ac:f6:77; fixed-address 10.13.10.24;}
+	host prnprot	   {hardware ethernet 00:25:36:ee:f8:58; fixed-address 10.13.10.25;}
+	host prngrafica1   {hardware ethernet a0:42:3f:37:e1:fe; fixed-address 10.13.10.26;}
+	host prngrafica2   {hardware ethernet 1c:7d:22:2b:01:69; fixed-address 10.13.10.27;}
+	host prngrafica3   {hardware ethernet 1c:7d:22:2b:10:55; fixed-address 10.13.10.28;}
+	host prngrafica4   {hardware ethernet 9c:93:4e:91:25:77; fixed-address 10.13.10.29;}
+	host prntelefonia  {hardware ethernet 00:25:36:91:06:a5; fixed-address 10.13.10.30;} #oki5112
+	host prngrafica5   {hardware ethernet 00:26:73:80:41:e5; fixed-address 10.13.10.31;} #RichoC3003
+	host prndfnfat	   {hardware ethernet 00:25:36:61:23:72; fixed-address 10.13.10.32;}
+	host prnmanut 	   {hardware ethernet 00:17:c8:e7:fc:23; fixed-address 10.13.10.33;} #Kyocera
+########
+#Rede 10.205
+	host prnsaa	   {hardware ethernet 00:25:36:ee:f8:88; fixed-address 10.205.10.21;}
+	host prnsaa10	   {hardware ethernet 00:25:36:76:da:33; fixed-address 10.205.10.22;}
+	host prnstd	   {hardware ethernet 00:25:36:76:3a:4c; fixed-address 10.205.10.24;}
+	host prnsdm	   {hardware ethernet 00:80:91:b8:29:d2; fixed-address 10.205.10.25;}
+#	host 	   {hardware ethernet ; fixed-address 10.205.10.26;}
+#	host 	   {hardware ethernet ; fixed-address 10.205.10.28;}
+#	host 	   {hardware ethernet ; fixed-address 10.205.10.29;}
+	host prncoordadmin {hardware ethernet a0:b3:cc:98:51:b0; fixed-address 10.205.10.31;}
+	host prndrh	   {hardware ethernet 00:80:91:ac:b9:e5; fixed-address 10.205.10.33;}
+	host prndfngab	   {hardware ethernet 00:25:36:ee:f8:66; fixed-address 10.205.10.35;}
+	host prnsaachef	   {hardware ethernet 00:25:36:ee:20:0c; fixed-address 10.205.10.36;}
+#	host 	   {hardware ethernet ; fixed-address 10.205.10.37;}
+	host prncontroint  {hardware ethernet 00:25:36:ee:c4:c0; fixed-address 10.205.10.38;}
+	host prndfngabinete{hardware ethernet 00:25:36:ee:44:df; fixed-address 10.205.10.39;}
+#	host        	   {hardware ethernet                  ; fixed-address 10.205.10.40;}
+	host prnsaa2	   {hardware ethernet a0:b3:cc:98:71:5f; fixed-address 10.205.10.41;}
+	host prncpl33	   {hardware ethernet 00:25:36:b6:ca:01; fixed-address 10.205.10.42;}
+	host prnsaa3	   {hardware ethernet 00:25:36:61:23:6a; fixed-address 10.205.10.43;}
+#	host 	           {hardware ethernet                  ; fixed-address 10.205.10.44;}
+#	host prntelefonia  {hardware ethernet 00:25:36:91:06:a5; fixed-address 10.205.10.45;}
+#	host               {hardware ethernet                  ; fixed-address 10.205.10.46;}
+	host prnprotocolo  {hardware ethernet 00:80:91:77:cb:8f; fixed-address 10.205.10.47;}
+
+
+####### 2º ANDAR
+#
+####### Rede 10.10
+#
+	
+	host prncmfr {hardware ethernet 00:25:36:ee:c4:f0; fixed-address 10.10.20.21;}
+	host prncmr {hardware ethernet 00:80:91:ac:68:47; fixed-address 10.10.20.22;}#fisioterapia_rampa
+
+
+####### Rede 10.11
+#	host prnfisio {hardware ethernet 00:25:36:e1:1e:56; fixed-address 10.11.20.21;}
+	host prnfisio {hardware ethernet 00:25:36:6e:48:aa; fixed-address 10.11.20.22;}
+	host prnfisio2 {hardware ethernet 00:25:36:e1:1e:56; fixed-address 10.11.20.23;}
+
+##### 10.20
+#
+
+	host prnclindor {hardware ethernet a0:b3:cc:98:71:65; fixed-address 10.20.20.21;}
+	host prnnir     {hardware ethernet 00:17:c8:70:95:af; fixed-address 10.20.20.22;}
+	host prnamb224  {hardware ethernet 00:25:36:ee:44:2b; fixed-address 10.20.20.23;}
+	host prnquimio  {hardware ethernet 00:25:36:2e:1c:84; fixed-address 10.20.20.24;}
+
+####### 3º ANDAR
+#
+####### Rede 10.30
+	host prnpatclin	  {hardware ethernet 00:25:36:61:23:ec; fixed-address 10.30.30.21;}
+	host prnpatclin2  {hardware ethernet 00:25:36:e1:1e:6a; fixed-address 10.30.30.22;}
+	host prnalmoxpat  {hardware ethernet 00:17:c8:e7:fc:42; fixed-address 10.30.30.23;}
+#        host prnalmoxpat  {hardware ethernet 00:80:91:ac:bc:1f; fixed-address 10.30.30.23;}
+	host prnfono	  {hardware ethernet 00:25:36:76:b9:5b; fixed-address 10.30.30.24;}
+#	host 	  {hardware ethernet ; fixed-address 10.30.30.25;}
+	host prnhemoter	  {hardware ethernet 00:80:91:ab:d2:79; fixed-address 10.30.30.26;}#Hemoterapia-Fracionamento-MPS5502
+	host prnrecep	  {hardware ethernet 00:07:4d:66:e2:02; fixed-address 10.30.30.27;}
+	host prnbio	  {hardware ethernet 00:25:36:ee:78:d9; fixed-address 10.30.30.28;}
+	host prnmicologia {hardware ethernet 00:25:36:91:c6:7a; fixed-address 10.30.30.29;}
+	host prnlabcon    {hardware ethernet 00:25:36:76:79:73; fixed-address 10.30.30.30;}
+	host prnhormonio  {hardware ethernet 00:25:36:ee:44:85; fixed-address 10.30.30.31;}
+	host prnbiomol    {hardware ethernet 00:25:36:b6:ca:6e; fixed-address 10.30.30.32;}
+	host prnimunosme  {hardware ethernet 00:80:91:75:5d:df; fixed-address 10.30.30.33;}#Localizacao Patologia Clinica
+	host prnsorologia {hardware ethernet 00:25:36:ee:78:0d; fixed-address 10.30.30.34;}#Localizacao Patologia Clinica
+	host prnqualidade {hardware ethernet 00:25:36:ee:e0:cf; fixed-address 10.30.30.35;}# Patologia Clinica Qualidade
+	host prnrehemo {hardware ethernet 00:25:36:76:79:0a; fixed-address 10.30.30.36;}# Hemoterapia-Recepcao-MPS5501b
+
+
+####### Rede 10.40
+
+	host prnurosme {hardware ethernet 00:25:36:2e:1c:2e; fixed-address 10.40.30.21;}#
+
+####### Rede 10.42
+	host prnsme	    {hardware ethernet 00:25:36:61:23:34; fixed-address 10.42.30.21;}
+#	host prnsme	    {hardware ethernet 00:25:36:b6:ca:3d; fixed-address 10.42.30.21;}
+	host prnsmeprohart1 {hardware ethernet 00:1a:4b:f2:3b:be; fixed-address 10.42.30.22;}
+	host prnsmepneumo   {hardware ethernet 00:1c:c4:0e:70:f1; fixed-address 10.42.30.23;}
+	host prnprohart	    {hardware ethernet 00:80:91:ab:d4:dd; fixed-address 10.42.30.24;}
+	host prnprohart2    {hardware ethernet 00:80:91:ac:27:93; fixed-address 10.42.30.25;}
+	host prnpneumo	    {hardware ethernet 00:25:36:91:ea:7f; fixed-address 10.42.30.26;}
+	host prnsmeadm	    {hardware ethernet 00:25:36:81:b6:5a; fixed-address 10.42.30.27;}
+	host prnantico	    {hardware ethernet 00:25:36:2e:2e:10; fixed-address 10.42.30.28;}
+	host prnsmelaudos   {hardware ethernet 00:25:36:ee:78:15; fixed-address 10.42.30.29;}
+	host prnprohart3    {hardware ethernet 00:25:36:ee:78:ab; fixed-address 10.42.30.30;}
+
+
+####### 4º ANDAR
+#
+####### Rede 10.30
+	host prnlccmo	{hardware ethernet 00:80:91:ba:c4:b7; fixed-address 10.30.40.21;}
+	host prnhemato	{hardware ethernet 00:25:36:91:89:b4; fixed-address 10.30.40.22;}
+	host prnbiocel	{hardware ethernet 00:25:36:76:da:57; fixed-address 10.30.40.23;}
+
+####### Rede 10.40
+#	host prnfarm	{hardware ethernet 00:25:36:61:23:cc; fixed-address 10.40.40.21;} 
+	host prnfarm	{hardware ethernet 00:80:91:ba:c7:ca; fixed-address 10.40.40.21;} 
+	host prncaf	{hardware ethernet 00:25:36:ee:78:2d; fixed-address 10.40.40.22;}  
+	host prncafalmox{hardware ethernet 00:25:36:61:23:94; fixed-address 10.40.40.23;}  
+	host prndsc     {hardware ethernet 00:25:36:61:23:6a; fixed-address 10.40.40.24;}  
+	host prnfarm1   {hardware ethernet 00:25:36:b6:ca:f1; fixed-address 10.40.40.25;}  
+	host prnfarmvig {hardware ethernet 00:25:36:76:b9:3b; fixed-address 10.40.40.26;}  
+
+####### Rede 10.42
+	host prnlcpt	{hardware ethernet 00:15:99:6d:9a:61; fixed-address 10.42.40.21;}
+	host prngastro {hardware ethernet 00:80:91:ac:f5:3b; fixed-address 10.42.40.22;} #oki 5502
+	host prngastro2	{hardware ethernet 00:25:36:61:23:d4; fixed-address 10.42.40.24;} #5501b
+
+####### Rede 10.43
+	host prnlance	  {hardware ethernet 00:26:55:71:b8:22; fixed-address 10.43.40.21;}
+#	host prnlabdip	  {hardware ethernet 00:25:36:76:79:1c; fixed-address 10.43.40.22;}
+	host prnlabdip	  {hardware ethernet 00:25:36:36:d0:43; fixed-address 10.43.40.22;}
+#	host prnlabmicob  {hardware ethernet 00:80:91:ac:28:67; fixed-address 10.43.40.24;}
+	host prnlabmicob2 {hardware ethernet 00:80:91:ba:c7:f2; fixed-address 10.43.40.25;}
+	host prnimuno     {hardware ethernet 00:25:36:36:5c:16; fixed-address 10.43.40.26;}
+	host prnnutro4    {hardware ethernet 00:25:36:ee:10:10; fixed-address 10.43.40.27;}
+	host prncviral	  {hardware ethernet 00:25:36:76:79:69; fixed-address 10.43.40.28;}
+	host prnlabmicob3  {hardware ethernet 00:80:91:ac:28:67; fixed-address 10.43.40.29;}
+
+
+
+
+####### 5º ANDAR
+#
+####### Rede 10.40
+	host prnden	    {hardware ethernet 00:80:91:ac:25:6c; fixed-address 10.40.50.21;}
+	host prndengabinete {hardware ethernet 00:80:91:ac:25:32; fixed-address 10.40.50.22;}
+	host prncoep	    {hardware ethernet 00:25:36:e1:1e:e2; fixed-address 10.40.50.23;}
+	host prndmd	    {hardware ethernet 00:80:91:ac:f6:9c; fixed-address 10.40.50.24;}
+#	host   {hardware ethernet ; fixed-address 10.40.50.25;}
+	host prndaa         {hardware ethernet 00:25:36:e1:1e:bc; fixed-address 10.40.50.26;}
+	host prnsuperden    {hardware ethernet 00:25:36:ee:44:4b; fixed-address 10.40.50.27;}
+	host prnprnlpc    {hardware ethernet 00:80:91:78:fd:ff; fixed-address 10.40.50.28;}
+
+####### Rede 10.50
+	host prndip2	   {hardware ethernet 00:25:36:91:06:c5; fixed-address 10.50.50.21;}
+	host prndip	   {hardware ethernet 00:80:91:78:bb:57; fixed-address 10.50.50.22;}
+	host prnservsocial {hardware ethernet 00:80:91:ac:25:2a; fixed-address 10.50.50.23;}
+	host prndermato	   {hardware ethernet 00:25:36:36:d0:53; fixed-address 10.50.50.24;}
+	host prnbrigada	   {hardware ethernet 00:25:36:36:d0:79; fixed-address 10.50.50.25;}
+	host prndermato2   {hardware ethernet 00:17:c8:e7:fc:58; fixed-address 10.50.50.26;}
+	host prnrisco	   {hardware ethernet 00:80:91:76:d1:5c; fixed-address 10.50.50.27;}
+	host prn05d	   {hardware ethernet 00:25:36:76:3a:e2; fixed-address 10.50.50.28;}
+	host prnnutri	   {hardware ethernet 00:80:91:ba:c4:09; fixed-address 10.50.50.29;}
+	host prnseavrhc	   {hardware ethernet 00:25:36:ee:44:fb; fixed-address 10.50.50.30;}
+	host prnteraocup5c   {hardware ethernet 00:25:36:76:3a:02; fixed-address 10.50.50.31;}#Terapia Ocupacional
+	host prnseav	   {hardware ethernet 00:80:91:ac:26:94; fixed-address 10.50.50.32;}
+	host prnnsp	   {hardware ethernet 00:25:36:ee:f8:70; fixed-address 10.50.50.33;}
+#	host prndermato2	   {hardware ethernet 00:17:c8:e7:fc:58; fixed-address 10.50.50.34;}
+
+####### Rede 10.51
+	host prnupc  {hardware ethernet 00:80:91:ba:c5:a5; fixed-address 10.51.50.21;}
+	host prnupc1 {hardware ethernet 00:21:5a:fe:f0:83; fixed-address 10.51.50.22;}
+	host prnupc2 {hardware ethernet 00:21:5a:fe:80:21; fixed-address 10.51.50.23;}
+	host prnupc3 {hardware ethernet 10:1f:74:b0:aa:e9; fixed-address 10.51.50.24;}
+	host prnupc4 {hardware ethernet ac:e2:d3:42:eb:e1; fixed-address 10.51.50.25;}
+	host prnupc5 {hardware ethernet ac:e2:d3:42:eb:d2; fixed-address 10.51.50.26;}
+
+
+
+###### 6º ANDAR
+#
+###### Rede 10.40
+	host prnlpt     {hardware ethernet 78:e7:d1:54:3f:22; fixed-address 10.40.60.22;}
+	host prnlpct    {hardware ethernet b4:99:ba:28:31:2d; fixed-address 10.40.60.23;}
+#	host  {hardware ethernet ; fixed-address 10.40.60.24;}
+	host prnidtpes  {hardware ethernet 00:25:36:ee:c4:a8; fixed-address 10.40.60.25;}
+
+###### Rede 10.60
+	host prncpt2 {hardware ethernet f4:ce:46:e8:10:5a; fixed-address 10.60.60.21;}
+	host prnonco {hardware ethernet 00:24:81:76:d4:89; fixed-address 10.60.60.22;}
+	host prncpt  {hardware ethernet 00:80:91:ac:26:e4; fixed-address 10.60.60.23;}
+	host prncptledtaes  {hardware ethernet 10:60:4b:14:e7:69; fixed-address 10.60.60.24;}
+	host prnpcth  {hardware ethernet 00:25:36:ee:44:07; fixed-address 10.60.60.25;}
+
+
+###### Rede 10.61
+	host prnpsico1	 {hardware ethernet 00:25:36:ee:f8:28; fixed-address 10.61.60.21;}
+	host prn06f	 {hardware ethernet 00:25:36:61:23:74; fixed-address 10.61.60.22;} #5501b
+	host prnpsicomed {hardware ethernet 00:80:91:ac:26:8e; fixed-address 10.61.60.23;} #5502b
+
+
+
+####### 7º ANDAR
+#
+####### Rede 10.70
+	host prnnefro	    {hardware ethernet 00:25:36:61:23:4a; fixed-address 10.70.70.21;}
+	host prnnefrorecep  {hardware ethernet 00:25:36:ee:78:cb; fixed-address 10.70.70.22;}
+	host prndensi	    {hardware ethernet 78:ac:c0:89:72:91; fixed-address 10.70.70.23;}
+	host prnhemodialise {hardware ethernet 00:25:36:b6:ca:5d; fixed-address 10.70.70.24;}
+	host prnnefro2	    {hardware ethernet 18:60:24:c9:06:f4; fixed-address 10.70.70.25;}
+	host prn07a	    {hardware ethernet 00:25:36:11:fa:f5; fixed-address 10.70.70.26;} #5501b
+	host prndensitome   {hardware ethernet 00:80:91:78:b9:98; fixed-address 10.70.70.27;}
+	host prnnefrosec    {hardware ethernet 00:80:91:76:2c:81; fixed-address 10.70.70.28;}
+#	host prnceparm    {hardware ethernet 00:25:36:96:ac:6c; fixed-address 10.70.70.29;} #CEPARM
+
+####### Rede 10.71
+	host prncep         {hardware ethernet 00:25:36:91:c6:06; fixed-address 10.71.70.21;} #5112
+	host prnceparm    {hardware ethernet 00:25:36:96:ac:6c; fixed-address 10.71.70.22;} #CEPARM
+
+
+####### Rede 10.81
+#	host prn07f	 {hardware ethernet 00:25:36:ee:44:8b; fixed-address 10.81.70.21;}
+#	host 	         {hardware ethernet 		     ; fixed-address 10.81.70.22;}
+#	host prn07f	 {hardware ethernet 00:25:36:36:d0:f9; fixed-address 10.81.70.23;}
+#	host prn07f	 {hardware ethernet 00:25:36:b6:ca:01; fixed-address 10.81.70.23;}
+
+
+####### 8º ANDAR
+#
+####### Rede 10.80
+	host prnilha08c   {hardware ethernet 00:25:36:01:6b:21; fixed-address 10.80.80.21;}  # OKI 551b
+	host prnic	  {hardware ethernet 00:21:b7:22:f6:c9; fixed-address 10.80.80.22;}
+	host prnccih	  {hardware ethernet 00:25:36:61:23:b4; fixed-address 10.80.80.23;}
+	host prn08d	  {hardware ethernet 00:25:36:91:06:3e; fixed-address 10.80.80.24;}
+	host prncpl2	  {hardware ethernet 00:25:36:61:23:0c; fixed-address 10.80.80.26;}
+	host prncard	  {hardware ethernet 00:25:36:ee:f8:f8; fixed-address 10.80.80.27;}
+#	host 		  {hardware ethernet 		      ; fixed-address 10.80.80.28;}
+	host prncoronaria {hardware ethernet 00:25:36:36:d0:f9; fixed-address 10.80.80.29;}
+#	host prnss08      {hardware ethernet 00:25:36:91:06:f9; fixed-address 10.80.80.30;}
+	host prncardiaca  {hardware ethernet 00:25:36:e1:1e:16; fixed-address 10.80.80.31;}
+	host prncoradm {hardware ethernet 00:25:36:2e:82:29; fixed-address 10.80.80.32;} #MPS5501
+####### Rede 10.81
+	host prntxmedula {hardware ethernet 00:1a:4b:f2:89:14; fixed-address 10.81.80.21;}
+	host prn08f	 {hardware ethernet 00:25:36:91:1a:40; fixed-address 10.81.80.22;}
+	host prnleon	 {hardware ethernet 00:1b:a9:31:7e:42; fixed-address 10.81.80.25;}
+	host prncardio	 {hardware ethernet 00:25:36:e1:1e:26; fixed-address 10.81.80.26;}
+
+#
+####### Rede 10.82
+	host prnices	{hardware ethernet 00:80:91:ac:26:78; fixed-address 10.82.80.23;}
+
+
+####### 9º ANDAR
+#
+####### Rede 10.81
+#	host 	  {hardware ethernet ; fixed-address 10.81.90.21;}
+	host prnneuroendo {hardware ethernet 00:1b:a9:9f:eb:ba; fixed-address 10.81.90.22;}
+
+####### Rede 10.90
+	host prn09c	 {hardware ethernet 00:25:36:61:23:ac; fixed-address 10.90.90.21;}
+	host prnposto09c {hardware ethernet 00:25:36:76:b9:db; fixed-address 10.90.90.22;}
+#	host prnss09     {hardware ethernet 00:25:36:91:06:f9; fixed-address 10.90.90.23;}
+
+####### Rede 10.92
+	host prnendocri	 {hardware ethernet 00:80:91:b0:b6:24; fixed-address 10.92.90.21;}
+	host prnclinmed  {hardware ethernet 00:80:91:ab:cb:be; fixed-address 10.92.90.22;}
+
+####### Rede 10.100
+	host prn09b-slenf  {hardware ethernet 00:25:36:91:1a:40; fixed-address 10.100.90.21;}
+	
+
+####### Rede 10.110
+#	host prnendocri	  {hardware ethernet 00:80:91:b0:b6:24; fixed-address 10.110.90.23;}
+#	host prnclinmed   {hardware ethernet                  ; fixed-address 10.110.90.24;}
+	host prnnutro	  {hardware ethernet 00:80:91:ac:f6:6a; fixed-address 10.110.90.25;}
+	host prnhepato	  {hardware ethernet a0:b3:cc:98:61:7a; fixed-address 10.110.90.26;}
+	host prnhepato2	  {hardware ethernet 00:80:91:ac:63:ed; fixed-address 10.110.90.27;}
+	host prncoordfono {hardware ethernet 00:25:36:ee:78:d5; fixed-address 10.110.90.28;}
+	host prnimuno9    {hardware ethernet 00:80:91:78:fa:05; fixed-address 10.110.90.29;}
+	host prn9fono     {hardware ethernet 00:25:36:ee:44:d5; fixed-address 10.110.90.30;}
+
+
+####### 10º ANDAR
+#
+####### Rede 10.100
+	host prn10ab      {hardware ethernet 00:25:36:ce:4f:8e; fixed-address 10.100.100.21;}
+	host prnslenf10b      {hardware ethernet 00:25:36:b6:ca:3e; fixed-address 10.100.100.22;}
+#	host prnposto10b  {hardware ethernet ; fixed-address 10.100.100.23;}
+####### Rede 10.101
+#	host prn10c	{hardware ethernet 00:25:36:91:06:3e; fixed-address 10.101.100.21;}
+#	host prnposto0c	{hardware ethernet 00:25:36:01:6b:21; fixed-address 10.101.100.22;}  # OKI 551b
+	host prnss10    {hardware ethernet 00:25:36:91:06:f9; fixed-address 10.101.100.23;}
+	host prncomeip	  {hardware ethernet 00:25:36:ee:78:a9; fixed-address 10.101.100.24;} #prncomeip
+####### Rede 10.102
+	host prnnpc	{hardware ethernet 10:60:4b:4c:65:ce; fixed-address 10.102.100.21;}
+
+####### Rede 10.110
+	host prnidtrute1 {hardware ethernet 08:00:37:7f:d9:3c; fixed-address 10.110.100.22;}
+	host prnidtrute2 {hardware ethernet 08:00:37:7f:d9:ab; fixed-address 10.110.100.23;}
+	host prnorto	 {hardware ethernet 00:25:36:76:da:f3; fixed-address 10.110.100.25;}
+	host prnneuroc	 {hardware ethernet 00:25:36:b6:ca:01; fixed-address 10.110.100.26;}
+	host prnneuro	 {hardware ethernet 00:25:36:81:b6:ea; fixed-address 10.110.100.27;}
+	host prnvascular {hardware ethernet 00:80:91:b0:41:e7; fixed-address 10.110.100.28;}
+	host prnprocto	 {hardware ethernet 00:25:36:76:79:ca; fixed-address 10.110.100.29;}
+	host prnortopedia{hardware ethernet 00:25:36:96:ac:c6; fixed-address 10.110.100.30;}
+
+####### Rede 10.113
+	host prnsessat	 {hardware ethernet 00:80:91:ac:27:36; fixed-address 10.113.101.21;}
+	host prnneuroamb {hardware ethernet 00:25:36:91:c6:51; fixed-address 10.113.101.22;}
+
+
+####### 11º ANDAR
+#
+####### Rede 10.110
+	host prndivpesq	 {hardware ethernet 00:80:91:ac:25:be; fixed-address 10.110.110.21;}
+	host prnplastica {hardware ethernet 00:25:36:ee:f8:38; fixed-address 10.110.110.22;}
+#	host prncirgeral {hardware ethernet 00:80:91:ac:25:6d; fixed-address 10.110.110.23;}
+	host prncirgeral {hardware ethernet 9c:ae:d3:b4:3c:27; fixed-address 10.110.110.23;} #Cirurgia Geral-11ªandar
+	host prnuro	 {hardware ethernet 00:80:91:b0:41:a2; fixed-address 10.110.110.25;}
+	host prnservonco {hardware ethernet 00:25:36:61:23:4a; fixed-address 10.110.110.26;}
+
+####### Rede 10.111
+	host prnlabsono {hardware ethernet f4:ce:46:fb:6b:84; fixed-address 10.111.110.21;}
+	host prnsono	{hardware ethernet 00:25:36:ee:44:17; fixed-address 10.111.110.22;}
+
+####### Rede 10.113
+
+
+####### 12º ANDAR
+
+####### Rede 10.110
+	host prnseme     {hardware ethernet 00:25:36:91:06:95; fixed-address 10.110.120.21;}
+
+#
+####### Rede 10.111
+	host prnccirurg  {hardware ethernet 00:25:36:ee:c4:40; fixed-address 10.111.120.21;}
+	host prnccirurg2 {hardware ethernet 00:25:36:ee:10:e0; fixed-address 10.111.120.24;}
+
+
+
+####### Rede 10.130
+	host prncae	 {hardware ethernet 00:23:7d:75:a4:30; fixed-address 10.130.120.22;}
+	host prnconcurso {hardware ethernet a0:b3:cc:98:91:86; fixed-address 10.130.120.23;}
+	host prncaepos	 {hardware ethernet 00:25:36:e1:1e:ba; fixed-address 10.130.120.24;}
+	host prncaeres	 {hardware ethernet 00:80:91:ba:c4:9e; fixed-address 10.130.120.25;}
+	host prncaeadm	 {hardware ethernet 9c:ae:d3:b5:c2:0a; fixed-address 10.130.120.26;}
+	host prncaegrafica	 {hardware ethernet 00:26:73:37:10:14; fixed-address 10.130.120.27;}
+	host prncaegrafica2	 {hardware ethernet 00:26:73:2b:c8:b8; fixed-address 10.130.120.28;}
+
+
+
+####### 13º ANDAR
+#
+####### Rede 10.130
+	host prnbiblio2 {hardware ethernet 00:21:b7:22:f6:32; fixed-address 10.130.130.23;}
+
+####### Rede 10.131
+	host prncti13round {hardware ethernet 00:25:36:36:d0:83; fixed-address 10.131.131.21;}
+	host prncti13adm {hardware ethernet 00:17:c8:6b:dd:0c; fixed-address 10.131.131.22;} #MPS5501
+	host prncti03      {hardware ethernet 00:25:36:ee:44:5f; fixed-address 10.131.131.23;}
+	host prncti02      {hardware ethernet 00:25:36:76:39:6b; fixed-address 10.131.131.24;}
+	host prncti01      {hardware ethernet 00:25:36:b6:ca:1e; fixed-address 10.131.131.25;}
+	host prninaloterapia {hardware ethernet 00:25:36:ee:44:bf; fixed-address 10.131.131.26;}
+
+
+
+
+####### IDT ANEXO
+####### Rede 10.140
+	host prnambtuberc {hardware ethernet 00:25:36:ee:c4:e8; fixed-address 10.140.10.21;}

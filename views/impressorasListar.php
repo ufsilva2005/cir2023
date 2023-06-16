@@ -39,11 +39,11 @@
 											</div>
 												
 											<div class="btn-group pull-left">
-												<a class="btn btn-small btn-danger">dEsativar<i class="icon-remove"></i></a>
+												<a class="btn btn-small btn-danger">Inativo<i class="icon-remove"></i></a>
 											</div>
 
 											<div class="btn-group pull-left">
-												<a class="btn btn-small btn-ufs">Imprimir<i class="icon-remove"></i></a>
+												<a class="btn btn-small btn-ufs">imPrimir<i class="icon-remove"></i></a>
 											</div>
 
 											<div class="btn-group pull-left">
@@ -122,10 +122,10 @@
                                                         <a href="./.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
-                                                        <a href="../.php?action=2&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-danger">E<i class="icon-remove"></i></a>
+                                                        <a href="../.php?action=2&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-danger">I<i class="icon-remove"></i></a>
                                                     </div>
 													<div class="btn-group pull-left">
-                                                        <a href="../.php?action=2&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-ufs">I<i class="icon-remove"></i></a>
+                                                        <a href="../.php?action=2&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-ufs">P<i class="icon-remove"></i></a>
                                                     </div>
                                                 </td>			
 											<tr>									
