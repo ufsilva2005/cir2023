@@ -1,4 +1,4 @@
-INSERT INTO `impressoras` (`idImpressora`, `nomeImpressora`, `numSerie`, `ipImpressora`, `macImpressora`, `tipoToner`, `statusImpressora`, `modeloImpressora`, `dataCadastro`, `respCadastro`, `dataAltCadastro`, `respAltCadastro`, `obsImpressora`, `idFuncionario`, `idSetor`), VALUES
+INSERT INTO `impressoras` (`idImpressora`, `nomeImpressora`, `numSerie`, `ipImpressora`, `macImpressora`, `tipoToner`, `statusImpressora`, `modeloImpressora`, `dataCadastro`, `respCadastro`, `dataAltCadastro`, `respAltCadastro`, `obsImpressora`, `idFuncionario`, `idSetor`) VALUES
 (10,'prnanat',null,'10.0.0.21','00:25:36:61:23:1C',null,'ativo',null,'2023-06-19','ULISSES FERREIRA DA SILVA','0000-00-00',null,null,4,null),
 (11,'prnanat2',null,'10.0.0.22','30:05:5C:8A:6A:C7',null,'ativo',null,'2023-06-19','ULISSES FERREIRA DA SILVA','0000-00-00',null,null,4,null),
 (12,'prnsintu',null,'10.0.0.23','00:17:C8:6B:FE:B5',null,'ativo',null,'2023-06-19','ULISSES FERREIRA DA SILVA','0000-00-00',null,null,4,null),

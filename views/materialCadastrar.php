@@ -1,6 +1,8 @@
 <?php
 	include "../template/menuPrincipal.php";
     include "../scripts/mascara.php"; 
+    include_once "../funcao/funcao.php";
+	include_once "../dao/DAO-controleCir.php";
 
     if($_SESSION['entMaterial'] != "sim")
         {
@@ -8,7 +10,28 @@
             echo "<script>location = '../template/menuPrincipal.php';</script>";  
         }
 
-        //SELECT codigo FROM `material` WHERE codigo LIKE 'cir%' ORDER BY codigo DESC LIMIT 1 
+    //Buscar código cir
+	$codigoDAO = new ControleCirDAO();
+	foreach ($codigoDAO->BuscarCodigo() as $resp)
+		{ 
+			$codigo1 = $resp->codigo;				          
+		}
+    
+    //echo strlen($codigo1);
+    $codigo2 = soNumero($codigo1);
+    $tamCodigo2 = strlen($codigo2);
+    $codigo2 = $codigo2+1;
+    $tamCodigo1 = strlen($codigo1);
+    $result = strstr($codigo1, "-", true); 
+    $fimCodigo = str_pad($codigo2, $tamCodigo2, "0", STR_PAD_LEFT);
+    $codigo = $result ."-".$fimCodigo;
+
+    //echo "<br>codigo2 => " . $codigo2;
+    //echo "<br>tamanho codigo1 => " . $tamCodigo1;
+    //echo "<br>tamanho codigo2 => " . $tamCodigo2;
+    //echo "<br>result => " . $result;
+    //echo "<br>fimCodigo => " . $fimCodigo;
+    //echo "<br>codigo final => " . $codigo;
 
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
@@ -33,8 +56,15 @@
 
                                         <div class="tab-content" id="pillsUfs-tabContent">
                                             <div class="tab-pane fade show active" id="pillsUfs-imp" role="tabpanel" aria-labelledby="pillsUfs-imp-tab">
-                                                <div class="col px-md-1 col-md-5">
-                                                    <input type="text" class="form-control" name = "imp" id = "imp"  pattern=".{5,}"  placeholder="000000000000" oninvalid="setCustomValidity('O Número de Série deve ter no Minimo 12 digitos !')" onchange="try{setCustomValidity('')}catch(e){}" >
+                                                <div class="row">
+                                                    <div class="col px-md-1 col-md-3">
+                                                        <label for="inputSuccess" class="control-label">Código:</label>
+                                                        <input type="text" class="form-control" name = "codigoImp" id = "codigoImp" value = "<?=$codigo; $_SESSION['codigo']=$codigo?>" readonly />
+                                                    </div> 
+                                                    <div class="col px-md-1 col-md-5">
+                                                        <label for="inputSuccess" class="control-label">Descrição:</label>
+                                                        <input type="text" class="form-control" name = "descImp" >
+                                                    </div> 
                                                 </div> 
                                             </div>
 

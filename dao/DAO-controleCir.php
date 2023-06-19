@@ -488,6 +488,29 @@
             //FIM DAS FUNÇÕES RELACIONADAS A IMPRESSORA 
 
             //INÍCIO DAS FUNÇÕES RELACIONADAS AOS MATERIAIS
+             public function BuscarCodigo() 
+                {					
+                    $conn = Database::connect();
+                    
+                    $conn->exec('SET CHARACTER SET utf8');
+                    
+                    $sql = "SELECT * FROM `material` WHERE codigo LIKE 'cir%' ORDER BY codigo DESC LIMIT 1 ";
+                    
+                    try 
+                        {
+                            $listar = $conn->query($sql);
+                            $buscar = $listar->fetchAll(PDO::FETCH_OBJ);
+                            $numRows = $listar->rowCount();
+                        } 
+                    catch (PDOException $exc)
+                        {
+                            $buscar = $exc->getTraceAsString();
+                        }
+                        
+                    return $buscar;
+                    $conn = null;	
+                }
+          
             //FIM DAS FUNÇÕES RELACIONADAS AOS MATERIAIS
 
             //INÍCIO DAS FUNÇÕES RELACIONADAS AO HISTORICO
