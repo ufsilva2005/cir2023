@@ -27,6 +27,24 @@
         {
             echo "<br>codigoImp => " . $codigoImp . "<br>";
 	        echo "<br>descImp => " . $descImp ."<br>";
+            //VERIFICAR SE DESCRIÇÃO EXISTE
+            require_once('../dao/conexao.class.php');
+            try {
+                    $pdo = new Conexao(); 
+                    $result = $pdo->select("SELECT * FROM material WHERE descricao = '$descImp'");
+                    $pdo->desconectar();
+                                        
+                }
+            catch (PDOException $e)
+                {
+                    echo $e->getMessage();
+                }
+            print_r($result);
+            if(!empty($result))
+                {
+                    echo "Given Array is empty";
+                }
+            //echo  $result;
         }
 
     else if($descImp == "" && $codigoComp !="" && $descComp != "" )
