@@ -1,7 +1,10 @@
 <?php
   	require_once "../dao/DAO-controleCir.php";
-	//include "../models/class-material.php";	
+	include "../models/class-material.php";	
 	include "../funcao/funcao.php";
+    $numSerie = 0;
+    $unidade = 0;
+    $quantidade = 0;
 
     session_start();	
    	$codigoImp = $_POST['codigoImp'];
@@ -25,13 +28,11 @@
 
     else if($descImp != "" && $codigoComp =="" && $descComp == "" )
         {
-            echo "<br>codigoImp => " . $codigoImp . "<br>";
-	        echo "<br>descImp => " . $descImp ."<br>";
             //VERIFICAR SE DESCRIÇÃO EXISTE
             require_once('../dao/conexao.class.php');
             try {
                     $pdo = new Conexao(); 
-                    $result = $pdo->select("SELECT * FROM material WHERE descricao = '$descImp'");
+                    $resultado = $pdo->select("SELECT * FROM material WHERE descricao = '$descImp'");
                     $pdo->desconectar();
                                         
                 }
@@ -39,11 +40,25 @@
                 {
                     echo $e->getMessage();
                 }
-            print_r($result);
-            if(!empty($result))
+           
+            if(!empty($resultado))
                 {
-                    echo "Given Array is empty";
+                    echo "<script type='text/javascript'>alert('ESTE MATERIAL JÁ ESTA CADASTRADO');</script>";
+                    echo "<script>location = '../views/materialCadastrar.php';</script>"; 
                 }
+            else
+                {
+                    //cadastrar material
+                    $material = new Material($idMaterial, $codigoImp, $descImp, $numSerie, $unidade, $quantidade);
+                    echo "<br>dados material <br>";		
+                    $material->exibir();
+                    echo "<br>";
+                    //$materialDAO = new ControleCirDAO();
+                    //$materialDAO->CadastrarMaterial($material);
+                    echo "<script type='text/javascript'>alert('MATERIAL CADASTRADO');</script>";
+                    echo "<script>location = '../views/materialCadastrar.php';</script>"; 
+                }
+
             //echo  $result;
         }
 

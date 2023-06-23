@@ -510,6 +510,33 @@
                     return $buscar;
                     $conn = null;	
                 }
+
+            public function CadastrarMaterial($material) 
+                {	
+                    $conn = Database::connect();
+                    
+                    $conn->exec('SET CHARACTER SET utf8');
+                    
+                    $prepara = $conn->prepare("INSERT INTO material(codigo, descricao, numSerie, unidade, quantidade) 
+                    VALUES(:codigoBd, :descricaoBd, :numSerieBd, :unidadeBd, :quantidadeBd)");
+                        
+                    //$Bdidmaterial	= $material->getIdmaterial();
+                    $Bdcodigo  	       = $material->getCodigo();                    
+                    $Bddescricao       = $material->getDescricao();
+                    $BdnumSerie	       = $material->getNumSerie();
+                    $Bdunidade         = $material->getUnidade();
+                    $Bdquantidade = $material->getQuantidade();
+                                        
+                    //$prepara->bindParam(":idmaterialBd", $Bdidmaterial);
+                    $prepara->bindParam(":codigoBd", $Bdcodigo);
+                    $prepara->bindParam(":descricaoBd",  $Bddescricao);
+                    $prepara->bindParam(":numSerieBd", $BdnumSerie);                   
+                    $prepara->bindParam(":unidadeBd", $Bdunidade);
+                    $prepara->bindParam(":quantidadeBd", $Bdquantidade);
+
+                    $prepara->execute();                 
+                    $conn = null;
+                }
           
             //FIM DAS FUNÇÕES RELACIONADAS AOS MATERIAIS
 

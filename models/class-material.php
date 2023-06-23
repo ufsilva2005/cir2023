@@ -95,6 +95,8 @@
 					echo $this->descricao . '<br>';
 					echo '</br>Nº Serie -> ';
 					echo $this->numSerie . '<br>';	
+					echo '</br>unidade -> ';
+					echo $this->unidade . '<br>';	
 					echo '</br>quantidade -> ';
 					echo $this->quantidade . '<br>';					
 				}
