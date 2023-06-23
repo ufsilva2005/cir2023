@@ -26,13 +26,6 @@
     $fimCodigo = str_pad($codigo2, $tamCodigo2, "0", STR_PAD_LEFT);
     $codigo = $result ."-".$fimCodigo;
 
-    //echo "<br>codigo2 => " . $codigo2;
-    //echo "<br>tamanho codigo1 => " . $tamCodigo1;
-    //echo "<br>tamanho codigo2 => " . $tamCodigo2;
-    //echo "<br>result => " . $result;
-    //echo "<br>fimCodigo => " . $fimCodigo;
-    //echo "<br>codigo final => " . $codigo;
-
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
 ?>	
@@ -63,30 +56,21 @@
                                                     </div> 
                                                     <div class="col px-md-1 col-md-5">
                                                         <label for="inputSuccess" class="control-label">Descrição:</label>
-                                                        <input type="text" class="form-control" name = "descImp" >
+                                                        <input type="text" class="form-control" name = "descImp" id = "descImp" >
                                                     </div> 
                                                 </div> 
                                             </div>
 
                                             <div class="tab-pane fade" id="pillsUfs-comp" role="tabpanel" aria-labelledby="pillsUfs-comp-tab">
-                                                <div class="col px-md-1 col-md-5">
-                                                    <select class="form-control" id="comp" name = "comp" >
-                                                        <option> </option>
-                                                        <option>CAE</option>
-                                                        <option>CIR</option>
-                                                        <option>DAA</option>
-                                                        <option>DAG</option>
-                                                        <option>DEG</option>
-                                                        <option>DEN</option>
-                                                        <option>DFN</option>
-                                                        <option>DRH</option>
-                                                        <option>DG</option>
-                                                        <option>DMD</option>
-                                                        <option>DSC</option>
-                                                        <option>FM</option>
-                                                        <option>IDT</option>
-                                                        <option></option>
-                                                    </select>								
+                                                <div class="row">
+                                                    <div class="col px-md-1 col-md-3">
+                                                        <label for="inputSuccess" class="control-label">Código:</label>
+                                                        <input type="text" class="form-control" name = "codigoComp" id = "codigoComp" />
+                                                    </div> 
+                                                    <div class="col px-md-1 col-md-5">
+                                                        <label for="inputSuccess" class="control-label">Descrição:</label>
+                                                        <input type="text" class="form-control" name = "descComp" id = "descComp" >
+                                                    </div> 
                                                 </div> 
                                             </div>
                                         </div>  
@@ -99,6 +83,9 @@
                                             <div class="col-md-2">								
                                                 <a  href="../template/menuPrincipal.php"><button type="button" class="btn btn-outline-warning">Voltar</button></a>
                                             </div>	
+
+                                            <div class="col px-md-1 col-md-12" id="MostraPesq">	</div>
+										    <div class="col px-md-1 col-md-12" id="MostraPesq1"> </div>			
                                         </div>                
                                     </form>	
                                 </div>
