@@ -19,7 +19,7 @@
                             <div class="col-md-12">	     
 						        <h3 class="text-success">Selecione o Tipo de Pesquisa:</h3>
                                 <div class="panel-header">
-                                    <form class="form-horizontal" action="../controllers/impressoraPesquisa.php" method="POST">   
+                                    <form class="form-horizontal" action="impressorasPesquisarResultado.php" method="POST">   
                                         <ul class="nav nav-pillsUfs mb-3" id="pillsUfs-tab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" id="pillsUfs-numSerie-tab" data-bs-toggle="pill" data-bs-target="#pillsUfs-numSerie" type="button" role="tab" aria-controls="pillsUfs-numSerie" aria-selected="true">Número de Série</button>
@@ -31,7 +31,10 @@
                                                 <button class="nav-link" id="pillsUfs-modelo-tab" data-bs-toggle="pill" data-bs-target="#pillsUfs-modelo" type="button" role="tab" aria-controls="pillsUfs-modelo" aria-selected="false">Modelo</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="pillsUfs-Ip-tab" data-bs-toggle="pill" data-bs-target="#pillsUfs-Ip" type="button" role="tab" aria-controls="pillsUfs-divisao" aria-selected="false">Nº IP</button>
+                                                <button class="nav-link" id="pillsUfs-ip-tab" data-bs-toggle="pill" data-bs-target="#pillsUfs-ip" type="button" role="tab" aria-controls="pillsUfs-Ip" aria-selected="false">Nº IP</button>
+                                            </li>
+                                             <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="pillsUfs-mac-tab" data-bs-toggle="pill" data-bs-target="#pillsUfs-mac" type="button" role="tab" aria-controls="pillsUfs-Ip" aria-selected="false">Número MAC</button>
                                             </li>
                                         </ul> 
 
@@ -64,7 +67,7 @@
                                                 </div> 
                                             </div>
                                             
-                                            <div class="tab-pane fade" id="pillsUfs-modelo" role="tabpanel" aria-labelledby="pillsUfs-modelo-tab">
+                                            <div class="tab-pane fade" id="pillsUfs-modelo" role="tabpanel" aria-labelledby="pillsUfs-ip-tab">
                                                 <div class="col px-md-1 col-md-5">
                                                     <select class="form-control" id="modelo" name = "modelo">
                                                         <option  value=""> </option> 
@@ -85,13 +88,19 @@
                                                     </select>
                                                 </div> 
                                             </div>
-                                            <div class="tab-pane fade" id="pillsUfs-Ip" role="tabpanel" aria-labelledby="pillsUfs-modelo-tab">
+                                            <div class="tab-pane fade" id="pillsUfs-ip" role="tabpanel" aria-labelledby="pillsUfs-ip-tab">
                                                 <div class="col px-md-1 col-md-5">
                                                     <label for="inputSuccess" class="control-label">Número de IP:</label>
                                                     <input type="text" class="form-control" name="numIp" pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" placeholder="000.000.000.000" oninvalid="setCustomValidity('Endereco ip invalido!')" onchange="try{setCustomValidity('')}catch(e){}" >
                                                 </div>
                                             </div>  
-                                         </div>
+                                            <div class="tab-pane fade" id="pillsUfs-mac" role="tabpanel" aria-labelledby="pillsUfs-mac-tab">
+                                                <div class="col px-md-1 col-md-5">
+                                                    <label for="inputSuccess" class="control-label">Número MAC:</label>
+												    <input type="text" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" onchange="try{setCustomValidity('')}catch(e){}" class="form-control" name="numMac" >
+											    </div>
+                                            </div>  
+                                        </div>
                                         <hr>
                                         <div id="actions" class="row">
                                             <div class="col-md-2">
