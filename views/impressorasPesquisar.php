@@ -30,6 +30,9 @@
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link" id="pillsUfs-modelo-tab" data-bs-toggle="pill" data-bs-target="#pillsUfs-modelo" type="button" role="tab" aria-controls="pillsUfs-modelo" aria-selected="false">Modelo</button>
                                             </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="pillsUfs-Ip-tab" data-bs-toggle="pill" data-bs-target="#pillsUfs-Ip" type="button" role="tab" aria-controls="pillsUfs-divisao" aria-selected="false">Nº IP</button>
+                                            </li>
                                         </ul> 
 
                                         <div class="tab-content" id="pillsUfs-tabContent">
@@ -82,11 +85,17 @@
                                                     </select>
                                                 </div> 
                                             </div>
-                                        </div>  
+                                            <div class="tab-pane fade" id="pillsUfs-Ip" role="tabpanel" aria-labelledby="pillsUfs-modelo-tab">
+                                                <div class="col px-md-1 col-md-5">
+                                                    <label for="inputSuccess" class="control-label">Número de IP:</label>
+                                                    <input type="text" class="form-control" name="numIp" pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" placeholder="000.000.000.000" oninvalid="setCustomValidity('Endereco ip invalido!')" onchange="try{setCustomValidity('')}catch(e){}" >
+                                                </div>
+                                            </div>  
+                                         </div>
                                         <hr>
                                         <div id="actions" class="row">
                                             <div class="col-md-2">
-                                                <button type="submit" class="btn btn-success">Salvar</button>								
+                                                <button type="submit" class="btn btn-success">Pesquisar</button>								
                                             </div>
 
                                             <div class="col-md-2">								
