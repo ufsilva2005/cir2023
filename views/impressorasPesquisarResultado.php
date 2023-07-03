@@ -10,7 +10,7 @@
         }
 
         //echo "<br>valorPesquisa => " . $valorPesquisa;  
-        //echo "<br>tipoPesquisa => " . $tipoPesquisa;  
+        echo "<br>tipoPesquisa => " . $tipoPesquisa;  
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
 ?>	
@@ -74,11 +74,19 @@
                                     </thead>  
                                     <tbody> 
                                         <?php
-                                            //header('Content-Type: text/html; charset=utf-8');
                                             $nomeTabela = "impressoras";								
                                             require_once '../dao/DAO-controleCir.php';
                                             $impAltDAO = new ControleCirDAO();
-                                            foreach($impAltDAO-> ListarOpcao2($nomeTabela, $tipoPesquisa, $valorPesquisa) as $imp)
+                                            if($tipoPesquisa != "divisao")
+                                                {
+                                                    foreach($impAltDAO->ListarOpcao2($nomeTabela, $tipoPesquisa, $valorPesquisa) as $imp);
+                                                }
+                                            else
+                                                {
+                                                    foreach($impAltDAO->BuscaPorDivisao($valorPesquisa) as $imp);
+                                                }
+                                            
+                                             
                                                 { ?>													
                                                     <tr>
                                                         <td>
