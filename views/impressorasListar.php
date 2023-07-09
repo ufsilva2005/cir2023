@@ -124,12 +124,12 @@
 														<?php                                    
                                                             if($statusImpressora != "ativo") 
                                                                 {
-                                                                    $html = "<a href='../.php?action=1&id=<?php echo $imp->idImpressora; ?>' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
+                                                                    $html = "<a href='../controllers/ativarDesativar.php?action=1&id=$idImpressora' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
                                                                     echo $html;
                                                                 }  
 															else
                                                                 {
-                                                                    $html = "<a href='../.php?action=2&id=<?php echo $imp->idImpressora; ?>' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
+                                                                    $html = "<a href='../controllers/ativarDesativar.php?action=2&id=$idImpressora' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
                                                                     echo $html;
                                                                 }                                    
                                                         ?>  

@@ -44,7 +44,8 @@
                                                     </div>
                                                         
                                                     <div class="btn-group pull-left">
-                                                        <a class="btn btn-small btn-danger">Inativo<i class="icon-remove"></i></a>
+                                                        <a class="btn btn-small btn-success">atIvar<i class="icon-remove"></i></a>
+                                                        <a class="btn btn-small btn-danger">destIvar<i class="icon-remove"></i></a>
                                                     </div>
 
                                                     <div class="btn-group pull-left">
