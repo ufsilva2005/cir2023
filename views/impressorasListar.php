@@ -39,7 +39,8 @@
 											</div>
 												
 											<div class="btn-group pull-left">
-												<a class="btn btn-small btn-danger">Inativo<i class="icon-remove"></i></a>
+												<a class="btn btn-small btn-success">atIvar<i class="icon-remove"></i></a>
+												<a class="btn btn-small btn-danger">destIvar<i class="icon-remove"></i></a>
 											</div>
 
 											<div class="btn-group pull-left">
@@ -108,7 +109,7 @@
 												</td>															
 												<td><?php echo $nomeLocal1?></td>	
 												<td><?php echo $localizacao1?></td>		
-												<td><?php echo $imp->statusImpressora?></td>
+												<td><?php echo $statusImpressora = $imp->statusImpressora?></td>
 												<td class='operations'>
                                                     <div class="btn-group pull-left" >
                                                         <a href="./impressoraAlterar.php?action=1&id=<?php echo $imp->idImpressora;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>
@@ -117,10 +118,21 @@
                                                     	<a href="./.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-primary">H<i class="icon-remove"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
-                                                        <a href="./.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
+                                                        <a href="./impressoraDetalhes.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
-                                                        <a href="../.php?action=2&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-danger">I<i class="icon-remove"></i></a>
+														<?php                                    
+                                                            if($statusImpressora != "ativo") 
+                                                                {
+                                                                    $html = "<a href='../.php?action=1&id=<?php echo $imp->idImpressora; ?>' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
+                                                                    echo $html;
+                                                                }  
+															else
+                                                                {
+                                                                    $html = "<a href='../.php?action=2&id=<?php echo $imp->idImpressora; ?>' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
+                                                                    echo $html;
+                                                                }                                    
+                                                        ?>  
                                                     </div>
 													<div class="btn-group pull-left">
                                                         <a href="../.php?action=2&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-ufs">P<i class="icon-remove"></i></a>
