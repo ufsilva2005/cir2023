@@ -11,8 +11,8 @@
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
 ?>	
-
-				<p></p><p></p>	
+<hr>
+		<nav class="navbar navbar-dark">
 				<div class="line">
                     <div class="col-md-12">	     
 						<h3 class="text-success">Menu Opção:</h3>
@@ -143,10 +143,15 @@
 										} ?>							
 							</tbody>
 								
-						</table>
-					</div>
+					</table>
 				</div>
-			</div>	
+			</div>
+		</nav>
+		<div class="fixed-bottom p-1 mb-1 bg-primary text-white">
+			<div class="col px-md-1 col-md-2"> 
+				<label for="inputSuccess" class="control-label">Total de Impressoras:</label>
+				<input type="text" class="form-control" value="<?php echo $_SESSION['numUser'];?>" >
+			</div>        
 		</div>		
 	</body>
 </html>

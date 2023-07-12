@@ -29,7 +29,7 @@
 	<script src="../js/Bootstrap3.7.js"></script>
 
     <body>
-        <nav class="navbar navbar-dark bg-primary">
+        <nav class="fixed-top navbar navbar-dark bg-primary">
             <div class="btn-group">
                 <!--img src="../img/logo2.png" width=90 height=40-->
                 <img src="../img/cir.jpg" width=60 height=60>

@@ -79,9 +79,7 @@
                 <label for="inputSuccess" class="control-label">Total de Impressoras:</label>
                 <input type="text" class="form-control" value="<?php echo $_SESSION['numRows'];?>" >
             </div>        
-        </div>
-        
-         
+        </div>       
 	</body>
 </html>
 
