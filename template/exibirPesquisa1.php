@@ -71,4 +71,4 @@
                                                 <?php 
                                                 } ?>							
                                     </tbody>                                        
-                                </table>  
+                                </table> 

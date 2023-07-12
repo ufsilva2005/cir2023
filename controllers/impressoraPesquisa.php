@@ -45,6 +45,6 @@
 		}
 	else
 		{
-			echo "<br>DAdos em branco";
+			echo "<br>Dados em branco";
 		}
 ?>

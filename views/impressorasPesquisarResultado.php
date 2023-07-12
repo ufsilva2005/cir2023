@@ -1,8 +1,7 @@
 <?php
-	include "../template/menuPrincipal.php";
-    //include "../scripts/mascara.php"; 
-   include_once "../controllers/impressoraPesquisa.php";  
-   
+    include "../template/menuPrincipal.php";    
+    include_once "../controllers/impressoraPesquisa.php";  
+
     if($_SESSION['impressora'] != "sim")
         {
             echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
@@ -15,7 +14,6 @@
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
 ?>	
 
-
                 <div class="line">
                     <div id="page-content-wrapper">                        						
                         <div class="panel-content">  
@@ -26,8 +24,7 @@
                                         <thead>
                                             <tr>
                                                 <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
-                                                <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
-                                                <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
+                                                <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;</th>                                             
                                                 <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
                                                 <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;</th>
                                                 <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
@@ -69,12 +66,22 @@
                                         {
                                             include "../template/exibirPesquisa2.php";  
                                         }     
-                                ?>       		
+                                ?>      
+                              		
                             </div>  
                         </div> 						
 					</div>
 				</div>
 			</div>	
-		</div>		
+		</div>        	
+        <div class="fixed-bottom p-3 mb-2 bg-primary text-white">
+            <div class="col px-md-1 col-md-2"> 
+                <label for="inputSuccess" class="control-label">Total de Impressoras:</label>
+                <input type="text" class="form-control" value="<?php echo $_SESSION['numRows'];?>" >
+            </div>        
+        </div>
+        
+         
 	</body>
 </html>
+

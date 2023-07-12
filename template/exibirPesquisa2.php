@@ -17,7 +17,8 @@
                                             $nomeTabela = "impressoras";								
                                             require_once '../dao/DAO-controleCir.php';
                                             $impAltDAO = new ControleCirDAO();
-                                            foreach($impAltDAO->BuscaPorDivisao($valorPesquisa) as $imp)                                             
+                                            foreach($impAltDAO->BuscaPorDivisao($valorPesquisa) as $imp)   
+                                                                                      
                                                 { ?>													
                                                     <tr>
                                                         <td>
@@ -71,4 +72,5 @@
                                                 <?php 
                                                 } ?>							
                                     </tbody>                                        
-                                </table>  
+                                </table> 
+                                  

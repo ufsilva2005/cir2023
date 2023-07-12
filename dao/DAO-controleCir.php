@@ -98,7 +98,6 @@
 
                    
                     $_SESSION['numRows'] = $numRows;
-
                     return $buscar;                        
                     $conn = null;	
                 }
@@ -181,7 +180,7 @@
                             $buscar = $exc->getTraceAsString();
                         }            
                     
-                    $conn = null; $_SESSION['numRows'] = $numRows;
+                    $_SESSION['numRows'] = $numRows;
                     return $buscar;
                     $conn = null;	
                 }
@@ -506,6 +505,7 @@
                         {
                             $buscar = $exc->getTraceAsString();
                         }
+                    $_SESSION['numRows'] = $numRows;
                     return $buscar;                        
                     $conn = null;	
                 }
