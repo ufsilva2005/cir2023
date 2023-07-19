@@ -13,17 +13,17 @@
 ?>	
 <hr>
 		<nav class="navbar navbar-dark">
-				<div class="line">
-                    <div class="col-md-12">	     
+				<div class="line p-1 position-absolute top-0 bottom-150 end-150">
+                    <div class="col-md-12 py-5">	     
 						<h3 class="text-success">Menu Opção:</h3>
                         <div class="panel-header">
 							<table class="table table-borderless">
 								<thead>
 									<tr>
-										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
-										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
-										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
-										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
+										<th>&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;</th>
+										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;</th>
+										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;</th>
+										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;</th>
 										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;</th>
 										<th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
 											<div class="btn-group pull-left" >
@@ -147,7 +147,7 @@
 				</div>
 			</div>
 		</nav>
-		<div class="fixed-bottom p-1 mb-1 bg-primary text-white">
+		<div class="fixed-bottom p-1 bg-primary text-white">
 			<div class="col px-md-1 col-md-2"> 
 				<label for="inputSuccess" class="control-label">Total de Impressoras:</label>
 				<input type="text" class="form-control" value="<?php echo $_SESSION['numUser'];?>" >
