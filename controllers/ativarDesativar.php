@@ -18,4 +18,9 @@
 	echo "<br>op1 => " . $op1;
 	echo "<br>idImpressora => " . $idImpressora;
 	echo "<br>statusImpressora => " . $statusImpressora;
+            
+    $ativaDeativaDAO = new ControleCirDAO();  
+    $ativaDeativaDAO->AtivaDesativa($idImpressora,$statusImpressora);
+	echo $_SESSION['tipoPesquisa'];
+    //header("Location: ../views/impressorasListar.php");      
 ?>

@@ -509,6 +509,26 @@
                     return $buscar;                        
                     $conn = null;	
                 }
+
+            public function AtivaDesativa($idImpressora,$statusImpressora)
+				{
+					$conn = Database::connect();					
+					$conn->exec('SET CHARACTER SET utf8');					
+					$sql = "UPDATE impressoras 
+                    SET statusImpressora = '$statusImpressora'
+                    WHERE idImpressora = '$idImpressora'";
+					try 
+						{
+							$listar = $conn->query($sql);
+							$buscar = $listar->fetchAll(PDO::FETCH_OBJ);
+						} 
+					catch (PDOException $exc)
+						{
+							$buscar = $exc->getTraceAsString();
+						}
+					return $buscar;
+					$conn = null;	
+				}    
             //FIM DAS FUNÇÕES RELACIONADAS A IMPRESSORA 
 
             //INÍCIO DAS FUNÇÕES RELACIONADAS AOS MATERIAIS

@@ -8,13 +8,16 @@
             echo "<script>location = '../template/menuPrincipal.php';</script>";  
         }
 
+	$inativo = 0;
+	$ativo = 0;
+
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
 ?>	
 <hr>
 		<nav class="navbar navbar-dark">
 				<div class="line p-1 position-absolute top-0 bottom-150 end-150">
-                    <div class="col-md-12 py-5">	     
+                    <div class="col-md-12 py-5 px-2">	     
 						<h3 class="text-success">Menu Opção:</h3>
                         <div class="panel-header">
 							<table class="table table-borderless">
@@ -125,12 +128,14 @@
                                                             if($statusImpressora != "ativo") 
                                                                 {
                                                                     $html = "<a href='../controllers/ativarDesativar.php?action=1&id=$idImpressora' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
-                                                                    echo $html;
+                                                                    $inativo++;
+																	echo $html;
                                                                 }  
 															else
                                                                 {
                                                                     $html = "<a href='../controllers/ativarDesativar.php?action=2&id=$idImpressora' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
-                                                                    echo $html;
+                                                                    $ativo++;
+																	echo $html;
                                                                 }                                    
                                                         ?>  
                                                     </div>
@@ -147,11 +152,21 @@
 				</div>
 			</div>
 		</nav>
-		<div class="fixed-bottom p-1 bg-primary text-white">
-			<div class="col px-md-1 col-md-2"> 
-				<label for="inputSuccess" class="control-label">Total de Impressoras:</label>
-				<input type="text" class="form-control" value="<?php echo $_SESSION['numUser'];?>" >
-			</div>        
+		<div class="fixed-bottom p-1 px-md-5 col-md-12 bg-primary text-white">
+			<div class="row">
+				<div class="col px-md-1 col-md-2"> 
+					<label for="inputSuccess" class="control-label">Total de Impressoras:</label>
+					<input type="text" class="form-control" value="<?php echo $_SESSION['numUser'];?>" >
+				</div>   
+				<div class="col px-md-1 col-md-2"> 
+					<label for="inputSuccess" class="control-label">Impressoras ativas:</label>
+					<input type="text" class="form-control" value="<?php echo $ativo;?>" >
+				</div>        
+				<div class="col px-md-1 col-md-2"> 
+					<label for="inputSuccess" class="control-label">Impressoras desativadas:</label>
+					<input type="text" class="form-control" value="<?php echo $inativo;?>" >
+				</div>    
+			</div>         
 		</div>		
 	</body>
 </html>

@@ -50,7 +50,7 @@
                                                         </td>															
                                                         <td><?php echo $nomeLocal1?></td>	
                                                         <td><?php echo $localizacao1?></td>		
-                                                        <td><?php echo $imp->statusImpressora?></td>
+                                                        <td><?php echo $statusImpressora = $imp->statusImpressora?></td>
                                                         <td class='operations'>
                                                             <div class="btn-group pull-left" >
                                                                 <a href="./impressoraAlterar.php?action=1&id=<?php echo $imp->idImpressora;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>
@@ -62,8 +62,21 @@
                                                                 <a href="./impressoraDetalhes.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
                                                             </div>
                                                             <div class="btn-group pull-left">
-                                                               <a href="../controllers/ativarDesativar.php?action=2&id=<?php echo $imp->idImpressora;?>" class="btn btn-small btn-danger">I<i class="icon-remove"></i></a>
-                                                            </div>
+                                                                <?php                                    
+                                                                    if($statusImpressora != "ativo") 
+                                                                        {
+                                                                            $html = "<a href='../controllers/ativarDesativar.php?action=1&id=$idImpressora' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
+                                                                            $inativo++;
+                                                                            echo $html;
+                                                                        }  
+                                                                    else
+                                                                        {
+                                                                            $html = "<a href='../controllers/ativarDesativar.php?action=2&id=$idImpressora' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
+                                                                            $ativo++;
+                                                                            echo $html;
+                                                                        }                                    
+                                                                ?>  
+                                                            </div> 
                                                             <div class="btn-group pull-left">
                                                                 <a href="../.php?action=2&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-ufs">P<i class="icon-remove"></i></a>
                                                             </div>
