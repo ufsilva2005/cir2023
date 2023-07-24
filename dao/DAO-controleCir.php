@@ -83,7 +83,7 @@
                     $conn = Database::connect();
                     $conn->exec('SET CHARACTER SET utf8');
                                     
-                    $sql = "SELECT * FROM $nomeTabela WHERE $tipoOpcao LIKE '$valorOpcao' ";
+                    $sql = "SELECT * FROM $nomeTabela WHERE $tipoOpcao LIKE '$valorOpcao%' ";
                     try 
                         {
                             $listar = $conn->query($sql);

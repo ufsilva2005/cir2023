@@ -38,7 +38,7 @@
                         <div class="tab-content" id="pillsUfs-tabContent">
                             <div class="tab-pane fade show active" id="pillsUfs-numSerie" role="tabpanel" aria-labelledby="pillsUfs-numSerie-tab">
                                 <div class="col px-md-1 col-md-5">
-                                    <input type="text" class="form-control" name="numSerie" id="numSerie" pattern=".{5,}" placeholder="000000000000" oninvalid="setCustomValidity('O Número de Série deve ter no Minimo 12 digitos !')" onchange="try{setCustomValidity('')}catch(e){}">
+                                    <input type="text" class="form-control" name="numSerie" id="numSerie"  placeholder="000000000000">
                                 </div>
                             </div>
 

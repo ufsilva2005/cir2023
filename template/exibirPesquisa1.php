@@ -1,4 +1,9 @@
-
+<?php
+    //session_start();
+    echo "1" . $tipoPesquisa . " - " . $valorPesquisa;
+    $_SESSION['tipoPesquisa'] = $tipoPesquisa;
+    $_SESSION['valorPesquisa'] = $valorPesquisa;
+?>
 
                                 <table class="table table-striped table-bordered table-condensed">
                                     <thead>
@@ -64,13 +69,13 @@
                                                                 <?php                                    
                                                                     if($statusImpressora != "ativo") 
                                                                         {
-                                                                            $html = "<a href='../controllers/ativarDesativar.php?action=1&id=$idImpressora' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
+                                                                            $html = "<a href='../controllers/ativarDesativar.php?action=3&id=$idImpressora' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
                                                                             $inativo++;
                                                                             echo $html;
                                                                         }  
                                                                     else
                                                                         {
-                                                                            $html = "<a href='../controllers/ativarDesativar.php?action=2&id=$idImpressora' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
+                                                                            $html = "<a href='../controllers/ativarDesativar.php?action=4&id=$idImpressora' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
                                                                             $ativo++;
                                                                             echo $html;
                                                                         }                                    

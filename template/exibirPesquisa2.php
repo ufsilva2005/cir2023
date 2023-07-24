@@ -1,4 +1,8 @@
-
+<?php
+echo "2" . $tipoPesquisa . " - " . $valorPesquisa;
+    $_SESSION['tipoPesquisa'] = $tipoPesquisa;
+    $_SESSION['valorPesquisa'] = $valorPesquisa;
+?>
 
                                 <table class="table table-striped table-bordered table-condensed">
                                     <thead>
@@ -53,13 +57,13 @@
                                                         <td><?php echo $statusImpressora = $imp->statusImpressora?></td>
                                                         <td class='operations'>
                                                             <div class="btn-group pull-left" >
-                                                                <a href="./impressoraAlterar.php?action=1&id=<?php echo $imp->idImpressora;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>
+                                                                <a href="./impressoraAlterar.php?action=3&id=<?php echo $imp->idImpressora;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>
                                                             </div>
                                                             <div class="btn-group pull-left">
                                                                 <a href="./.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-primary">H<i class="icon-remove"></i></a>
                                                             </div>
                                                             <div class="btn-group pull-left">
-                                                                <a href="./impressoraDetalhes.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
+                                                                <a href="./impressoraDetalhes.php?action=4&id=<?php echo $imp->idImpressora; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
                                                             </div>
                                                             <div class="btn-group pull-left">
                                                                 <?php                                    
