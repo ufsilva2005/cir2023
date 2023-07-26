@@ -1,7 +1,7 @@
 <?php
-    echo "1" . $tipoPesquisa . " - " . $valorPesquisa;
-    echo $tipoPesquisa;
-    echo $valorPesquisa;
+    //echo "1" . $tipoPesquisa . " - " . $valorPesquisa;
+    //echo $tipoPesquisa;
+    //echo $valorPesquisa;
     //$_SESSION['tipoP'] = $tipoPesquisa;
     //$_SESSION['valorP'] = $valorPesquisa;
 
