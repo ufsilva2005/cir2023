@@ -1,8 +1,18 @@
 <?php
     //session_start();
-    echo "1" . $tipoPesquisa . " - " . $valorPesquisa;
-    $_SESSION['tipoPesquisa'] = $tipoPesquisa;
-    $_SESSION['valorPesquisa'] = $valorPesquisa;
+    //echo "1" . $tipoPesquisa . " - " . $valorPesquisa;
+    //echo $tipoPesquisa;
+    //cho $valorPesquisa;
+    //$_SESSION['tipoP'] = $tipoPesquisa;
+    //$_SESSION['valorP'] = $valorPesquisa;
+    //echo "<br>tipo1 valor1 => " . $_SESSION['tipoP1'] . " - " . $_SESSION['valorP1'];
+    if($tipoPesquisa == "" && $valorPesquisa == "")
+        {
+            $tipoPesquisa =  $_SESSION['tipoP1'];
+            $valorPesquisa = $_SESSION['valorP1'];
+        }
+    $_SESSION['tipoP'] = $tipoPesquisa;
+    $_SESSION['valorP'] = $valorPesquisa;
 ?>
 
                                 <table class="table table-striped table-bordered table-condensed">

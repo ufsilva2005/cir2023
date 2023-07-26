@@ -1,7 +1,17 @@
 <?php
-echo "2" . $tipoPesquisa . " - " . $valorPesquisa;
-    $_SESSION['tipoPesquisa'] = $tipoPesquisa;
-    $_SESSION['valorPesquisa'] = $valorPesquisa;
+    echo "1" . $tipoPesquisa . " - " . $valorPesquisa;
+    echo $tipoPesquisa;
+    echo $valorPesquisa;
+    //$_SESSION['tipoP'] = $tipoPesquisa;
+    //$_SESSION['valorP'] = $valorPesquisa;
+
+    if($tipoPesquisa == "" && $valorPesquisa == "")
+        {
+            $tipoPesquisa =  $_SESSION['tipoP1'];
+            $valorPesquisa = $_SESSION['valorP1'];
+        }
+    $_SESSION['tipoP'] = $tipoPesquisa;
+    $_SESSION['valorP'] = $valorPesquisa;
 ?>
 
                                 <table class="table table-striped table-bordered table-condensed">
@@ -69,13 +79,13 @@ echo "2" . $tipoPesquisa . " - " . $valorPesquisa;
                                                                 <?php                                    
                                                                     if($statusImpressora != "ativo") 
                                                                         {
-                                                                            $html = "<a href='../controllers/ativarDesativar.php?action=1&id=$idImpressora' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
+                                                                            $html = "<a href='../controllers/ativarDesativar.php?action=3&id=$idImpressora' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
                                                                             $inativo++;
                                                                             echo $html;
                                                                         }  
                                                                     else
                                                                         {
-                                                                            $html = "<a href='../controllers/ativarDesativar.php?action=2&id=$idImpressora' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
+                                                                            $html = "<a href='../controllers/ativarDesativar.php?action=4&id=$idImpressora' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
                                                                             $ativo++;
                                                                             echo $html;
                                                                         }                                    

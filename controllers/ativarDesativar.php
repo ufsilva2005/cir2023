@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	$tipoPesquisa = $_SESSION['tipoPesquisa'];
-	$valorPesquisa = $_SESSION['valorPesquisa'];
+	$tipoP = $_SESSION['tipoP'];
+	$valorP = $_SESSION['valorP'];
 
 	include "../dao/DAO-controleCir.php";
 	$op1 = $_GET['action'];
@@ -22,27 +22,31 @@
             header("Location: ../template/menuPrincipal.php");  
 		}
           
-	echo "<br>op2 2 => " . $op2;
-	echo "<br>idImpressora => " . $idImpressora;
-	echo "<br>statusImpressora => " . $statusImpressora;
+	//echo "<br>op2 2 => " . $op2;
+	//echo "<br>idImpressora => " . $idImpressora;
+	//echo "<br>statusImpressora => " . $statusImpressora;
 	//echo $_SESSION['tipoPesquisa'] = $tipoPesquisa;
 	//echo $_SESSION['valorPesquisa'] = $valorPesquisa;
-	echo "<br>tipoPesquisa => " . $tipoPesquisa;
-	echo "<br>valorPesquisa => " . $valorPesquisa;
+	//echo "<br>tipoP => " . $tipoP;
+	//echo "<br>valorP => " . $valorP;
             
-    //$ativaDeativaDAO = new ControleCirDAO();  
-    //$ativaDeativaDAO->AtivaDesativa($idImpressora,$statusImpressora);
+    $ativaDeativaDAO = new ControleCirDAO();  
+    $ativaDeativaDAO->AtivaDesativa($idImpressora,$statusImpressora);
 	//echo $_SESSION['tipoPesquisa'];
 
 	if($op2 == 1 || $op2 == 2)
 		{
-			echo "<br>op2 3 => " . $op2;
-			//header("Location: ../views/impressorasListar.php");     
+			//echo "<br>op2 3 => " . $op2;
+			//$_SESSION['tipoP'] = $tipoP;
+			//$_SESSION['valorP'] = $valorP;
+			header("Location: ../views/impressorasListar.php");     
 		} 
 
 	else
 		{
-			echo "<br>op2 4 => " . $op2;
+			//echo "<br>op2 4 => " . $op2;
+			$_SESSION['tipoP1'] = $tipoP;
+			$_SESSION['valorP1'] = $valorP;			
 			header("Location: ../views/impressorasPesquisarResultado.php");
 		}
 ?>

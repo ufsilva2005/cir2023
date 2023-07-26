@@ -6,7 +6,12 @@
         echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
         echo "<script>location = '../template/menuPrincipal.php';</script>";
     }
-
+    if($valorPesquisa == "" && $tipoPesquisa =="")
+        {   
+            $valorPesquisa = $_SESSION['valorP1'] ;  
+   			$tipoPesquisa = $_SESSION['tipoP1'];   
+        }
+    //echo "<br><br>";
     //echo "<br>valorPesquisa => " . $valorPesquisa;  
     //echo "<br>tipoPesquisa => " . $tipoPesquisa;  
     //$idFuncionario = $_SESSION['idFuncionario'];  
