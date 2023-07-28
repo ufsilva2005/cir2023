@@ -585,15 +585,16 @@
                     
                     $conn->exec('SET CHARACTER SET utf8');
                     
-                    $prepara = $conn->prepare("INSERT INTO material(codigo, descricao, numSerie, unidade, quantidade) 
-                    VALUES(:codigoBd, :descricaoBd, :numSerieBd, :unidadeBd, :quantidadeBd)");
+                    $prepara = $conn->prepare("INSERT INTO material(codigo, descricao, numSerie, unidade, quantidade, statusMat) 
+                    VALUES(:codigoBd, :descricaoBd, :numSerieBd, :unidadeBd, :quantidadeBd, :statusMatBd)");
                         
                     //$Bdidmaterial	= $material->getIdmaterial();
-                    $Bdcodigo  	       = $material->getCodigo();                    
-                    $Bddescricao       = $material->getDescricao();
-                    $BdnumSerie	       = $material->getNumSerie();
-                    $Bdunidade         = $material->getUnidade();
+                    $Bdcodigo  	  = $material->getCodigo();                    
+                    $Bddescricao  = $material->getDescricao();
+                    $BdnumSerie	  = $material->getNumSerie();
+                    $Bdunidade    = $material->getUnidade();
                     $Bdquantidade = $material->getQuantidade();
+                    $BdstatusMat  = $material->getStatusMat();
                                         
                     //$prepara->bindParam(":idmaterialBd", $Bdidmaterial);
                     $prepara->bindParam(":codigoBd", $Bdcodigo);
@@ -601,6 +602,7 @@
                     $prepara->bindParam(":numSerieBd", $BdnumSerie);                   
                     $prepara->bindParam(":unidadeBd", $Bdunidade);
                     $prepara->bindParam(":quantidadeBd", $Bdquantidade);
+                    $prepara->bindParam(":statusMatBd", $BdstatusMat);
 
                     $prepara->execute();                 
                     $conn = null;

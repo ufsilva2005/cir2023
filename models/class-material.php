@@ -7,10 +7,11 @@
 			private $numSerie;
 			private $unidade;
 			private $quantidade;
+			private $statusMat;
 			
 			
 			// Recebe  parametros 
-			public function __construct ($idMaterial = "", $codigo = null, $descricao = null, $numSerie = null, $unidade = null, $quantidade = null) 
+			public function __construct ($idMaterial = "", $codigo = null, $descricao = null, $numSerie = null, $unidade = null, $quantidade = null, $statusMat = null) 
 			
 				{
 					$this->idMaterial = $idMaterial;
@@ -18,7 +19,8 @@
 					$this->descricao  = $descricao;
 					$this->numSerie   = $numSerie;
 					$this->unidade    = $unidade;
-					$this->quantidade = $quantidade;					
+					$this->quantidade = $quantidade;	
+					$this->statusMat = $statusMat;				
 				}
 				
 			///metodos get e metodos set
@@ -82,6 +84,16 @@
 					$this->quantidade = $quantidade;
 				}			
 			
+			//statusMat
+			public function getStatusMat() 
+				{     
+					return $this->statusMat;
+				}
+			public function setStatusMat($statusMat) 
+				{     
+					$this->statusMat = $statusMat;
+				}			
+			
 				
 			// Método para exibir
 			public function exibir() 
@@ -98,7 +110,9 @@
 					echo '</br>unidade -> ';
 					echo $this->unidade . '<br>';	
 					echo '</br>quantidade -> ';
-					echo $this->quantidade . '<br>';					
+					echo $this->quantidade . '<br>';		
+					echo '</br>statusMat -> ';
+					echo $this->statusMat . '<br>';				
 				}
 		}
 ?>
