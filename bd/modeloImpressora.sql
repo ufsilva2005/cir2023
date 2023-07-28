@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 24/05/2023 às 10:17
--- Versão do servidor: 10.3.38-MariaDB-0+deb10u1
--- Versão do PHP: 8.0.28
+-- Tempo de geração: 28/07/2023 às 16:15
+-- Versão do servidor: 10.3.39-MariaDB-0+deb10u1
+-- Versão do PHP: 8.0.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,20 +36,23 @@ CREATE TABLE `modeloImpressora` (
 --
 -- Despejando dados para a tabela `modeloImpressora`
 --
+
 INSERT INTO `modeloImpressora` (`idModelo`, `statusModelo`, `modeloImpressora`) VALUES
-(1, 'ativo', 'KYOCERA-ECOSYS M3655-IDN'),
-(2, 'ativo', 'OKI-C831'),
-(3, 'ativo', 'OKI-ES 4172-LP MFP'),
-(4, 'ativo', 'OKI-ES 5112'),
-(5, 'ativo', 'OKI-MPS 5501-B'),
-(6, 'ativo', 'CHEFE DE SESSÃO'),
-(7, 'ativo', 'OKI-MPS 5502-MB'),
-(8, 'ativo', 'RICOH AFICIO MP7502'),
-(9, 'ativo', 'RICOH AFICIO MP171'),
-(10, 'ativo', 'ANALIRICOH AFICIO MPC2051STA'),
+(1, 'ativo', 'KYOCERA ECOSYS M3655-IDN'),
+(2, 'ativo', 'OKI C831'),
+(3, 'ativo', 'OKI ES 4172 LP MFP'),
+(4, 'ativo', 'OKI ES 5112'),
+(5, 'ativo', 'OKI MPS 5501B'),
+(6, 'ativo', 'EPSON WF M5799'),
+(7, 'ativo', 'OKI MPS 5502 MB'),
+(8, 'inativo', 'RICOH AFICIO MP7502'),
+(9, 'inativo', 'RICOH AFICIO MP171'),
+(10, 'inativo', 'RICOH AFICIO MPC2051STA'),
 (11, 'ativo', 'XEROX WORKCENTRE-7855'),
-(12, 'ativo', 'ZEBRA-S4M'),
-(13, 'ativo', 'ZEBRA-GC-420T');
+(12, 'ativo', 'ZEBRA S4M'),
+(13, 'ativo', 'ZEBRA GC420T'),
+(14, 'ativo', 'OKI ES 6405');
+
 --
 -- Índices para tabelas despejadas
 --
@@ -59,16 +62,6 @@ INSERT INTO `modeloImpressora` (`idModelo`, `statusModelo`, `modeloImpressora`) 
 --
 ALTER TABLE `modeloImpressora`
   ADD PRIMARY KEY (`idModelo`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `modeloImpressora`
---
-ALTER TABLE `modeloImpressora`
-  MODIFY `idModelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -33,7 +33,7 @@
 			$modeloDAO = new ControleCirDAO();   
 			$nomeTabela = "modeloImpressora";
 			$tipoOpcao = "idModelo";								
-			foreach ($modeloDAO->ListarOpcao2($nomeTabela, $tipoOpcao, $modeloImpressoraBd) as $res)
+			foreach ($modeloDAO->ListarOpcao($nomeTabela, $tipoOpcao, $modeloImpressoraBd) as $res)
 				{
 					$idModelo = $res->idModelo;
 					$modeloImpressora = $res->modeloImpressora;

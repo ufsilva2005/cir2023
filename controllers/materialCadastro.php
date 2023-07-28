@@ -50,11 +50,11 @@
                 {
                     //cadastrar material
                     $material = new Material($idMaterial, $codigoImp, $descImp, $numSerie, $unidade, $quantidade);
-                    echo "<br>dados material <br>";		
-                    $material->exibir();
-                    echo "<br>";
-                    //$materialDAO = new ControleCirDAO();
-                    //$materialDAO->CadastrarMaterial($material);
+                    //echo "<br>dados material <br>";		
+                    //$material->exibir();
+                    //echo "<br>";
+                    $materialDAO = new ControleCirDAO();
+                    $materialDAO->CadastrarMaterial($material);
                     echo "<script type='text/javascript'>alert('MATERIAL CADASTRADO');</script>";
                     echo "<script>location = '../views/materialCadastrar.php';</script>"; 
                 }

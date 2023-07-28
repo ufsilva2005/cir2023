@@ -84,9 +84,11 @@
                                             $tonnerDAO = new ControleCirDAO();
                                             $nomeTabela = "material";
                                             $tipoOpcao = "descricao";
+                                            $status = "statusMat";
+                                            $valorStatus = "ativo";
                                             $valorOpcao = "TONNER";
 
-                                            foreach ($tonnerDAO->ListarOpcao($nomeTabela, $tipoOpcao, $valorOpcao) as $res) {
+                                            foreach ($tonnerDAO->ListarOpcaoAtivo($nomeTabela, $tipoOpcao, $valorOpcao, $status, $valorStatus) as $res) {
                                             ?>
                                                 <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
                                             <?php

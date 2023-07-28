@@ -58,7 +58,7 @@
                     $conn = Database::connect();
                     $conn->exec('SET CHARACTER SET utf8');
                                     
-                    $sql = "SELECT * FROM $nomeTabela WHERE $tipoOpcao LIKE '$valorOpcao%' ";
+                    $sql = "SELECT * FROM $nomeTabela WHERE $tipoOpcao LIKE '$valorOpcao' ";
                     try 
                         {
                             $listar = $conn->query($sql);
@@ -84,6 +84,30 @@
                     $conn->exec('SET CHARACTER SET utf8');
                                     
                     $sql = "SELECT * FROM $nomeTabela WHERE $tipoOpcao LIKE '$valorOpcao%' ";
+                    try 
+                        {
+                            $listar = $conn->query($sql);
+                            $buscar = $listar->fetchAll(PDO::FETCH_OBJ);
+                            $numRows = $listar->rowCount();
+                        } 
+
+                    catch (PDOException $exc)
+                        {
+                            $buscar = $exc->getTraceAsString();
+                        }
+
+                   
+                    $_SESSION['numRows'] = $numRows;
+                    return $buscar;                        
+                    $conn = null;	
+                }
+
+            public function ListarOpcaoAtivo($nomeTabela, $tipoOpcao, $valorOpcao,  $status, $valorStatus)  
+                {
+                    $conn = Database::connect();
+                    $conn->exec('SET CHARACTER SET utf8');
+                                    
+                    $sql = "SELECT * FROM $nomeTabela WHERE $tipoOpcao LIKE '$valorOpcao%' AND  $status = '$valorStatus'";
                     try 
                         {
                             $listar = $conn->query($sql);
