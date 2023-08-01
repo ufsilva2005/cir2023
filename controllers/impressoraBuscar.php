@@ -29,6 +29,7 @@
 					$tipoToner = $res->descricao;
 				}            
 			$statusImpressora = $imp->statusImpressora;
+			$conexaoImp = $imp->conexaoImp;
 			$modeloImpressoraBd = $imp->modeloImpressora;
 			$modeloDAO = new ControleCirDAO();   
 			$nomeTabela = "modeloImpressora";

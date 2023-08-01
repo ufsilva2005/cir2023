@@ -8,15 +8,15 @@
     }
 
     require_once '../controllers/impressoraBuscar.php';
-    $_SESSION['idSetor'] = $idSetor;
-    $_SESSION['idFuncionario'] = $idFuncionario;
+    //$_SESSION['idSetor'] = $idSetor;
+    //$_SESSION['idFuncionario'] = $idFuncionario;
 ?>
 
         <hr>
         <nav class="navbar navbar-dark">
             <div class="line col-md-12 p-5 position-absolute start-5 top-0 bottom-50 end-250">
                 <h3 class="text-success">Informações da Impressora</h3>
-                <form name="cadastro" id="cadastro" method="post" action="../controllers/impressoraUpdate.php">
+                <form name="cadastro" id="cadastro" >
                     <fieldset>
                         <div class="row">
                             <label>
@@ -63,16 +63,20 @@
                                 <label for="inputSuccess" class="control-label">Modelo:</label>
                                 <input type="text" class="form-control" value="<?php echo $modeloImpressora; ?>" disabled>
                             </div>
+
                             <div class="col px-md-1 col-md-3">
                                 <label for="inputSuccess" class="control-label">Tipo do Tonner: </label>
                                 <input type="text" class="form-control" value="<?php echo $tipoToner; ?>" disabled>
                             </div>
 
                             <div class="col px-md-1 col-md-3">
-                                <div class="custom-control custom-radio">
-                                    <label for="inputSuccess" class="control-label">Status:</label>
-                                    <input type="text" class="form-control" value="<?php echo $statusImpressora; ?>" disabled>
-                                </div>
+                                <label for="inputSuccess" class="control-label">Status:</label>
+                                <input type="text" class="form-control" value="<?php echo $statusImpressora; ?>" disabled>
+                            </div>
+
+                            <div class="col px-md-1 col-md-3">
+                                <label for="inputSuccess" class="control-label">Conexão:</label>
+                                <input type="text" class="form-control" value="<?php echo $conexaoImp; ?>" disabled>
                             </div>
                         </div>
 
@@ -118,7 +122,7 @@
 
                         <div id="actions" class="row">
                             <div class="col-md-2">
-                                <a href="../template/menuPrincipal.php"><button type="button" class="btn btn-outline-warning">Voltar</button></a>
+                                <a href="../template/menuPrincipal.php"><button type="button" class="btn btn-outline-warning">Cancelar</button></a>
                             </div>
                         </div>
 

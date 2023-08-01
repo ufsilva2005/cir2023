@@ -24,6 +24,7 @@
     $numMacAlt = converteMaiuscula($_POST['numMac']);  
     $tipoTonnerAlt = converteMaiuscula($_POST['tipoTonner']);      
     $impStatusAlt =  $_POST['impStatus'];
+    $conexaoImpAlt =  $_POST['conexaoImp'];
     $modeloAlt = $_POST['modelo'];   
     $divisaoAlt = $_POST['divisao'];
     $localAlt = $_POST['local'];
@@ -40,6 +41,7 @@
     $macImpressoraAnt = $_SESSION['antNumMac'];
     $tipoTonerAnt = $_SESSION['tipoTonerBd'];
     $statusImpressoraAnt = $_SESSION['antStatusImp'];
+    $conexaoImpAnt = $_SESSION['antConexaoImp'];
     $modeloImpressoraAnt = $_SESSION['antModelImp'];
     $divisaoAnt = $_SESSION['antDivisao'];
     $localizacaoAnt = $_SESSION['antLocalizacao'];
@@ -133,6 +135,17 @@
             $statusImpressora = $impStatusAlt;  
             $aux++;
             $hitorico .= 'STATUS ALTERADO DE: '. $statusImpressoraAnt .' PARA => '. $statusImpressora .'</br>';
+        }
+
+      if ($conexaoImpAlt == "" || $conexaoImpAlt == $conexaoImpAnt ) 
+        {
+            $conexaoImp = $conexaoImpAnt;
+        }   
+     else
+        {
+            $conexaoImp = $conexaoImpAlt;  
+            $aux++;
+            $hitorico .= 'TIPO DE CONEXÃO ALTERADA DE: '. $conexaoImpAnt  .' PARA => '. $conexaoImp .'</br>';
         }
 
     if ($modeloAlt == "" || $modeloAlt == $modeloImpressoraAnt)
@@ -229,6 +242,8 @@
             $hitorico .= 'NOME DO LOCAL ALTERADO DE: '. $nomeLocalAnt .' PARA => '. $nomeLocalBd .'</br>';
         }
 
+echo "<br>hitorico => " . $hitorico;
+
     //verificar setor e salvar update  
     $divisao2DAO = new ControleCirDAO();   
     $nomeTabela = "divisao";
@@ -269,7 +284,7 @@
                     else
                         {
                             $impressora = new Impressora($idImpressora, $nomeImpressora,  $numSerie, $ipImpressora, $macImpressora, $tipoToner, 
-                            $statusImpressora, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $ObsImpAlt,
+                            $statusImpressora, $conexaoImp, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $ObsImpAlt,
                             $_SESSION['idFuncionario'] , $idSetor);
                             //echo "<br>dados impressora <br>";		
                             //$impressora->exibir();
@@ -282,7 +297,7 @@
              else
                 {
                     $impressora = new Impressora($idImpressora, $nomeImpressora,  $numSerie, $ipImpressora, $macImpressora, $tipoToner, 
-                    $statusImpressora, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $ObsImpAlt,
+                    $statusImpressora, $conexaoImp, $modeloImpressora, $dataCadastroA, $respCadastro, $dateAltCadastro, $funcionarioAltCadastro, $ObsImpAlt,
                     $_SESSION['idFuncionario'] , $idSetor);
                     //echo "<br>dados impressora <br>";		
                     //$impressora->exibir();

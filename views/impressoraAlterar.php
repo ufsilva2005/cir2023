@@ -122,6 +122,21 @@ $_SESSION['idFuncionario'] = $idFuncionario;
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col px-md-1 col-md-3">
+                                <div class="custom-control custom-radio">
+                                    <label for="inputSuccess" class="control-label">Conexão: <?= $conexaoImp;
+                                                                                            $_SESSION['antConexaoImp'] = $conexaoImp ?></label></br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="conexaoImp" id="conexao1" value="Rede" checked>
+                                        <label class="form-check-label" for="conexao1">Rede</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="conexaoImp" id="conexao2" value="Usb">
+                                        <label class="form-check-label" for="conexao2">Usb</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <hr>

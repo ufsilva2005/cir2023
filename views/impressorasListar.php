@@ -31,6 +31,7 @@
 									<th>Setor da Máquina</th>
 									<th>Localização</th>
 									<th>Status</th>
+									<th>Conexão</th>
 									<th>OPÇÃO</th>
 								</tr>
 
@@ -74,6 +75,7 @@
 												<td><?php echo $nomeLocal1?></td>	
 												<td><?php echo $localizacao1?></td>		
 												<td><?php echo $statusImpressora = $imp->statusImpressora?></td>
+												<td><?php echo $conexaoImp = $imp->conexaoImp?></td>
 												<td class='operations'>
                                                     <div class="btn-group pull-left" >
                                                         <a href="./impressoraAlterar.php?action=1&id=<?php echo $imp->idImpressora;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>

@@ -39,6 +39,8 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="../views/impressorasCadastrar.php">Cadastrar</a></li>
                         <li><a class="dropdown-item" href="../views/impressorasListar.php">Listar Todas</a></li>
+                        <li><a class="dropdown-item" href="../views/naoImplementada.php">Listar Ativas</a></li>
+                        <li><a class="dropdown-item" href="../views/naoImplementada.php">Listar Inativas</a></li>
                         <li><a class="dropdown-item" href="../views/impressorasPesquisar.php">Pesquisar</a></li>
                     </ul>
                 </div>
@@ -63,8 +65,8 @@
                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">FUNCIONÁRIOS</button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="../views/funcionarioCadastro.php">Cadastro</a></li>
-                        <li><a class="dropdown-item" href="../views/funcionarioGerNome.php">Gerenciar Por Nome</a></li>
-                        <li><a class="dropdown-item" href="../views/funcionarioGerTodos.php">Gerenciar Todos</a></li>  
+                        <li><a class="dropdown-item" href="../views/naoImplementada.php">Gerenciar Por Nome</a></li>
+                        <li><a class="dropdown-item" href="../views/naoImplementada.php">Gerenciar Todos</a></li>  
                     </ul>
                 </div>  
 
