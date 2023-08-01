@@ -8,6 +8,7 @@
 			private $macImpressora;
 			private $tipoToner;
 			private $statusImpressora;
+			private $conexaoImp;
 			private $modeloImpressora;
 			private $dataCadastro;
 			private $respCadastro;	
@@ -19,7 +20,7 @@
 			
 			// Recebe  parametros 
 			public function __construct ($idImpressora="", $nomeImpressora = null,  $numSerie = null, $ipImpressora = null, 
-			$macImpressora = null, $tipoToner = null, $statusImpressora = null, $modeloImpressora = null, $dataCadastro = null, $respCadastro = null, 
+			$macImpressora = null, $tipoToner = null, $statusImpressora = null, $conexaoImp = null, $modeloImpressora = null, $dataCadastro = null, $respCadastro = null, 
 			$dataAltCadastro = null, $respAltCadastro = null, $obsImpressora = null, $idFuncionario = null, $idSetor = null) 
 			
                 {
@@ -30,6 +31,7 @@
 					$this->macImpressora    = $macImpressora;
 					$this->tipoToner		= $tipoToner;
 					$this->statusImpressora = $statusImpressora;
+					$this->conexaoImp 		= $conexaoImp;
 					$this->modeloImpressora = $modeloImpressora;
 					$this->dataCadastro    	= $dataCadastro;
 					$this->respCadastro		= $respCadastro;
@@ -101,7 +103,7 @@
 					$this->tipoToner = $tipoToner;
 				}
 				
-			 //StatusImpressora DA IMPRESSORA
+			//Status DA IMPRESSORA
 			public function getStatusImpressora() 
 				{     
 					return $this->statusImpressora;
@@ -111,7 +113,17 @@
 					$this->statusImpressora = $statusImpressora;
 				}
 			
-			//ModeloImpressora DA IMPRESSORA
+			//conexao DA IMPRESSORA
+			public function getConexaoImp() 
+				{     
+					return $this->conexaoImp;
+				}
+			public function setConexaoImp($conexaoImp) 
+				{     
+					$this->conexaoImp = $conexaoImp;
+				}
+
+			//Modelo DA IMPRESSORA
 			public function getModeloImpressora() 
 				{     
 					return $this->modeloImpressora;
@@ -221,6 +233,9 @@
 					
 					echo '</br>StatusImpressora -> ';
 					echo $this->statusImpressora . '<br>';
+
+					echo '</br>$conexaoImp -> ';
+					echo $this->conexaoImp . '<br>';
 					
 					echo '</br> ModeloImpressora -> ';
 					echo $this->modeloImpressora . '<br>';

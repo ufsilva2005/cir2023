@@ -6,15 +6,16 @@
 	include "../models/class-impressora.php";
 
 	//recebe dados da view
-    $nomeImpressora = $_POST['nomeImpressora'];
+    $nomeImpressora =  converteMaiuscula($_POST['nomeImpressora']);
 	$numSerie = converteMaiuscula($_POST['numSerie']);     
 	$ipImpressora = $_POST['numIp'];
-	$macImpressora = $_POST['numMac'];   
+	$macImpressora =  converteMaiuscula($_POST['numMac']);   
 	$tipoToner = $_POST['tonner'];   
 	$statusImpressora = $_POST['statusImp'];
+	$conexaoImp = $_POST['conexaoImp'];
 	$modeloImpressora = $_POST['modelo'];
 	$dataCadastro = $dataCadastro = formatarData($_SESSION['data']); 
-	//$respCadastro = $_SESSION['respCadastro'];
+	//$nomeFuncionario = $_SESSION['nomeFuncionario'];
 	$idFuncionario = $_SESSION['idFuncionario'] ;
 	$dataAltCadastro = "0000-00-00";
 	$respAltCadastro = "";
@@ -42,11 +43,11 @@
 			echo "<br>idSetor => " . $idSetor . "<br>";
             
             $impressora = new Impressora($idImpressora, $nomeImpressora,  $numSerie, $ipImpressora, $macImpressora, $tipoToner, 
-            $statusImpressora, $modeloImpressora, $dataCadastro, $_SESSION['respCadastro'], $dataAltCadastro, $respAltCadastro, $obsImpressora,
+            $statusImpressora, $conexaoImp, $modeloImpressora, $dataCadastro, $_SESSION['nomeFuncionario'], $dataAltCadastro, $respAltCadastro, $obsImpressora,
             $idFuncionario, $idSetor);
-			//echo "<br>dados impressora <br>";		
-			//$impressora->exibir();
-			//echo "<br>";
+			echo "<br>dados impressora <br>";		
+			$impressora->exibir();
+			echo "<br>";
 			$impressoraDAO = new ControleCirDAO();
 			$impressoraDAO->CadastrarImpre($impressora);
 			
@@ -66,26 +67,29 @@
 			//echo "<br>verificaDivisao => " . $idDivisao . "<br>";
 
 			$local1 = new Setor($idSetor, $idDivisao, $localizacao, $ramal, $respSetor, $nomeLocal);	
-			//echo "<br>";				
-			//$local1->exibir();
-			//echo "<br>";		
+			echo "<br>";				
+			$local1->exibir();
+			echo "<br>";		
 			$local = new ControleCirDAO();	
 			$local->CadastrarSetor($local1);
 
 			$idSetor = $_SESSION['localid'];
+			echo "<br>idSetor => " . $idSetor; 
+			echo "<br>nomeFuncionario => " . $_SESSION['nomeFuncionario'];
+
 			
-            $impressora = new Impressora($idImpressora, $nomeImpressora,  $numSerie, $ipImpressora, $macImpressora, $tipoToner, 
-            $statusImpressora, $modeloImpressora, $dataCadastro, $_SESSION['respCadastro'], $dataAltCadastro, $respAltCadastro, $obsImpressora,
+            $impressora = new Impressora($idImpressora, $nomeImpressora, $numSerie, $ipImpressora, $macImpressora, $tipoToner, 
+            $statusImpressora, $conexaoImp, $modeloImpressora, $dataCadastro, $_SESSION['nomeFuncionario'], $dataAltCadastro, $respAltCadastro, $obsImpressora,
             $idFuncionario, $idSetor);
-			//echo "<br>";		
-			//$impressora->exibir();
-			//echo "<br>";		
+			echo "<br>";		
+			$impressora->exibir();
+			echo "<br>";		
 			$impressoraDAO = new ControleCirDAO();
 			$impressoraDAO->CadastrarImpre($impressora);
 			
         }
 	
 	
-	header("Location: ../views/impressorasCadastrar.php");
+	//header("Location: ../views/impressorasCadastrar.php");
     
 ?>

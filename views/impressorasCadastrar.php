@@ -108,6 +108,18 @@
                                             <label class="form-check-label" for="status2">Inativo</label>
                                         </div>
                                     </div>
+
+                                     <div class="col px-md-1 col-md-3">
+                                        <label for="inputSuccess" class="control-label">Conexão:</label> <br>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="conexaoImp" id="conexao" value="Rede" checked>
+                                            <label class="form-check-label" for="conexao">Rede</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="conexaoImp" id="conexao" value="Usb">
+                                            <label class="form-check-label" for="conexao">Usb</label>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <hr>

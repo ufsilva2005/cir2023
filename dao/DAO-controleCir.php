@@ -377,9 +377,9 @@
                     $conn->exec('SET CHARACTER SET utf8');
                     
                     $prepara = $conn->prepare("INSERT INTO impressoras(nomeImpressora, numSerie, ipImpressora, macImpressora, tipoToner, 
-                    statusImpressora, modeloImpressora, dataCadastro, respCadastro, dataAltCadastro, respAltCadastro, obsImpressora,
+                    statusImpressora, conexaoImp, modeloImpressora, dataCadastro, respCadastro, dataAltCadastro, respAltCadastro, obsImpressora,
                     idFuncionario, idSetor) 
-                    VALUES(:nomeImpressoraBd, :numSerieBd, :ipImpressoraBd, :macImpressoraBd, :tipoTonerBd, :statusImpressoraBd, 
+                    VALUES(:nomeImpressoraBd, :numSerieBd, :ipImpressoraBd, :macImpressoraBd, :tipoTonerBd, :statusImpressoraBd, :conexaoImpBd,
                     :modeloImpressoraBd, :dataCadastroBd, :respCadastroBd, :dataAltCadastroBd, :respAltCadastroBd, :obsImpressoraBd, 
                     :idFuncionarioBd, :idSetorBd)");
                         
@@ -390,6 +390,7 @@
                     $BdmacImpressora    = $impressora->getMacImpressora();
                     $BdtipoToner        = $impressora->getTipoToner();
                     $BdstatusImpressora = $impressora->getStatusImpressora();
+                    $BdconexaoImp       = $impressora->getConexaoImp(); 
                     $BdmodeloImpressora = $impressora->getModeloImpressora();
                     $BddataCadastro 	= $impressora->getDataCadastro();
                     $BdrespCadastro 	= $impressora->getRespCadastro();
@@ -406,6 +407,7 @@
                     $prepara->bindParam(":macImpressoraBd", $BdmacImpressora);
                     $prepara->bindParam(":tipoTonerBd", $BdtipoToner);
                     $prepara->bindParam(":statusImpressoraBd", $BdstatusImpressora);
+                    $prepara->bindParam(":conexaoImpBd", $BdconexaoImp);
                     $prepara->bindParam(":modeloImpressoraBd", $BdmodeloImpressora);
                     $prepara->bindParam(":dataCadastroBd", $BddataCadastro);
                     $prepara->bindParam(":respCadastroBd", $BdrespCadastro);
@@ -471,6 +473,7 @@
                     $BdmacImpressora    = $impressora->getMacImpressora();
                     $BdtipoToner        = $impressora->getTipoToner();
                     $BdstatusImpressora = $impressora->getStatusImpressora();
+                    $BdconexaoImp       = $impressora->getConexaoImp(); 
                     $BdmodeloImpressora = $impressora->getModeloImpressora();
                     $BddataCadastro 	= $impressora->getDataCadastro();
                     $BdrespCadastro 	= $impressora->getRespCadastro();
@@ -485,9 +488,9 @@
                     
                     $prepara = $conn->prepare("UPDATE impressoras SET nomeImpressora=:nomeImpressoraBd, numSerie=:numSerieBd,
                     ipImpressora=:ipImpressoraBd, macImpressora=:macImpressoraBd, tipoToner=:tipoTonerBd, statusImpressora=:statusImpressoraBd,
-                    modeloImpressora=:modeloImpressoraBd, dataCadastro=:dataCadastroBd, respCadastro=:respCadastroBd, dataAltCadastro=:dataAltCadastroBd,
-                    respAltCadastro=:respAltCadastroBd, obsImpressora=:obsImpressoraBd, idFuncionario=:idFuncionarioBd, idSetor=:idSetorBd
-                    WHERE idImpressora=:idImpressoraBd"); 
+                    conexaoImp=:conexaoImpBd ,modeloImpressora=:modeloImpressoraBd, dataCadastro=:dataCadastroBd, respCadastro=:respCadastroBd, 
+                    dataAltCadastro=:dataAltCadastroBd, respAltCadastro=:respAltCadastroBd, obsImpressora=:obsImpressoraBd, idFuncionario=:idFuncionarioBd,
+                    idSetor=:idSetorBd WHERE idImpressora=:idImpressoraBd"); 
                    
                     $prepara->bindParam(":idImpressoraBd", $BdidImpressora);
                     $prepara->bindParam(":nomeImpressoraBd", $BdnomeImpressora);
@@ -496,6 +499,7 @@
                     $prepara->bindParam(":macImpressoraBd", $BdmacImpressora);
                     $prepara->bindParam(":tipoTonerBd", $BdtipoToner);
                     $prepara->bindParam(":statusImpressoraBd", $BdstatusImpressora);
+                    $prepara->bindParam(":conexaoImpBd", $BdconexaoImp);
                     $prepara->bindParam(":modeloImpressoraBd", $BdmodeloImpressora);
                     $prepara->bindParam(":dataCadastroBd", $BddataCadastro);
                     $prepara->bindParam(":respCadastroBd", $BdrespCadastro);
