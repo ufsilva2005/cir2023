@@ -10,6 +10,16 @@
 
 	$inativo = 0;
 	$ativo = 0;
+    $atiDes=  $_GET['action'];
+    $_SESSION['atiDes'] = $atiDes;
+    if($atiDes == 1)
+        {
+            $valorOpcao	= "ativo";
+        }
+    else
+        {
+            $valorOpcao	= "inativo";
+        }
 
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
@@ -39,10 +49,11 @@
 							<tbody> 
 								<?php
 									//header('Content-Type: text/html; charset=utf-8');
-									$nomeTabela = "impressoras";								
+									$nomeTabela = "impressoras";	
+                                    $tipoOpcao = "statusImpressora";                                     						
 									require_once '../dao/DAO-controleCir.php';
 									$impAltDAO = new ControleCirDAO();
-									foreach($impAltDAO-> ListarTudo($nomeTabela)  as $imp)
+									foreach($impAltDAO-> ListarOpcao($nomeTabela,  $tipoOpcao, $valorOpcao)  as $imp)
 										{ ?>													
 											<tr>
 												<td>
@@ -81,7 +92,7 @@
                                                         <a href="./impressoraAlterar.php?action=1&id=<?php echo $imp->idImpressora;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
-                                                    	<a href="./historicoImp.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-primary">H<i class="icon-remove"></i></a>
+                                                    	<a href="./.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-primary">H<i class="icon-remove"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
                                                         <a href="./impressoraDetalhes.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
@@ -90,13 +101,13 @@
 														<?php                                    
                                                             if($statusImpressora != "ativo") 
                                                                 {
-                                                                    $html = "<a href='../controllers/ativarDesativar.php?action=1&id=$idImpressora' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
+                                                                    $html = "<a href='../controllers/ativarDesativar.php?action=5&id=$idImpressora' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
                                                                     $inativo++;
 																	echo $html;
                                                                 }  
 															else
                                                                 {
-                                                                    $html = "<a href='../controllers/ativarDesativar.php?action=2&id=$idImpressora' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
+                                                                    $html = "<a href='../controllers/ativarDesativar.php?action=6&id=$idImpressora' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
                                                                     $ativo++;
 																	echo $html;
                                                                 }                                    

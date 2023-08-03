@@ -2,17 +2,18 @@
 	session_start();
 	$tipoP = $_SESSION['tipoP'];
 	$valorP = $_SESSION['valorP'];
+	$atiDes = $_SESSION['atiDes'];
 
 	include "../dao/DAO-controleCir.php";
 	$op1 = $_GET['action'];
 	$idImpressora = $_GET['id'];
 	echo "<br>op1 1 => " . $op1;
-	if($op1 == 1 || $op1 == 3)  
+	if($op1 == 1 || $op1 == 3 || $op1 == 5)  
 		{
             $op2 = $op1;
 			$statusImpressora = "ativo";
 		}
-	elseif($op1 == 2 || $op1 == 4)  
+	elseif($op1 == 2 || $op1 == 4 || $op1 == 6)  
 		{
             $op2 = $op1;
 			$statusImpressora = "inativo";
@@ -42,11 +43,15 @@
 			header("Location: ../views/impressorasListar.php");     
 		} 
 
-	else
+	elseif($op2 == 3 || $op2 == 4)
 		{
 			//echo "<br>op2 4 => " . $op2;
 			$_SESSION['tipoP1'] = $tipoP;
 			$_SESSION['valorP1'] = $valorP;			
 			header("Location: ../views/impressorasPesquisarResultado.php");
+		}
+	else
+		{	
+			header("Location: ../views/impressorasListarAtivas.php?action=$atiDes");
 		}
 ?>

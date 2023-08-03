@@ -102,6 +102,31 @@
                     $conn = null;	
                 }
 
+            public function ListarOpcao3($nomeTabela, $tipoOpcao, $valorOpcao)  
+                {
+                    $conn = Database::connect();
+                    $conn->exec('SET CHARACTER SET utf8');
+                                    
+                    $sql = "SELECT * FROM $nomeTabela WHERE $tipoOpcao LIKE '$valorOpcao'  ORDER BY dataAltera DESC";
+                    try 
+                        {
+                            $listar = $conn->query($sql);
+                            $buscar = $listar->fetchAll(PDO::FETCH_OBJ);
+                            $numRows = $listar->rowCount();
+                        } 
+
+                    catch (PDOException $exc)
+                        {
+                            $buscar = $exc->getTraceAsString();
+                        }
+
+                   
+                    $_SESSION['numRows'] = $numRows;
+
+                    return $buscar;                        
+                    $conn = null;	
+                }
+
             public function ListarOpcaoAtivo($nomeTabela, $tipoOpcao, $valorOpcao,  $status, $valorStatus)  
                 {
                     $conn = Database::connect();

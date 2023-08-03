@@ -39,8 +39,8 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="../views/impressorasCadastrar.php">Cadastrar</a></li>
                         <li><a class="dropdown-item" href="../views/impressorasListar.php">Listar Todas</a></li>
-                        <li><a class="dropdown-item" href="../views/naoImplementada.php">Listar Ativas</a></li>
-                        <li><a class="dropdown-item" href="../views/naoImplementada.php">Listar Inativas</a></li>
+                        <li><a class="dropdown-item" href="../views/impressorasListarAtivas.php?action=1">Listar Ativas</a></li>
+                        <li><a class="dropdown-item" href="../views/impressorasListarAtivas.php?action=2">Listar Inativas</a></li>
                         <li><a class="dropdown-item" href="../views/impressorasPesquisar.php">Pesquisar</a></li>
                     </ul>
                 </div>
