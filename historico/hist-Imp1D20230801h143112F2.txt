@@ -1,1 +1,0 @@
-TESTE - STATUS ALTERADO DE: inativo PARA => ativo\nTIPO DE CONEXÃO ALTERADA DE: Rede PARA => Usb\n

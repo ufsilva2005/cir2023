@@ -3,7 +3,6 @@
 	$tipoP = $_SESSION['tipoP'];
 	$valorP = $_SESSION['valorP'];
 	$atiDes = $_SESSION['atiDes'];
-	$texto = "ALTERAÇÃO DE STATUS - ";
 	//$_SESSION['idFuncionario'] = $idFuncionario;
 	$funcionarioAltCadastro = $_SESSION['nomeFuncionario'];
 
@@ -15,22 +14,32 @@
 	$idImpressora = $_GET['id'];
 	$dateAltCadastro = date('Y-m-d');
 
+	//echo "<br>op1 1 => " . $op1;
+
 	if($op1 == 1 || $op1 == 3 || $op1 == 5)  
 		{
             $op2 = $op1;
 			$statusImpressora = "ativo";
-			$hitorico1 = $texto . "STATUS ALTERADO DE INATIVO PARA => ". $statusImpressora . " \n";
+			$hitorico .= 'STATUS ALTERADO DE INATIVO PARA => '. $statusImpressora . ' \n';
 		}
 	elseif($op1 == 2 || $op1 == 4 || $op1 == 6)  
 		{
             $op2 = $op1;
 			$statusImpressora = "inativo";
-			$hitorico1 = $texto . "STATUS ALTERADO DE ATIVO PARA => ". $statusImpressora . " \n";
+			$hitorico .= 'STATUS ALTERADO DE ATIVO PARA => '. $statusImpressora . ' \n';
 		}
 	else  
 		{
             header("Location: ../template/menuPrincipal.php");  
 		}
+          
+	//echo "<br>op2 2 => " . $op2;
+	//echo "<br>idImpressora => " . $idImpressora;
+	//echo "<br>statusImpressora => " . $statusImpressora;
+	//echo $_SESSION['tipoPesquisa'] = $tipoPesquisa;
+	//echo $_SESSION['valorPesquisa'] = $valorPesquisa;
+	//echo "<br>tipoP => " . $tipoP;
+	//echo "<br>valorP => " . $valorP;
 
 	//criar historico e salvar
     //nome dos arquivos historico
@@ -40,26 +49,25 @@
     $caminho = "../historico/";
     $desHist = $caminho . "hist-" . $nomeHist;
             
-    $output2 = fopen($desHist, 'wb');
+    //$output2 = fopen($desHist, 'wb');
     //salva arquivo 
-    fwrite($output2, $hitorico1);
-    fclose($output2); 
+    //fwrite($output2, $hitorico);
+    //fclose($output2); 
 
-	//echo "<br>hitorico => " . $hitorico;
-	//echo "<br>desHist => " . $desHist;
+	echo "<br>hitorico => " . $hitorico;
+	echo "<br>desHist => " . $desHist;
 
 	$idComputador = null;
     $historico = new Historico($idHistorico, $desHist, $dateAltCadastro, $funcionarioAltCadastro,  $idComputador,  $idImpressora, $_SESSION['idFuncionario']);
     echo "<br>dados  Historico<br>";		
     $historico->exibir();
     echo "<br>"; 
-    $historicoDAO = new ControleCirDAO();
-    $historicoDAO->HitoricoCadastrar($historico);
+    //$historicoDAO = new ControleCirDAO();
+    //$historicoDAO->HitoricoCadastrar($historico);
             
-    $ativaDeativaDAO = new ControleCirDAO();  
-    $ativaDeativaDAO->AtivaDesativa($idImpressora,$statusImpressora);
+    //$ativaDeativaDAO = new ControleCirDAO();  
+    //$ativaDeativaDAO->AtivaDesativa($idImpressora,$statusImpressora);
 	//echo $_SESSION['tipoPesquisa'];
-	
 
 	if($op2 == 1 || $op2 == 2)
 		{

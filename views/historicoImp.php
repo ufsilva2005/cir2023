@@ -38,17 +38,19 @@
                                         </div>
 
                                         <div class='area-texto'> 
-                                            <label class="text-danger" for="inputSuccess" class="control-label">Aleração Efetuada:</label>    
-                                            <div>                                        
-                                                <textarea rows="5" cols="100" maxlength="2500" disabled>
-                                                    <?php 
-														$historico = $hist->nomeAlteracoes;
-														$historico = lerArquivo($historico);
-														//echo trim($historico);
-														echo "\n Obs: " . $result = strstr($historico, " - ", true);
-														echo "\n Alteração: " . $result = str_replace(" - ","",strstr($historico, " - ", false));
-													?>        
-                                                </textarea>                                    
+                                            <label class="text-danger" for="inputSuccess" class="control-label">Alteração Efetuada:</label>    
+                                            <div>   
+												<p>                                     
+													<textarea rows="5" cols="100" maxlength="2500" disabled>
+														<?php 
+															$historico = $hist->nomeAlteracoes;
+															$historico = lerArquivo($historico);
+															//echo nl2br($historico);
+															echo "\n Obs: " . $result = strstr($historico, " - ", true);
+															echo "\n Alteração: " . $result = str_replace(" - ","",strstr($historico, " - ", false));
+														?>        
+													</textarea>     
+												</p>                              
                                             </div>
                                         </div>
                                     </div>				

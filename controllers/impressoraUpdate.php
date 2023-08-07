@@ -66,7 +66,7 @@
         {
             $nomeImpressora = $nomeImpAlt;  
             $aux++;
-            $hitorico .= 'NOME DA IMPRESSORA ALTERADO DE: '. $nomeImpressoraAnt .' PARA => '. $nomeImpressora .'</br>';
+            $hitorico .= 'NOME DA IMPRESSORA ALTERADO DE: '. $nomeImpressoraAnt .' PARA => '. $nomeImpressora . ' \n';
         }
 
     if ($numSerieAlt == "" || $numSerieAlt == $numSerieAnt) 
@@ -77,7 +77,7 @@
         {
             $numSerie = $numSerieAlt;  
             $aux++;
-            $hitorico .= 'Nº DE SÈRIE ALTERADO DE: '. $numSerieAnt .' PARA => '. $numSerie .'</br>';
+            $hitorico .= 'Nº DE SÈRIE ALTERADO DE: '. $numSerieAnt .' PARA => '. $numSerie . ' \n';
         }
 
     if ($ipImpressoraAlt == "" || $ipImpressoraAlt == $ipImpressoraAnt)
@@ -88,7 +88,7 @@
         {
             $ipImpressora = $ipImpressoraAlt;  
             $aux++;
-            $hitorico .= 'IP DA IMPRESSORA ALTERADO DE: '. $ipImpressoraAnt .' PARA => '. $ipImpressora .'</br>';
+            $hitorico .= 'IP DA IMPRESSORA ALTERADO DE: '. $ipImpressoraAnt .' PARA => '. $ipImpressora . ' \n';
         }
 
     if ($numMacAlt == "" || $numMacAlt == $macImpressoraAnt)
@@ -99,7 +99,7 @@
         {
             $macImpressora = $numMacAlt;  
             $aux++;
-            $hitorico .= 'MAC DA IMPRESSORA ALTERADO DE: '. $macImpressoraAnt .' PARA => '. $macImpressora .'</br>';
+            $hitorico .= 'MAC DA IMPRESSORA ALTERADO DE: '. $macImpressoraAnt .' PARA => '. $macImpressora . ' \n';
         }
  
     if ($tipoTonnerAlt == "" || $tipoTonnerAlt == $tipoTonerAnt) 
@@ -123,7 +123,7 @@
                     $desTonnerAlt = $res->descricao;
                 }	
             $aux++;
-            $hitorico .= 'TIPO DE TONNER ALTERADO DE: '. $descTonnerAnt .' PARA => '. $desTonnerAlt .'</br>';
+            $hitorico .= 'TIPO DE TONNER ALTERADO DE: '. $descTonnerAnt .' PARA => '. $desTonnerAlt . ' \n';
         }
 
     if ($impStatusAlt == "" || $impStatusAlt == $statusImpressoraAnt) 
@@ -134,7 +134,7 @@
         {
             $statusImpressora = $impStatusAlt;  
             $aux++;
-            $hitorico .= 'STATUS ALTERADO DE: '. $statusImpressoraAnt .' PARA => '. $statusImpressora .'</br>';
+            $hitorico .= 'STATUS ALTERADO DE: '. $statusImpressoraAnt .' PARA => '. $statusImpressora . ' \n';
         }
 
       if ($conexaoImpAlt == "" || $conexaoImpAlt == $conexaoImpAnt ) 
@@ -145,7 +145,7 @@
         {
             $conexaoImp = $conexaoImpAlt;  
             $aux++;
-            $hitorico .= 'TIPO DE CONEXÃO ALTERADA DE: '. $conexaoImpAnt  .' PARA => '. $conexaoImp .'</br>';
+            $hitorico .= 'TIPO DE CONEXÃO ALTERADA DE: '. $conexaoImpAnt  .' PARA => '. $conexaoImp . ' \n';
         }
 
     if ($modeloAlt == "" || $modeloAlt == $modeloImpressoraAnt)
@@ -170,7 +170,7 @@
                 }	
            
             $aux++;
-            $hitorico .= 'MODELO DA IMPRESSORA ALTERADO DE: '. $descModelAnt .' PARA => '. $desModelAlt .'</br>';
+            $hitorico .= 'MODELO DA IMPRESSORA ALTERADO DE: '. $descModelAnt .' PARA => '. $desModelAlt . ' \n';
         }
 
     //local
@@ -195,7 +195,7 @@
                 }	
 
             $auxLocal++;
-            $hitorico .= 'DIVSÃO DA IMPRESSORA ALTERADA DE: '. $descricaoAnt .' PARA => '. $descricaoAlt .'</br>';
+            $hitorico .= 'DIVSÃO DA IMPRESSORA ALTERADA DE: '. $descricaoAnt .' PARA => '. $descricaoAlt . ' \n';
         }
        
     if ($localAlt == "" || $localAlt == $localizacaoAnt) 
@@ -206,7 +206,7 @@
         {
             $localizacaoBd = $localAlt;  
             $auxLocal++;
-            $hitorico .= 'LOCAL ALTERADO DE: '. $localizacaoAnt .' PARA => '. $localizacaoBd .'</br>';
+            $hitorico .= 'LOCAL ALTERADO DE: '. $localizacaoAnt .' PARA => '. $localizacaoBd . ' \n';
         }
 
     if ($ramalAlt == "" || $ramalAlt == $ramalAnt) 
@@ -217,7 +217,7 @@
         {
             $ramalBd = $ramalAlt;  
             $auxLocal++;
-            $hitorico .= 'RAMAL ALTERADO DE: '. $ramalAnt .' PARA => '. $ramalBd .'</br>';
+            $hitorico .= 'RAMAL ALTERADO DE: '. $ramalAnt .' PARA => '. $ramalBd . ' \n';
         }
 
     if ($respSetCompAlt == "" || $respSetCompAlt == $respSetCompAnt)
@@ -228,7 +228,7 @@
         {
             $respSetBd = $respSetCompAlt;  
             $auxLocal++;
-            $hitorico .= 'RESPONSÁVEL PELO SETOR ALTERADO DE: '. $respSetCompAnt .' PARA => '. $respSetBd .'</br>';
+            $hitorico .= 'RESPONSÁVEL PELO SETOR ALTERADO DE: '. $respSetCompAnt .' PARA => '. $respSetBd . ' \n';
         }
 
     if ($nomeLocalAlt == "" || $nomeLocalAlt == $nomeLocalAnt)
@@ -239,10 +239,10 @@
         {
             $nomeLocalBd = $nomeLocalAlt;  
             $auxLocal++;
-            $hitorico .= 'NOME DO LOCAL ALTERADO DE: '. $nomeLocalAnt .' PARA => '. $nomeLocalBd .'</br>';
+            $hitorico .= 'NOME DO LOCAL ALTERADO DE: '. $nomeLocalAnt .' PARA => '. $nomeLocalBd . ' \n';
         }
 
-echo "<br>hitorico => " . $hitorico;
+    //echo "<br>hitorico => " . $hitorico;
 
     //verificar setor e salvar update  
     $divisao2DAO = new ControleCirDAO();   
@@ -320,12 +320,12 @@ echo "<br>hitorico => " . $hitorico;
             fclose($output2); 
 
             $idComputador = null;
-            $historico = new Historico($idHistorico, $desHist, $dateAltCadastro, $funcionarioAltCadastro,  $idComputador,  $idImpressora, $_SESSION['idFuncionario']);
+            $historicoBd = new Historico($idHistorico, $desHist, $dateAltCadastro, $funcionarioAltCadastro,  $idComputador,  $idImpressora, $_SESSION['idFuncionario']);
             //echo "<br>dados  Historico<br>";		
             //$historico->exibir();
             //echo "<br>"; 
             $historicoDAO = new ControleCirDAO();
-            $historicoDAO->HitoricoCadastrar($historico);
+            $historicoDAO->HitoricoCadastrar($historicoBd);
 
             echo "<script type='text/javascript'>alert('valor(es)  alterado(s)');</script>";
             echo "<script>location = '../views/impressorasListar.php';</script>";   

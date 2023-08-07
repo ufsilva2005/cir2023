@@ -92,7 +92,7 @@
                                                         <a href="./impressoraAlterar.php?action=1&id=<?php echo $imp->idImpressora;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
-                                                    	<a href="./.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-primary">H<i class="icon-remove"></i></a>
+                                                    	<a href="./historicoImp.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-primary">H<i class="icon-remove"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
                                                         <a href="./impressoraDetalhes.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
