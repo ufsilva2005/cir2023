@@ -6,7 +6,7 @@
             header("Location: ../index.php");
 		}
     $idImpressora =  $_GET['id'];
-    $idImpressora;
+    //$idImpressora;
 	$_SESSION['idImpAlt'] = $idImpressora;     
     $nomeTabela = "impressoras";
     $opcao1 = "idImpressora";

@@ -1,1 +1,1 @@
-TESTE - STATUS ALTERADO DE: ativo PARA => inativo</br>
+TESTE - STATUS ALTERADO DE: ativo PARA => inativo\n

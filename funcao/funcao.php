@@ -48,4 +48,23 @@
 			$rData2 = implode("/",array_reverse(explode("-",$BdAltdataNascimento1)));  
 			return $rData2;
 		}
+
+	//ler historico
+	function lerArquivo($historico)
+		{
+			if (file_exists($historico)) 
+				{
+					$fp = fopen($historico,"r+");
+					//lendo o arquivo
+					$texto = fread($fp, filesize($historico));      
+					fclose($fp);  
+				} 
+				
+			 else 
+			 	{
+					$texto = null;
+				}					
+			return trim($texto, '\n');
+		}	
+?>
 ?>

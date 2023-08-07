@@ -1,5 +1,6 @@
 <?php
 	include "../template/menuPrincipal.php";
+	include "../funcao/funcao.php";
    
     if($_SESSION['impressora'] != "sim")
         {
@@ -8,7 +9,10 @@
         }
 	
     $hist =  $_GET['action'];
-   include "../controllers/impressoraBuscar.php"; 
+   	include "../controllers/impressoraBuscar.php"; 
+
+   $inativo = 0;
+   $ativo = 0;
 
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
@@ -19,25 +23,31 @@
 			<nav class="fixed  navbar navbar-dark">
 				<div class="line col-md-12 p-5 position-absolute top-50 bottom-150 end-150">
                     <div class="col-md-12 py-5 px-2">	  
-                        <h5 class="text-success"><?php echo "Histórico da impressora " . $nomeImpressora . " Número de Série " . $numSerie . " " . $idImpressora; ?></h5>
+                        <h4 class="text-success"><?php echo "Histórico da impressora " . $nomeImpressora . " Número de Série " . $numSerie; ?></h4>
                         <?php
                             $nomeTabela = "historico";	
 							$tipoOpcao = "idImpressora";						
 							require_once '../dao/DAO-controleCir.php';
 							$impAltDAO = new ControleCirDAO();
-							foreach($impAltDAO->ListarOpcao3($nomeTabela, $tipoOpcao, $idImpressora)    as $hist)
+							foreach($impAltDAO->ListarOpcao3($nomeTabela, $tipoOpcao, $idImpressora) as $hist)
 								{
                                     ?>	
                                     <div class="row">
                                         <div class="col px-md-1  col-md-12">
-                                            <label for="inputSuccess" class="control-label"><?php echo "Data da Alteração: " . $hist->dataAltera . " Funcionário " . $hist->respAlteracoes; ?></label>
+                                            <label class="text-success" for="inputSuccess" class="control-label">&nbsp; <?php echo "Data da Alteração: " . $hist->dataAltera . " Funcionário " . $hist->respAlteracoes; ?></label>
                                         </div>
 
                                         <div class='area-texto'> 
-                                            <label for='inputSuccess' class='control-label'>Aleração Efetuada:</label>    
+                                            <label class="text-danger" for="inputSuccess" class="control-label">Aleração Efetuada:</label>    
                                             <div>                                        
-                                                <textarea  text-align='left' style='resize: none' name='histDAtual' rows='5' cols='80' maxlength='2500'  wrap='hard' white-space: nowrap >
-                                                            <?php echo $hist->nomeAlteracoes ?>            
+                                                <textarea rows="5" cols="100" maxlength="2500" disabled>
+                                                    <?php 
+														$historico = $hist->nomeAlteracoes;
+														$historico = lerArquivo($historico);
+														//echo trim($historico);
+														echo "\n Obs: " . $result = strstr($historico, " - ", true);
+														echo "\n Alteração: " . $result = str_replace(" - ","",strstr($historico, " - ", false));
+													?>        
                                                 </textarea>                                    
                                             </div>
                                         </div>
