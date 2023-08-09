@@ -64,9 +64,9 @@
 	if($op2 == 1 || $op2 == 2)
 		{
 			//echo "<br>op2 3 => " . $op2;
-			//$_SESSION['tipoP'] = $tipoP;
-			//$_SESSION['valorP'] = $valorP;
-			//header("Location: ../views/impressorasListar.php");     
+			$_SESSION['tipoP'] = $tipoP;
+			$_SESSION['valorP'] = $valorP;
+			header("Location: ../views/impressorasListar.php");     
 		} 
 
 	elseif($op2 == 3 || $op2 == 4)
@@ -74,10 +74,10 @@
 			//echo "<br>op2 4 => " . $op2;
 			$_SESSION['tipoP1'] = $tipoP;
 			$_SESSION['valorP1'] = $valorP;			
-			//header("Location: ../views/impressorasPesquisarResultado.php");
+			header("Location: ../views/impressorasPesquisarResultado.php");
 		}
 	else
 		{	
-			//header("Location: ../views/impressorasListarAtivas.php?action=$atiDes");
+			header("Location: ../views/impressorasListarAtivas.php?action=$atiDes");
 		}
 ?>

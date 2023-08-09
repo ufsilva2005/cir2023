@@ -103,7 +103,7 @@
                                                         ?>  
                                                     </div>
 													<div class="btn-group pull-left">
-                                                        <a href="../.php?action=2&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-ufs">P<i class="icon-remove"></i></a>
+                                                        <a href="./impressorasImprimirDados.php?action=1&id=<?php echo $imp->idImpressora; ?>" class="btn btn-small btn-ufs">P<i class="icon-remove"></i></a>
                                                     </div>
                                                 </td>			
 											<tr>									
