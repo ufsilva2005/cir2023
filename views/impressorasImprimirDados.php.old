@@ -1,37 +1,30 @@
 <?php
-	//include "../template/menuPrincipal.php";
-	//include "../funcao/funcao.php";
+	include "../template/menuPrincipal.php";
+	include "../funcao/funcao.php";
    
-   // if($_SESSION['impressora'] != "sim")
-        //{
-            //echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
-            //echo "<script>location = '../template/menuPrincipal.php';</script>";  
-        //}
+    if($_SESSION['impressora'] != "sim")
+        {
+            echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
+            echo "<script>location = '../template/menuPrincipal.php';</script>";  
+        }
 	
-   //$hist =  $_GET['action'];
+    $hist =  $_GET['action'];
    	include "../controllers/impressoraBuscar.php"; 
 
-    $inativo = 0;
-    $ativo = 0;
-    //$nomeImpressora = "teste";
-    //$numSerie = "0001";
+   $inativo = 0;
+   $ativo = 0;
+
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
 
-    $valor = "teste de variavel";
-    $i = 0;
+       $valor = "teste de variavel";
 
-    $html ='<!DOCTYPE html>
-            <html lang="PT-BR">
-                <head>
-                    <meta charset="utf-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <meta http-equiv="X-UA-Compatible" content="IE=edge">   <head>
-                    <style type="text/css"> 
-                        *{
-                            padding: 0;
-                            margin: 0;
-                        }
+    $html ='<head>
+                <style type="text/css"> 
+                    *{
+                        padding: 0;
+                        margin: 0;
+                    }
 
                     table{
                         width: 98%;
@@ -102,7 +95,7 @@
                     }
                 </style>
             </head>
- <body>
+
             <nav class="fixed  navbar navbar-dark">
 				<div class="line col-md-12 p-5 position-absolute top-50 bottom-150 end-150">
                     <div class="col-md-12 py-5 px-2">	  
@@ -246,27 +239,26 @@
 
  //$html = $html.$html2;
 
- //echo $html;
+ echo $html;
 
  
    //inclui a biblioteca do dompdf
-    //require_once("dompdf/autoload.inc.php");
     require_once("../dompdf/autoload.inc.php");
 
     use Dompdf\Dompdf;
     use Dompdf\Options;
 
-    //def("DOMPDF_ENABLE_REMOTE", false); 
+    def("DOMPDF_ENABLE_REMOTE", false); 
     $options = new Options();
     $options->set('isRemoteEnabled', true);
     $dompdf = new Dompdf($options);
 
     //$dompdf->set_base_path("/www/html/marcio/sistemaEscolarUfs2/bootstrap-5.0.2/css");
 
-    //$dompdf = new Dompdf();
+    $dompdf = new Dompdf();
     
     //concatenando as variáveis
-    $html=$html.$html3;
+    $html=$html.$html2.$html3;
 
     //gerando o pdf
     $html = utf8_decode($html);
@@ -274,7 +266,7 @@
     // configurar papel 
 	$dompdf->set_paper("A4", "portrail");
     
-    //$html = iconv('UTF-8',$html);
+    $html = iconv('UTF-8',$html);
     $dompdf->load_html(utf8_encode($html));
     $dompdf->render();
     $dompdf->stream("matricula.pdf", 

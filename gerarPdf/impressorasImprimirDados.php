@@ -13,10 +13,6 @@
 
     $inativo = 0;
     $ativo = 0;
-    //$nomeImpressora = "teste";
-    //$numSerie = "0001";
-    //$idFuncionario = $_SESSION['idFuncionario'];  
-    //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
 
     $valor = "teste de variavel";
     $i = 0;
@@ -31,15 +27,17 @@
                         *{
                             padding: 0;
                             margin: 0;
+                             margin-right: 20px;
+                        margin-left: 10px;
                         }
 
                     table{
-                        width: 98%;
+                        width: 95%;
                         border-collapse: separate;
                         border-spacing: 0;
-                        margin-top: 5px;
-                        margin-bottom: 5px;
-                        margin-right: 10px;
+                        margin-top: 2px;
+                        margin-bottom: 1px;
+                        margin-right: 20px;
                         margin-left: 10px;
 
                         border-top: 1px solid;
@@ -51,9 +49,20 @@
                         background-color: #efefef;
                     }
 
+                    .table1{
+                        margin-top: 40px;
+                        margin-bottom: 1px;
+
+                        border-top: 1px solid;
+                        border-bottom: 1px solid;
+                        border-right: 1px solid;
+                        border-left: 1px solid;
+                        text-align: center;
+                        padding: 2px;
+                        background-color: #efefef;
+                    }
+
                     .tableUfs{
-                        /*width: 100%;
-                        border-collapse: separate;*/
                         border-spacing: 0;
                         margin-top: 0px;
                         margin-right: 10px;
@@ -104,9 +113,9 @@
             </head>
  <body>
             <nav class="fixed  navbar navbar-dark">
-				<div class="line col-md-12 p-5 position-absolute top-50 bottom-150 end-150">
+				<div class="line col-md-12 p-5 position-absolute top-100 bottom-150 end-150">
                     <div class="col-md-12 py-5 px-2">	  
-                        <table>
+                        <table class = "table1">
                             <thead>
                                 <tr>
                                     <th>   
@@ -156,87 +165,72 @@
                                 <table>                          
                                     <thead>
                                         <tr>												
-                                            <th style="width:6%"><h6>ITEM</h6></th>	
-                                            <th><h6>DESCRIÇÃO DO MATERIAL</h6></th>
-                                            <th style="width:10%"><h6>ESTADO</h6></th>
-                                            <th style="width:6%"><h6>NOTA FISCAL</h6></th>
-                                            <th style="width:10%"><h6>SUBELEMENTO</h6></th>
-                                            <th style="width:10%"><h6>CONTA CONTÁBIL</h6></th>
-                                            <th style="width:6%"><h6>QUA</h6></th>	
-                                            <th style="width:6%"><h6>VALOR UNITÁRIO</h6></th>
-                                            <th style="width:6%"><h6>VALOR TOTAL</h6></th>									
+                                            <th style="width:30%"><h6>ITEM</h6></th>	
+                                            <th style="width:70%"><h6>DESCRIÇÃO</h6></th>							
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>																																
-                                                        <td><h6> "TOTAL"' . $i . '</h6></td>
-                                                        <td><h6> "TOTAL"' . $i . '</h6></td>
-                                                        <td><h6> "TOTAL"' . $i . '</h6></td>
-                                                        <td><h6> "TOTAL"' . $i . '</h6></td>
-                                                        <td><h6> "TOTAL"' . $i . '</h6></td>
-                                                        <td><h6> "TOTAL"' . $i . '</h6></td>
-                                                        <td><h6> "TOTAL"' . $i . '</h6></td>
-                                                        <td><h6> "TOTAL"' . $i . '</h6></td>
-                                                        <td><h6> "TOTAL"' . $i . '</h6></td>
-                                                    <tr>               </tbody>                                   
+                                            <td><h6>Número de Série</h6></td>
+                                            <td><h6> ' . $numSerie . '</h6></td>
+                                        </tr> 
+                                        <tr>    
+                                            <td><h6>Número IP</h6></td>
+                                            <td><h6>' . $ipImpressora . '</h6></td>
+                                        </tr> 
+                                        <tr>    
+                                            <td><h6>Mac Address</h6></td>
+                                            <td><h6>' . $macImpressora . '</h6></td>
+                                        </tr> 
+                                        <tr>    
+                                            <td><h6>Tipo de Toner</h6></td>
+                                            <td><h6>' . $tipoToner . '</h6></td>
+                                        </tr> 
+                                        <tr>    
+                                            <td><h6>Status da Impressora</h6></td>
+                                            <td><h6>' . $statusImpressora . '</h6></td>
+                                        </tr> 
+                                        <tr>    
+                                            <td><h6>Tipo de Conexão</h6></td>
+                                            <td><h6>' . $conexaoImp . '</h6></td>
+                                        </tr> 
+                                        <tr>    
+                                            <td><h6>Modelo da Impressora</h6></td>
+                                            <td><h6>' . $modeloImpressora . '</h6></td>
+                                        </tr> 
+                                        <tr>    
+                                            <td><h6>Data de Cadastro</h6></td>
+                                            <td><h6>' . $dataCadastroA . '</h6></td>
+                                        </tr> 
+                                        <tr>    
+                                            <td><h6>Responsável pelo Cadastro</h6></td>
+                                            <td><h6>' . $respCadastro . '</h6></td>
+                                        </tr> 
+                                        <tr>    
+                                            <td><h6>Divisao</h6></td>
+                                            <td><h6>' . $divisao1 . '</h6></td>
+                                        </tr> 
+                                        <tr>    
+                                            <td><h6>localizacao</h6></td>
+                                            <td><h6>' . $localizacao1 . '</h6></td>
+                                        </tr> 
+                                        <tr>    
+                                            <td><h6>Setor</h6></td>
+                                            <td><h6>' . $nomeLocal1 . '</h6></td>
+                                             </tr> 
+                                        <tr>    
+                                            <td><h6>Ramal</h6></td>
+                                            <td><h6>' . $ramal1 . '</h6></td>
+                                             </tr> 
+                                        <tr>    
+                                            <td><h6>Resposável pelo Setor</h6></td>
+                                            <td><h6>' . $respSetComp1 . '</h6></td>
+                                        </tr>            
+                                    </tbody>                                   
                                 </table>
                             </div>
-                        </div>
-
-                    
-                        <div class="row">
-                            <div class="col px-md-1 col-md-12">
-                                <table>
-                                    <thead>
-                                        </tr>    
-                                            <td>               
-                                                <h6>Nº do Pocesso: &nbsp;' . $valor . '</h6> 
-                                                <h6>Doação: &nbsp;' . $valor . '</h6>
-                                                <h6>Localidade: &nbsp;' . $valor . '</h6>
-                                            </td>
-                                        </tr>
-                                    </thead>            
-                                </table>
-                            </div>
-                        </div>
-
-                        <p></p> <br /> <br /> 
-
-                        <div class="row">
-                            <div class="col px-md-1 col-md-12">
-                                <table class = "tableUfs">
-                                    <thead>
-                                        </tr>    
-                                            <th>               
-                                                <h5>';
-
-                                                    setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "pt_BR.utf-8", "portuguese");
-                                                    date_default_timezone_set("America/Sao_Paulo");
-                                                    $mes1 = date("m");
-                                                    $dia = date("d");
-                                                    $ano = date("Y");
-                                                    //$mesAux[] = ['Janeiro';'Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-                                                    $mesAux = array("Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro");
-                                                    //$today = date("j F  Y"); //$data =  utf8_encode(d de F de Y);
-                                                    $mes = $mesAux[1+1];
-    $html3 = '                                      Rio de Janeiro &nbsp;' . $dia . '&nbsp; de &nbsp;'. $mes . '&nbsp; de &nbsp;'. $ano .
-                                                '</h5> 
-
-                                                <p></p> <br /> <br /> 
-
-                                                <h5>______________________________________________________</h5>
-                                                <h5>(Nome do Reponsável direto pelo bem e SIAPE)</h5>
-                                            
-                                                <p></p> <br /> <br /> 
-
-                                                <h5>________________________________________________________________</h5>
-                                                <h5>(Nome do Reponsável pelo setor de patrimônio da Unidade e SIAPE)</h5>
-                                            </th>
-                                        </tr>
-                                    </thead>            
-                                </table>
-                            </div>
-                        </div>
+                        </div>    
+                       
                     </div>
 				</div>
 			</nav>	  
@@ -251,7 +245,7 @@
  
    //inclui a biblioteca do dompdf
     //require_once("dompdf/autoload.inc.php");
-    require_once("../dompdf/autoload.inc.php");
+    require_once("dompdf/autoload.inc.php");
 
     use Dompdf\Dompdf;
     use Dompdf\Options;
@@ -266,7 +260,7 @@
     //$dompdf = new Dompdf();
     
     //concatenando as variáveis
-    $html=$html.$html3;
+    //$html=$html.$html3;
 
     //gerando o pdf
     $html = utf8_decode($html);
@@ -277,7 +271,7 @@
     //$html = iconv('UTF-8',$html);
     $dompdf->load_html(utf8_encode($html));
     $dompdf->render();
-    $dompdf->stream("matricula.pdf", 
+    $dompdf->stream($nomeImpressora . ".pdf", 
 		array(
 			"Attachment" => false //Para realizar o download somente alterar para true
 		));
