@@ -42,14 +42,26 @@
                                         <input type="text" class="form-control" name="numSerie" id="numSerie" pattern=".{5,}" placeholder="000000000000" oninvalid="setCustomValidity('O Número de Série deve ter no Minimo 12 digitos !')" onchange="try{setCustomValidity('')}catch(e){}" required>
                                     </div>
 
-                                    <div class="col px-md-1  col-md-3">
+                                    <div class="col px-md-1  col-md-2">
                                         <label for="inputSuccess" class="control-label">Número de IP:</label>
                                         <input type="text" class="form-control" name="numIp" pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" placeholder="000.000.000.000" oninvalid="setCustomValidity('Endereco ip invalido!')" onchange="try{setCustomValidity('')}catch(e){}">
                                     </div>
 
-                                    <div class="col px-md-1  col-md-3">
+                                    <div class="col px-md-1  col-md-2">
                                         <label for="inputSuccess" class="control-label">Número MAC:</label>
                                         <input type="text" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" onchange="try{setCustomValidity('')}catch(e){}" class="form-control" name="numMac">
+                                    </div>
+
+                                    <div class="col px-md-1 col-md-2">
+                                        <label for="inputSuccess" class="control-label">Colorida:</label> <br>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="colorida0" id="colorida1" value="sim" >
+                                            <label class="form-check-label" for="colorida1">SIM</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="colorida0" id="colorida2" value="não" checked>
+                                            <label class="form-check-label" for="colorida2">NÃO</label>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -74,10 +86,10 @@
                                             ?>
                                         </select>
                                     </div>
-
-                                    <div class="col px-md-1 col-md-3">
-                                        <label class="control-label">Tipo do Tonner:</label>
-                                        <select class="form-control" name="tonner" required>
+                                    
+                                    <div class="col px-md-1 col-md-2">
+                                        <label class="control-label">Tipo do Tonner 1:</label>
+                                        <select class="form-control" name="tonner[]" required>
                                             <option value=""> </option>
                                             <?php
                                             include_once "../dao/DAO-controleCir.php";
@@ -96,6 +108,74 @@
                                             ?>
                                         </select>
                                     </div>
+                                    <div class="col px-md-1 col-md-2">
+                                        <label class="control-label">Tipo do Tonner 2:</label>
+                                        <select class="form-control" name="tonner[]" >
+                                            <option value=""> </option>
+                                            <?php
+                                            include_once "../dao/DAO-controleCir.php";
+                                            $tonnerDAO = new ControleCirDAO();
+                                            $nomeTabela = "material";
+                                            $tipoOpcao = "descricao";
+                                            $status = "statusMat";
+                                            $valorStatus = "ativo";
+                                            $valorOpcao = "TONNER";
+
+                                            foreach ($tonnerDAO->ListarOpcaoAtivo($nomeTabela, $tipoOpcao, $valorOpcao, $status, $valorStatus) as $res) {
+                                            ?>
+                                                <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
+                                            <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col px-md-1 col-md-2">
+                                        <label class="control-label">Tipo do Tonner 3:</label>
+                                        <select class="form-control" name="tonner[]" >
+                                            <option value=""> </option>
+                                            <?php
+                                            include_once "../dao/DAO-controleCir.php";
+                                            $tonnerDAO = new ControleCirDAO();
+                                            $nomeTabela = "material";
+                                            $tipoOpcao = "descricao";
+                                            $status = "statusMat";
+                                            $valorStatus = "ativo";
+                                            $valorOpcao = "TONNER";
+
+                                            foreach ($tonnerDAO->ListarOpcaoAtivo($nomeTabela, $tipoOpcao, $valorOpcao, $status, $valorStatus) as $res) {
+                                            ?>
+                                                <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
+                                            <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col px-md-1 col-md-2">
+                                        <label class="control-label">Tipo do Tonner 4:</label>
+                                        <select class="form-control" name="tonner[]" >
+                                            <option value=""> </option>
+                                            <?php
+                                            include_once "../dao/DAO-controleCir.php";
+                                            $tonnerDAO = new ControleCirDAO();
+                                            $nomeTabela = "material";
+                                            $tipoOpcao = "descricao";
+                                            $status = "statusMat";
+                                            $valorStatus = "ativo";
+                                            $valorOpcao = "TONNER";
+
+                                            foreach ($tonnerDAO->ListarOpcaoAtivo($nomeTabela, $tipoOpcao, $valorOpcao, $status, $valorStatus) as $res) {
+                                            ?>
+                                                <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
+                                            <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row">
 
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Status:</label> <br>

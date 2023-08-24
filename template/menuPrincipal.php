@@ -48,8 +48,9 @@
                 <div class="btn-group">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">COMPUTADORES</button>
                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../views/computadorCadastrar.php">Cadastrar</a></li>
                         <li><a class="dropdown-item" href="../views/naoImplementada.php">Pesquisar</a></li>
-                        <li><a class="dropdown-item" href="../views/naoImplementada.php">Cadastrar</a></li>
+                        <li><a class="dropdown-item" href="../views/naoImplementada.php">Listar</a></li>
                     </ul>
                 </div>
 

@@ -9,8 +9,14 @@
     $nomeImpressora =  converteMaiuscula($_POST['nomeImpressora']);
 	$numSerie = converteMaiuscula($_POST['numSerie']);     
 	$ipImpressora = $_POST['numIp'];
-	$macImpressora =  converteMaiuscula($_POST['numMac']);   
+	$macImpressora =  converteMaiuscula($_POST['numMac']);  
+	$colorida = $_POST['colorida0'];   
 	$tipoToner = $_POST['tonner'];   
+	$idTipoToner0 = serialize($tipoToner); 
+	//$tipoToner1 = $_POST['tonner1'];  
+	//$tipoToner2 = $_POST['tonner2'];  
+	//$tipoToner3 = $_POST['tonner3'];  
+	//$tipoToner4 = $_POST['tonner4'];  
 	$statusImpressora = $_POST['statusImp'];
 	$conexaoImp = $_POST['conexaoImp'];
 	$modeloImpressora = $_POST['modelo'];
@@ -27,7 +33,25 @@
 	$respSetor =  converteMaiuscula($dadosLocImp[3]);
 	$nomeLocal = converteMaiuscula($_POST['nomLocImpressora']);
 	$obsImpressora =  $dadosLocImp[4];
-	
+
+	print_r ($tipoToner);
+	echo "<br>" . $colorida;
+	echo "<br>TESTE<br>";
+	print_r($idTipoToner0);
+	echo "<br>TESTE<br>";
+	if($colorida == "não")
+		{
+			$idTipoToner = $tipoToner; 
+			$idTipoToner1 = serialize($tipoToner);
+			print_r($idTipoToner1[0]);
+			echo "<br>";
+			print_r(serialize($idTipoToner[0]));
+		}
+
+	//a:4:{i:0;s:2:"32";i:1;s:0:"";i:2;s:0:"";i:3;s:0:"";}  $idExames = $_POST['tipoExames'];   
+    //$tiposExames = serialize($idExames); 
+    //a:1:{i:0;s:1:"1";}
+	/*
 	//verificar se local existe
 	$setorExisteDAO = new ControleCirDAO();
 	foreach ($setorExisteDAO->VerificarSetor($nomeDivisao,$localizacao,$nomeLocal) as $local)
@@ -91,5 +115,5 @@
 	
 	
 	//header("Location: ../views/impressorasCadastrar.php");
-    
+    */
 ?>
