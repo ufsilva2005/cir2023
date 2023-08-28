@@ -89,7 +89,7 @@
                                     
                                     <div class="col px-md-1 col-md-2">
                                         <label class="control-label">Tipo do Tonner 1:</label>
-                                        <select class="form-control" name="tonner[]" required>
+                                        <select class="form-control" name="tonner1[]" required>
                                             <option value=""> </option>
                                             <?php
                                             include_once "../dao/DAO-controleCir.php";
@@ -110,7 +110,7 @@
                                     </div>
                                     <div class="col px-md-1 col-md-2">
                                         <label class="control-label">Tipo do Tonner 2:</label>
-                                        <select class="form-control" name="tonner[]" >
+                                        <select class="form-control" name="tonner2[]" >
                                             <option value=""> </option>
                                             <?php
                                             include_once "../dao/DAO-controleCir.php";
@@ -131,7 +131,7 @@
                                     </div>
                                     <div class="col px-md-1 col-md-2">
                                         <label class="control-label">Tipo do Tonner 3:</label>
-                                        <select class="form-control" name="tonner[]" >
+                                        <select class="form-control" name="tonner3[]" >
                                             <option value=""> </option>
                                             <?php
                                             include_once "../dao/DAO-controleCir.php";
@@ -152,7 +152,7 @@
                                     </div>
                                     <div class="col px-md-1 col-md-2">
                                         <label class="control-label">Tipo do Tonner 4:</label>
-                                        <select class="form-control" name="tonner[]" >
+                                        <select class="form-control" name="tonner4[]" >
                                             <option value=""> </option>
                                             <?php
                                             include_once "../dao/DAO-controleCir.php";
