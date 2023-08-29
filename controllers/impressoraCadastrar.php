@@ -69,7 +69,7 @@
 
 			//$idTipoTonerBd1 = serialize($tipoToner1); 
 			//echo "<br>";
-			//print_r ($idTipoTonerBd1);
+			//print_r ($idTipoTonerBd1);  a:1:{i:0;s:2:"32";}
 		}
 
 	else
