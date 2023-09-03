@@ -1,20 +1,23 @@
 <?php
-    include "../template/menuPrincipal.php";
-    include "../scripts/mascara.php";
+    //include "../template/menuPrincipal.php";
+    //include "../scripts/mascara.php";
 
-    if ($_SESSION['computador'] != "sim") {
-        echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
-        echo "<script>location = '../template/menuPrincipal.php';</script>";
-    }
+    //if ($_SESSION['computador'] != "sim") {
+        //echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
+        //echo "<script>location = '../template/menuPrincipal.php';</script>";
+    //}
 
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
 
-    include "../scripts/validarNumImp.php";
     //include "../scripts/validarNumImp.php";
-    include "../scripts/mascara.php";
+    //include "../scripts/validarNumImp.php";
+    //include "../scripts/mascara.php";
+    include_once("../dao/conexao.php"); 
 ?>
-<script type="text/javascript" src="../javaScripts/typeahead.js"></script>
+<script src="../js/jquery.min.3-1.js"></script>
+<!--script src="../js/typeahead.js"></!--script-->
+ <script src="../js/bootstrap3-typeahead.min.js"></script>  
 
         <hr>
         <nav class="navbar navbar-dark">
@@ -23,7 +26,7 @@
                 <h3 class="text-success">Cadastro de Computador</h3>
                 <div class="panel-content">
                     <div class="col-md-12">
-                    <form name="cadastro" id="cadastro" method="post" action="../controllers/computadorCadastrar.php">
+                    <form  method="post" action="../controllers/computadorCadastrar.php">
                                     <fieldset>	
                                         <div class="row">										
 											<label><a>1-> Informações Sobre o Computador</a></label>
@@ -71,13 +74,13 @@
 											<div class="col px-md-1 col-md-3">
 												<label for="inputSuccess" class="control-label">Modelo/Marca:</label>
 												<!--input type="text" class="form-control" name="DadosComputador[]" required-->
-												<input type="text" class="form-control" name="modelo" id = "modelo" class="typeahead"/>
+												<input type="text" class="form-control" name="modelo" id = "modelo" />
 											</div>
 																	
 											<div class="col px-md-1 col-md-5">
 												<label for="inputSuccess" class="control-label">Tipo de Processador:</label>
 												<!--input type="text" class="form-control" name="DadosComputador[]" required-->
-												<input type="text" class="form-control" name = "tipoProcessador" id = "tipoProcessador" class="typeahead"/>
+												<input type="text" class="form-control" name="tipoProcessador" id="tipoProcessador"   autocomplete="off" />
 											</div>
 																	
 											<div class="col px-md-1 col-md-2">
@@ -213,7 +216,7 @@
 											<div class="col px-md-1 col-md-6">
                                                 <label for="inputSuccess" class="control-label">Local do Computador:</label>
                                                 <!--input type="text" class="form-control" name="LocalComputador[]" required-->
-                                                <input type="text" class="form-control" name="LocalComputador1" id="LocalComputador1" class="typeahead"/>
+                                                <input type="text" class="form-control" name="LocalComputador1" id="LocalComputador1" />
 											</div>
 											
 											<div class="col px-md-1 col-md-6">
@@ -261,4 +264,25 @@
             </div>
         </nav>
     </body>
+       <script>
+        $(document).ready(function(){
+            $('#tipoProcessador').typeahead({
+                source: function(query, result)
+                    {
+                        $.ajax({
+                            url:"../scripts/pesquisaProcessador.php",
+                            method:"POST",
+                            data:{query:query},
+                            dataType:"json",
+                            success:function(data)
+                                {
+                                    result($.map(data, function(item){
+                                        return item;
+                                    }));
+                                }
+                        })
+                    }
+            });
+        });
+    </script>
 </html>

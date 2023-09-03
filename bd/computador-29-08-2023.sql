@@ -38,14 +38,14 @@ CREATE TABLE `computador` (
   `respAltCadastro` varchar(30) DEFAULT NULL,
   `dataAltCadastro` date DEFAULT NULL,
   `sistemaOpera` varchar(20) DEFAULT NULL,
-  `modelMaquina` varchar(50) DEFAULT NULL,
-  `idTipoProcessador` int(11) DEFAULT NULL,
+  `modelMaquina` varchar(50) DEFAULT NULL,  
   `memoria` varchar(10) DEFAULT NULL,
   `numIp` varchar(15) DEFAULT NULL,
   `numMac` varchar(17) DEFAULT NULL,
   `capHD` varchar(10) DEFAULT NULL,
   `statusComp` varchar(7) DEFAULT NULL,
   `obs` varchar(255) DEFAULT NULL,
+  `idTipoProcessador` int(11) DEFAULT NULL,
   `idFuncionario` int(11) DEFAULT NULL,
   `idSetor` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
