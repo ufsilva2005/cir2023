@@ -1,18 +1,17 @@
 <?php
 	session_start();
-	//include "../funcao/funcaoVerificar.php";
+	include "../funcao/funcao.php";
 	//include "../dao/DAO-controleCir.php";
 	//include "../models/class-setor.php";
 	//include "../models/class-computador.php";
 	
 		
 	//recebe dados da view
-	//$DadosComputador = $_POST['DadosComputador'];
-	//$LocalComputador = $_POST['LocalComputador'];
-	//$dataCadastro    = $dataCadastro = formatarData($_SESSION['data']); 
-	$tipoProcessador    = $_POST['listaProcessador'];
-	//$respCadastro = $_SESSION['respCadastro'];
-	//$idFuncionario = $_SESSION['idFuncionario'] ;
+	$DadosComputador = $_POST['DadosComputador'];
+	$LocalComputador = $_POST['LocalComputador'];
+	$dataCadastro    = $dataCadastro = formatarData($_SESSION['data']); 	
+	$respCadastro = $_SESSION['respCadastro'];
+	$idFuncionario = $_SESSION['idFuncionario'] ;
 
 	//PEGAR ID DO RESPONSAVEL PELO CADASTRO
 	/*$nomeTabela = "funcionario"; 
@@ -28,8 +27,6 @@
 			$idFuncionario = 0;
 		}*/
 
-	echo "<br>tipoProcessador => " . $tipoProcessador;
-/*
 	//informacoes da maquina
 	$idComputador = "";
 	$numCir  = $_POST['numCir'];		
@@ -38,16 +35,37 @@
 	$nomeComputador  = $_POST['nomeCir'];
 	$sistemaOpera  = $DadosComputador[2];
 	$modelMaquina =  $_POST['modelo'];
-	$tipProcessador = $_POST['tipoProcessador'];
+	$tipoProcessador = $_POST['listaProcessador'];
 	$memoria  = $DadosComputador[3];
 	$numIp  = $DadosComputador[4];
 	$numMac  = $DadosComputador[5];
 	$capHD  = $DadosComputador[6];
-	$statusComp  = $DadosComputador[7];
-	$obs  = converteMaiuscula($DadosComputador[8]);
+	$tipoHD  = $DadosComputador[7];
+	$statusComp  = $DadosComputador[8];
+	$obs  = converteMaiuscula($DadosComputador[9]);
 	$respAltCadastro = "";
     $dataAltCadastro = "0000-00-00";
-				
+
+	echo "<br>numCir => " . $numCir;	
+	echo "<br>numPatReitoria => " . $numPatReitoria;	
+	echo "<br>numPatrimonio => " . $numPatrimonio;
+	echo "<br>nomeComputador => " . $nomeComputador;
+	echo "<br>sistemaOpera => " . $sistemaOpera;	
+	echo "<br>modelMaquina => " . $modelMaquina;	
+	echo "<br>tipoProcessador => " . $tipoProcessador;
+	echo "<br>memoria => " . $memoria;
+	echo "<br>numIp => " . $numIp;	
+	echo "<br>numMac => " . $numMac;	
+	echo "<br>capHD => " . $capHD;
+	echo "<br>tipoHD => " . $tipoHD;
+	echo "<br>statusComp => " . $statusComp;
+	//echo "<br>tipoProcessador => " . $tipoProcessador;
+	//echo "<br>tipoProcessador => " . $tipoProcessador;
+	//echo "<br>tipoProcessador => " . $tipoProcessador;
+	//echo "<br>tipoProcessador => " . $tipoProcessador;
+
+
+	/*			
 	//informaçoes do local	
 	$idSetor = "";
 	$nomeDivisao = $LocalComputador[0];

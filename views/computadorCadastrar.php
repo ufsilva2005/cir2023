@@ -1,6 +1,5 @@
 <?php
     include "../template/menuPrincipal.php";
-    //include "../scripts/mascara.php";
 
     //if ($_SESSION['computador'] != "sim") {
         //echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
@@ -10,9 +9,8 @@
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
 
-    //include "../scripts/validarNumImp.php";
-    //include "../scripts/validarNumImp.php";
-    //include "../scripts/mascara.php";
+    include "../scripts/validarNumImp.php";
+    include "../scripts/mascara.php";
     include_once("../dao/conexao.php"); 
 ?>
     <script src="../js/jquery.min.3-1.js"></script>
@@ -46,8 +44,10 @@
                     <div class="col-md-12">
                     <form  method="post" action="../controllers/computadorCadastrar.php">
                                     <fieldset>	
-                                        <div class="row">										
-											<label><a>1-> Informações Sobre o Computador</a></label>
+                                        <div class="row">		
+                                            <label>
+                                                <h5 class="text-primary">1-> Informações Sobre o Computador </h5>
+                                            </label>	
 										</div>	
                                         
                                         <div class="row">
@@ -162,11 +162,11 @@
 											<div class="col px-md-1 col-md-2">
                                                 <label for="inputSuccess" class="control-label">tipo de HD:</label> <br>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="DadosComputador[7]" id="ssd1" value="0" checked>
+                                                    <input class="form-check-input" type="radio" name="DadosComputador[7]" id="ssd1" value="SATA" checked>
                                                     <label class="form-check-label" for="ssd1">SATA</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="DadosComputador[7]" id="ssd1" value="1">
+                                                    <input class="form-check-input" type="radio" name="DadosComputador[7]" id="ssd1" value="SSD">
                                                     <label class="form-check-label" for="ssd1">SSD</label>
                                                 </div>
 											</div>
@@ -186,8 +186,10 @@
                                             
                                         <p></p>
 											
-										<div class="row">										
-											<label><a>2-> Informações do local onde esta a máquina</a></label>
+										<div class="row">		
+                                            <label>
+                                                <h5 class="text-primary">2-> Informações do local do Computador</h5>
+                                            </label>	
 										</div>
 											
 										<div class="row">																						
@@ -259,8 +261,10 @@
 											</div>
 										</div>
 
-										<div class="row">										
-											<label><a>3-> Informações do responsavel pelo cadastro</a></label>
+										<div class="row">	
+                                            <label>
+                                                <h5 class="text-primary">3-> Informações do responsavel pelo cadastro</h5>
+                                            </label>	
 										</div>
 
                                         <div class="row">
