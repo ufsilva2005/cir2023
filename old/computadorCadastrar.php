@@ -1,5 +1,5 @@
 <?php
-    include "../template/menuPrincipal.php";
+    //include "../template/menuPrincipal.php";
     //include "../scripts/mascara.php";
 
     //if ($_SESSION['computador'] != "sim") {
@@ -15,27 +15,9 @@
     //include "../scripts/mascara.php";
     include_once("../dao/conexao.php"); 
 ?>
-    <script src="../js/jquery.min.3-1.js"></script>
-    <!--script src="../js/typeahead.js"></!--script-->
-    <script src="../js/bootstrap3-typeahead.min.js"></script>  
-    <script src="../js/jquery-latest.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#termo_busca').keyup(function() {
-                $.ajax({
-                    type: 'POST',
-                    url: '../scripts/buscaProcessador.php',
-                    data: {
-                        nome: $("#termo_busca").val()
-                    },
-                    success: function(data) {
-                        $('#listaProcessador').html(data);
-                    }
-                });
-            });
-
-        });
-    </script>
+<script src="../js/jquery.min.3-1.js"></script>
+<!--script src="../js/typeahead.js"></!--script-->
+ <script src="../js/bootstrap3-typeahead.min.js"></script>  
 
         <hr>
         <nav class="navbar navbar-dark">
@@ -53,29 +35,29 @@
                                         <div class="row">
                                             <div class="col px-md-1 col-md-3">
                                                 <label for="inputSuccess" class="control-label" >Número da Cir:</label>
-                                                <input type="text" class="form-control" name = "numCir" id = "numCir" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000"  >
+                                                <input type="text" class="form-control" name = "numCir" id = "numCir" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000"  required>
                                             </div>  
                                                 
                                             <div class="col px-md-1 col-md-3">
 												<label for="inputSuccess" class="control-label">Patrimônio Reitoria:</label>
-												<input type="text" class="form-control" name="DadosComputador[]" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000" >
+												<input type="text" class="form-control" name="DadosComputador[]" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000" required>
 											</div>
 
                                             <div class="col px-md-1 col-md-3">
 												<label for="inputSuccess" class="control-label">Patrimônio HU:</label>
-												<input type="text" class="form-control" name="DadosComputador[]" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000" >
+												<input type="text" class="form-control" name="DadosComputador[]" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000" required>
 											</div>
 
 											<div class="col px-md-1 col-md-3">
 												<label for="inputSuccess" class="control-label">Nome do Computador:</label>
-												<input type="text" class="form-control" id = "nomeCir" name = "nomeCir" >
+												<input type="text" class="form-control" id = "nomeCir" name = "nomeCir" required>
 											</div>												                                      
                                         </div>		
                                             
                                         <div class="row">
 											<div class="col px-md-1 col-md-2">
 												<label for="inputSuccess" class="control-label">Sistema Operacional:</label>
-												<select class="form-control"  name = "DadosComputador[]" >
+												<select class="form-control"  name = "DadosComputador[]" required>
                                                     <option> </option>
                                                     <option>WINDOWS XP</option>
                                                     <option>WINDOWS VISTA</option>
@@ -89,25 +71,21 @@
                                                 </select>
 											</div>
 
-											<div class="col px-md-1 col-md-2">
+											<div class="col px-md-1 col-md-3">
 												<label for="inputSuccess" class="control-label">Modelo/Marca:</label>
-												<!--input type="text" class="form-control" name="DadosComputador[]" -->
+												<!--input type="text" class="form-control" name="DadosComputador[]" required-->
 												<input type="text" class="form-control" name="modelo" id = "modelo" />
 											</div>
-
-                                            <div class="col px-md-1  col-md-2">
-                                                <label for="inputSuccess" class="control-label">Pesquisar Processador:</label>
-                                                <input type="text" class="form-control" id="termo_busca" name="termo_busca">               
-                                            </div>
 																	
-											<div class="col px-md-1 col-md-4">
-                                                    <label for="inputSuccess" class="control-label">Tipo de Processador:</label>
-                                                    <select class="form-control" name="listaProcessador" id="listaProcessador" onclick="if( $('#listaProcessador').html() == '' ){ alert('Tipo de Processador Não encontrado.\n Comunique ao Administrador do Sistema.');}"></select>
-                                            </div>
-
+											<div class="col px-md-1 col-md-5">
+												<label for="inputSuccess" class="control-label">Tipo de Processador:</label>
+												<!--input type="text" class="form-control" name="DadosComputador[]" required-->
+												<input type="text" class="form-control" name="tipoProcessador" id="tipoProcessador"   autocomplete="off" />
+											</div>
+																	
 											<div class="col px-md-1 col-md-2">
 												<label for="inputSuccess" class="control-label">Memória:</label>
-												<select class="form-control" name="DadosComputador[]">
+												<select class="form-control" name="DadosComputador[]"required>
                                                     <option> </option>
                                                     <option>512 Mb</option>
                                                     <option>1 Gb</option>
@@ -129,12 +107,12 @@
 																
 											<div class="col px-md-1 col-md-3">
 												<label for="inputSuccess" class="control-label">Número MAC:</label>
-												<input type="text" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" onchange="try{setCustomValidity('')}catch(e){}"  class="form-control" name="DadosComputador[]" >
+												<input type="text" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" onchange="try{setCustomValidity('')}catch(e){}"  class="form-control" name="DadosComputador[]" required>
 											</div>
 																	
-											<div class="col px-md-1 col-md-2">
+											<div class="col px-md-1 col-md-3">
 												<label for="inputSuccess" class="control-label">Capacidade do HD:</label>
-												 <select class="form-control"  name = "DadosComputador[]" >
+												 <select class="form-control"  name = "DadosComputador[]" required>
                                                     <option> </option>
                                                     <option>40 GB</option>
                                                     <option>60 GB</option>
@@ -156,29 +134,17 @@
                                                     <option>3 TB</option>
                                                     <option></option>
                                                 </select>
-												<!--input type="text" class="form-control" name="Computador[]" -->
+												<!--input type="text" class="form-control" name="Computador[]" required-->
 											</div>
 																	
-											<div class="col px-md-1 col-md-2">
-                                                <label for="inputSuccess" class="control-label">tipo de HD:</label> <br>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="DadosComputador[7]" id="ssd1" value="0" checked>
-                                                    <label class="form-check-label" for="ssd1">SATA</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="DadosComputador[7]" id="ssd1" value="1">
-                                                    <label class="form-check-label" for="ssd1">SSD</label>
-                                                </div>
-											</div>
-
-                                            <div class="col px-md-1 col-md-2">
+											<div class="col px-md-1 col-md-3">
                                                 <label for="inputSuccess" class="control-label">Status:</label> <br>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="DadosComputador[8]" id="status1" value="ativo" checked>
+                                                    <input class="form-check-input" type="radio" name="DadosComputador[7]" id="status1" value="ativo" checked>
                                                     <label class="form-check-label" for="status1">Ativo</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="DadosComputador[8]" id="status2" value="inativo">
+                                                    <input class="form-check-input" type="radio" name="DadosComputador[7]" id="status2" value="inativo">
                                                     <label class="form-check-label" for="status2">Inativo</label>
                                                 </div>
 											</div>
@@ -193,7 +159,7 @@
 										<div class="row">																						
 											<div class="col px-md-1 col-md-2">
 												<label for="inputSuccess" class="control-label">Divisão:</label>
-												<select class="form-control" name = "LocalComputador[]" >
+												<select class="form-control" name = "LocalComputador[]" required>
                                                     <option> </option>
                                                     <option>CAE</option>
                                                     <option>CIR</option>
@@ -210,13 +176,13 @@
                                                     <option>IDT</option>
                                                     <option></option>
                                                 </select>
-												<!--input type="text" class="form-control"  name="Computador['divisao']" -->
+												<!--input type="text" class="form-control"  name="Computador['divisao']" required-->
 											</div>
 																
 											<div class="col px-md-1 col-md-2">
                                                 <label for="inputSuccess" class="control-label">Localização:</label>
                                                 <!--select class="selectpicker show-menu-arrow" name = "Computador['localizacao']"-->
-                                                <select class="form-control" name = "LocalComputador[]" >
+                                                <select class="form-control" name = "LocalComputador[]" required>
                                                     <option> </option>
                                                     <option>subsolo</option>
                                                     <option>1° andar</option>
@@ -249,7 +215,7 @@
                                         <div class="row">
 											<div class="col px-md-1 col-md-6">
                                                 <label for="inputSuccess" class="control-label">Local do Computador:</label>
-                                                <!--input type="text" class="form-control" name="LocalComputador[]" -->
+                                                <!--input type="text" class="form-control" name="LocalComputador[]" required-->
                                                 <input type="text" class="form-control" name="LocalComputador1" id="LocalComputador1" />
 											</div>
 											
@@ -298,4 +264,25 @@
             </div>
         </nav>
     </body>
+       <script>
+        $(document).ready(function(){
+            $('#tipoProcessador').typeahead({
+                source: function(query, result)
+                    {
+                        $.ajax({
+                            url:"../scripts/pesquisaProcessador.php",
+                            method:"POST",
+                            data:{query:query},
+                            dataType:"json",
+                            success:function(data)
+                                {
+                                    result($.map(data, function(item){
+                                        return item;
+                                    }));
+                                }
+                        })
+                    }
+            });
+        });
+    </script>
 </html>
