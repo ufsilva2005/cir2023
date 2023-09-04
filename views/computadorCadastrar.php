@@ -14,7 +14,6 @@
     include_once("../dao/conexao.php"); 
 ?>
     <script src="../js/jquery.min.3-1.js"></script>
-    <!--script src="../js/typeahead.js"></!--script-->
     <script src="../js/bootstrap3-typeahead.min.js"></script>  
     <script src="../js/jquery-latest.min.js"></script>
     <script>
@@ -58,12 +57,12 @@
                                                 
                                             <div class="col px-md-1 col-md-3">
 												<label for="inputSuccess" class="control-label">Patrimônio Reitoria:</label>
-												<input type="text" class="form-control" name="DadosComputador[]" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000" >
+												<input type="text" class="form-control" name="dadosComputador[]" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000" >
 											</div>
 
                                             <div class="col px-md-1 col-md-3">
 												<label for="inputSuccess" class="control-label">Patrimônio HU:</label>
-												<input type="text" class="form-control" name="DadosComputador[]" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000" >
+												<input type="text" class="form-control" name="dadosComputador[]" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000" >
 											</div>
 
 											<div class="col px-md-1 col-md-3">
@@ -75,7 +74,7 @@
                                         <div class="row">
 											<div class="col px-md-1 col-md-2">
 												<label for="inputSuccess" class="control-label">Sistema Operacional:</label>
-												<select class="form-control"  name = "DadosComputador[]" >
+												<select class="form-control"  name = "dadosComputador[]" >
                                                     <option> </option>
                                                     <option>WINDOWS XP</option>
                                                     <option>WINDOWS VISTA</option>
@@ -91,7 +90,7 @@
 
 											<div class="col px-md-1 col-md-2">
 												<label for="inputSuccess" class="control-label">Modelo/Marca:</label>
-												<!--input type="text" class="form-control" name="DadosComputador[]" -->
+												<!--input type="text" class="form-control" name="dadosComputador[]" -->
 												<input type="text" class="form-control" name="modelo" id = "modelo" />
 											</div>
 
@@ -107,7 +106,7 @@
 
 											<div class="col px-md-1 col-md-2">
 												<label for="inputSuccess" class="control-label">Memória:</label>
-												<select class="form-control" name="DadosComputador[]">
+												<select class="form-control" name="dadosComputador[]">
                                                     <option> </option>
                                                     <option>512 Mb</option>
                                                     <option>1 Gb</option>
@@ -124,17 +123,17 @@
                                         <div class="row">
 											<div class="col px-md-1 col-md-3">
 												<label for="inputSuccess" class="control-label">Número de IP:</label>
-												<input type="text" class="form-control"  name="DadosComputador[]" pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" placeholder="000.000.000.000" oninvalid="setCustomValidity('Endereco ip invalido!')" onchange="try{setCustomValidity('')}catch(e){}" >
+												<input type="text" class="form-control"  name="dadosComputador[]" pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" placeholder="000.000.000.000" oninvalid="setCustomValidity('Endereco ip invalido!')" onchange="try{setCustomValidity('')}catch(e){}" >
 											</div>
 																
 											<div class="col px-md-1 col-md-3">
 												<label for="inputSuccess" class="control-label">Número MAC:</label>
-												<input type="text" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" onchange="try{setCustomValidity('')}catch(e){}"  class="form-control" name="DadosComputador[]" >
+												<input type="text" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" onchange="try{setCustomValidity('')}catch(e){}"  class="form-control" name="dadosComputador[]" >
 											</div>
 																	
 											<div class="col px-md-1 col-md-2">
 												<label for="inputSuccess" class="control-label">Capacidade do HD:</label>
-												 <select class="form-control"  name = "DadosComputador[]" >
+												 <select class="form-control"  name = "dadosComputador[]" >
                                                     <option> </option>
                                                     <option>40 GB</option>
                                                     <option>60 GB</option>
@@ -162,11 +161,11 @@
 											<div class="col px-md-1 col-md-2">
                                                 <label for="inputSuccess" class="control-label">tipo de HD:</label> <br>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="DadosComputador[7]" id="ssd1" value="SATA" checked>
+                                                    <input class="form-check-input" type="radio" name="dadosComputador[7]" id="ssd1" value="SATA" checked>
                                                     <label class="form-check-label" for="ssd1">SATA</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="DadosComputador[7]" id="ssd1" value="SSD">
+                                                    <input class="form-check-input" type="radio" name="dadosComputador[7]" id="ssd1" value="SSD">
                                                     <label class="form-check-label" for="ssd1">SSD</label>
                                                 </div>
 											</div>
@@ -174,11 +173,11 @@
                                             <div class="col px-md-1 col-md-2">
                                                 <label for="inputSuccess" class="control-label">Status:</label> <br>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="DadosComputador[8]" id="status1" value="ativo" checked>
+                                                    <input class="form-check-input" type="radio" name="dadosComputador[8]" id="status1" value="ativo" checked>
                                                     <label class="form-check-label" for="status1">Ativo</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="DadosComputador[8]" id="status2" value="inativo">
+                                                    <input class="form-check-input" type="radio" name="dadosComputador[8]" id="status2" value="inativo">
                                                     <label class="form-check-label" for="status2">Inativo</label>
                                                 </div>
 											</div>
@@ -195,7 +194,7 @@
 										<div class="row">																						
 											<div class="col px-md-1 col-md-2">
 												<label for="inputSuccess" class="control-label">Divisão:</label>
-												<select class="form-control" name = "LocalComputador[]" >
+												<select class="form-control" name = "localComputador[]" >
                                                     <option> </option>
                                                     <option>CAE</option>
                                                     <option>CIR</option>
@@ -218,7 +217,7 @@
 											<div class="col px-md-1 col-md-2">
                                                 <label for="inputSuccess" class="control-label">Localização:</label>
                                                 <!--select class="selectpicker show-menu-arrow" name = "Computador['localizacao']"-->
-                                                <select class="form-control" name = "LocalComputador[]" >
+                                                <select class="form-control" name = "localComputador[]" >
                                                     <option> </option>
                                                     <option>subsolo</option>
                                                     <option>1° andar</option>
@@ -239,25 +238,25 @@
 																	
 											<div class="col px-md-1 col-md-2">
 												<label for="inputSuccess" class="control-label">Ramal:</label>
-												<input type="text" class="form-control" name="LocalComputador[]" pattern="[0-9]{4}+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000" maxlength="4">
+												<input type="text" class="form-control" name="localComputador[]" pattern="[0-9]{4}+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000" maxlength="4">
 											</div>
 																
 											<div class="col px-md-1 col-md-6">
 												<label for="inputSuccess" class="control-label">Responsável pelo Setor:</label>
-												<input type="text" class="form-control" name="LocalComputador[]">
+												<input type="text" class="form-control" name="localComputador[]">
 											</div>
 										</div>
                                            
                                         <div class="row">
 											<div class="col px-md-1 col-md-6">
                                                 <label for="inputSuccess" class="control-label">Local do Computador:</label>
-                                                <!--input type="text" class="form-control" name="LocalComputador[]" -->
-                                                <input type="text" class="form-control" name="LocalComputador1" id="LocalComputador1" />
+                                                <!--input type="text" class="form-control" name="localComputador[]" -->
+                                                <input type="text" class="form-control" name="localComputador1" id="localComputador1" />
 											</div>
 											
 											<div class="col px-md-1 col-md-6">
 												<label for="inputSuccess" class="control-label">Observação:</label>
-												<input type="text" class="form-control" name="DadosComputador[]">
+												<input type="text" class="form-control" name="dadosComputador[]">
 											</div>
 										</div>
 

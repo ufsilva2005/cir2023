@@ -7,8 +7,8 @@
 	
 		
 	//recebe dados da view
-	$DadosComputador = $_POST['DadosComputador'];
-	$LocalComputador = $_POST['LocalComputador'];
+	$dadosComputador = $_POST['dadosComputador'];
+	$localComputador = $_POST['localComputador'];
 	$dataCadastro    = $dataCadastro = formatarData($_SESSION['data']); 	
 	$respCadastro = $_SESSION['respCadastro'];
 	$idFuncionario = $_SESSION['idFuncionario'] ;
@@ -30,19 +30,19 @@
 	//informacoes da maquina
 	$idComputador = "";
 	$numCir  = $_POST['numCir'];		
-	$numPatReitoria  = $DadosComputador[0];
-	$numPatrimonio  = $DadosComputador[1];
+	$numPatReitoria  = $dadosComputador[0];
+	$numPatrimonio  = $dadosComputador[1];
 	$nomeComputador  = $_POST['nomeCir'];
-	$sistemaOpera  = $DadosComputador[2];
+	$sistemaOpera  = $dadosComputador[2];
 	$modelMaquina =  $_POST['modelo'];
 	$tipoProcessador = $_POST['listaProcessador'];
-	$memoria  = $DadosComputador[3];
-	$numIp  = $DadosComputador[4];
-	$numMac  = $DadosComputador[5];
-	$capHD  = $DadosComputador[6];
-	$tipoHD  = $DadosComputador[7];
-	$statusComp  = $DadosComputador[8];
-	$obs  = converteMaiuscula($DadosComputador[9]);
+	$memoria  = $dadosComputador[3];
+	$numIp  = $dadosComputador[4];
+	$numMac  = $dadosComputador[5];
+	$capHD  = $dadosComputador[6];
+	$tipoHD  = $dadosComputador[7];
+	$statusComp  = $dadosComputador[8];
+	$obs  = converteMaiuscula($dadosComputador[9]);
 	$respAltCadastro = "";
     $dataAltCadastro = "0000-00-00";
 
@@ -59,22 +59,29 @@
 	echo "<br>capHD => " . $capHD;
 	echo "<br>tipoHD => " . $tipoHD;
 	echo "<br>statusComp => " . $statusComp;
-	//echo "<br>tipoProcessador => " . $tipoProcessador;
-	//echo "<br>tipoProcessador => " . $tipoProcessador;
-	//echo "<br>tipoProcessador => " . $tipoProcessador;
-	//echo "<br>tipoProcessador => " . $tipoProcessador;
+	echo "<br>obs => " . $obs;
+	echo "<br>respAltCadastro => " . $respAltCadastro;
+	echo "<br>dataAltCadastro => " . $dataAltCadastro;
 
-
-	/*			
-	//informaçoes do local	
-	$idSetor = "";
-	$nomeDivisao = $LocalComputador[0];
-	$localizacao = $LocalComputador[1];
-	$ramalComp = $LocalComputador[2];
-	$respSetor = converteMaiuscula($LocalComputador[3]);
-	$nomeLocal = converteMaiuscula($_POST['LocalComputador1']);
 
 		
+	//informaçoes do local	
+	$idSetor = "";
+	$nomeDivisao = $localComputador[0];
+	$localizacao = $localComputador[1];
+	$ramalComp = $localComputador[2];
+	$respSetor = converteMaiuscula($localComputador[3]);
+	$nomeLocal = converteMaiuscula($_POST['localComputador1']);
+
+	echo "<br>";
+	echo "<br>idSetor => " . $idSetor;	
+	echo "<br>nomeDivisao => " . $nomeDivisao;	
+	echo "<br>localizacao => " . $localizacao;
+	echo "<br>ramalComp => " . $ramalComp;
+	echo "<br>respSetor => " . $respSetor;	
+	echo "<br>nomeLocal => " . $nomeLocal;	
+
+	/*	
 	//verificar se local existe
 	$setorExisteDAO = new ControleCirDAO();
 	foreach ($setorExisteDAO->VerificarSetor($nomeDivisao,$localizacao,$nomeLocal) as $local)
