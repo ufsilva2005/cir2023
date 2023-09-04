@@ -90,7 +90,6 @@
 
 											<div class="col px-md-1 col-md-2">
 												<label for="inputSuccess" class="control-label">Modelo/Marca:</label>
-												<!--input type="text" class="form-control" name="dadosComputador[]" -->
 												<input type="text" class="form-control" name="modelo" id = "modelo" />
 											</div>
 
@@ -155,7 +154,6 @@
                                                     <option>3 TB</option>
                                                     <option></option>
                                                 </select>
-												<!--input type="text" class="form-control" name="Computador[]" -->
 											</div>
 																	
 											<div class="col px-md-1 col-md-2">
@@ -211,12 +209,10 @@
                                                     <option>IDT</option>
                                                     <option></option>
                                                 </select>
-												<!--input type="text" class="form-control"  name="Computador['divisao']" -->
 											</div>
 																
 											<div class="col px-md-1 col-md-2">
                                                 <label for="inputSuccess" class="control-label">Localização:</label>
-                                                <!--select class="selectpicker show-menu-arrow" name = "Computador['localizacao']"-->
                                                 <select class="form-control" name = "localComputador[]" >
                                                     <option> </option>
                                                     <option>subsolo</option>
@@ -250,7 +246,6 @@
                                         <div class="row">
 											<div class="col px-md-1 col-md-6">
                                                 <label for="inputSuccess" class="control-label">Local do Computador:</label>
-                                                <!--input type="text" class="form-control" name="localComputador[]" -->
                                                 <input type="text" class="form-control" name="localComputador1" id="localComputador1" />
 											</div>
 											
