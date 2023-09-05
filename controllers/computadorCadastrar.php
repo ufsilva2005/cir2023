@@ -95,6 +95,6 @@
 		}
 		
 
-	//header("Location: ../views/cadastrarComputador.php");
+	header("Location: ../views/computadorCadastrar.php");
 ?>
  

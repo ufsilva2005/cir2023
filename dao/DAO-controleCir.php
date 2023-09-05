@@ -460,11 +460,11 @@
                     $conn->exec('SET CHARACTER SET utf8');
                     
                     $prepara = $conn->prepare("INSERT INTO impressoras(nomeImpressora, numSerie, ipImpressora, macImpressora, tipoToner, 
-                    statusImpressora, conexaoImp, modeloImpressora, dataCadastro, respCadastro, dataAltCadastro, respAltCadastro, obsImpressora,
-                    idFuncionario, idSetor) 
-                    VALUES(:nomeImpressoraBd, :numSerieBd, :ipImpressoraBd, :macImpressoraBd, :tipoTonerBd, :statusImpressoraBd, :conexaoImpBd,
-                    :modeloImpressoraBd, :dataCadastroBd, :respCadastroBd, :dataAltCadastroBd, :respAltCadastroBd, :obsImpressoraBd, 
-                    :idFuncionarioBd, :idSetorBd)");
+                    colorida, statusImpressora, conexaoImp, modeloImpressora, dataCadastro, respCadastro, dataAltCadastro, respAltCadastro, 
+                    obsImpressora, idFuncionario, idSetor) 
+                    VALUES(:nomeImpressoraBd, :numSerieBd, :ipImpressoraBd, :macImpressoraBd, :tipoTonerBd, :coloridaBd, :statusImpressoraBd, 
+                    :conexaoImpBd, :modeloImpressoraBd, :dataCadastroBd, :respCadastroBd, :dataAltCadastroBd, :respAltCadastroBd, 
+                    :obsImpressoraBd, :idFuncionarioBd, :idSetorBd)");
                         
                     //$BdidImpressora		= $impressora->getIdImpressora();
                     $BdnomeImpressora  	= $impressora->getNomeImpressora();
@@ -472,6 +472,7 @@
                     $BdipImpressora  	= $impressora->getIpImpressora();
                     $BdmacImpressora    = $impressora->getMacImpressora();
                     $BdtipoToner        = $impressora->getTipoToner();
+                    $Bdcolorida         = $impressora->getColorida();
                     $BdstatusImpressora = $impressora->getStatusImpressora();
                     $BdconexaoImp       = $impressora->getConexaoImp(); 
                     $BdmodeloImpressora = $impressora->getModeloImpressora();
@@ -489,6 +490,7 @@
                     $prepara->bindParam(":ipImpressoraBd",  $BdipImpressora);
                     $prepara->bindParam(":macImpressoraBd", $BdmacImpressora);
                     $prepara->bindParam(":tipoTonerBd", $BdtipoToner);
+                    $prepara->bindParam(":coloridaBd", $Bdcolorida);
                     $prepara->bindParam(":statusImpressoraBd", $BdstatusImpressora);
                     $prepara->bindParam(":conexaoImpBd", $BdconexaoImp);
                     $prepara->bindParam(":modeloImpressoraBd", $BdmodeloImpressora);

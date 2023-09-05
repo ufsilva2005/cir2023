@@ -242,6 +242,9 @@
 					
 					echo '</br>Tipo do tonner -> ';
 					echo $this->tipoToner . '<br>';
+
+					echo '</br>Tipo do tonner2 -> ';
+					echo $this->colorida . '<br>';
 					
 					echo '</br>StatusImpressora -> ';
 					echo $this->statusImpressora . '<br>';
