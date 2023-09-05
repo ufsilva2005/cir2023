@@ -262,16 +262,18 @@
 										</div>
 
                                         <div class="row">
-                                            <div class="col px-md-1 col-md-2">
-												<label for="inputSuccess" class="control-label">Data do Cadastro:</label>
-												<input type="text" class="form-control"  value = "<?php $date = date('d/m/Y'); echo $date; $_SESSION['data']=$date; ?>" disabled>
-											</div>
-											
-											<div class="col px-md-1 col-md-10">
-												<label for="inputSuccess" class="control-label">Responsável pelo Cadastro:</label>
-												<input type="text" class="form-control" value = "<?=$nomeFuncionario; $_SESSION['respCadastro']=$nomeFuncionario ?>"  disabled>
-											</div>  
-										</div>
+                                            <div class="col px-md-1  col-md-2">
+                                                <label for="inputSuccess" class="control-label">Data do Cadastro:</label>
+                                                <input type="text" class="form-control" value="<?php $date = date('d/m/Y');
+                                                                                                echo $date;
+                                                                                                $_SESSION['data'] = $date ?>" disabled>
+                                            </div>
+
+                                            <div class="col px-md-1 col-md-10">
+                                                <label for="inputSuccess" class="control-label">Responsável pelo Cadastro:</label>
+                                                <input type="text" class="form-control" value="<?= $_SESSION['nomeFuncionario'] ?>" disabled>
+                                            </div>
+                                        </div> 
 
 										<p></p>	
 											

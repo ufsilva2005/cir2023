@@ -392,6 +392,64 @@
             //FIM DAS FUNÇÕES RELACIONADAS AO LOCAL                      
 
             //INÍCIO DAS FUNÇÕES RELACIONADAS AO COMPUTADOR
+            public function CadastrarComp($computador) 
+                {	
+                    $conn = Database::connect();                
+                    $conn->exec('SET CHARACTER SET utf8');                
+                    $prepara = $conn->prepare("INSERT INTO computador (numCir, numPatrimonio, numPatReitoria, nomeComputador, 
+                    dataCadastro, respCadastro, dataAltCadastro, respAltCadastro, sistemaOpera, modelMaquina, memoria, numIp, numMac, 
+                    capHD, tipoHD, statusComp,	obs, idFuncionario, idSetor, idTipoProcessador)
+                    VALUES(:numCirBd, :numPatrimonioBd, :numPatReitoriaBd, :nomeComputadorBd, :dataCadastroBd, :respCadastroBd, 
+                    :dataAltCadastroBd, :respAltCadastroBd, :sistemaOperaBd, :modelMaquinaBd, :memoriaBd, :numIpBd, :numMacBd,
+                    :capHDBd, :tipoHDBd, :statusCompBd, :obsBd, :idFuncionarioBd, :idSetorBd, :idTipoProcessadorBd)");
+                    
+                    //$BdidComputador		= $computador->getIdComputador();
+                    $BdnumCir  			 = $computador->getNumCir();
+                    $BdnumPatrimonio  	 = $computador->getNumPatrimonio();
+                    $BdnumPatReitoria  	 = $computador->getNumPatReitoria();
+                    $BdnomeComputador	 = $computador->getNomeComputador();
+                    $BddataCadastro 	 = $computador->getDataCadastro();
+                    $BdrespCadastro    	 = $computador->getRespCadastro();                    
+                    $BddataAltCadastro   = $computador->getDataAltCadastro();  
+                    $BdrespAltCadastro   = $computador->getRespAltCadastro();                  
+                    $BdsistemaOpera  	 = $computador->getSistemaOpera();
+                    $BdmodelMaquina  	 = $computador->getModelMaquina();
+                    $Bdmemoria 			 = $computador->getMemoria();
+                    $BdnumIp  			 = $computador->getNumIp();
+                    $BdnumMac 			 = $computador->getNumMac();
+                    $BdcapHD  			 = $computador->getCapHD();
+                    $BdtipoHD  			 = $computador->getTipoHD();
+                    $BdstatusComp 		 = $computador->getStatusComp();
+                    $Bdobs  			 = $computador->getObs();
+                    $BdidFuncionario 	 = $computador->getIdFuncionario();
+                    $BdidSetor			 = $computador->getIdSetor();
+                    $BdidTipoProcessador = $computador->getIdTipoProcessador();
+                        
+                    //$prepara->bindParam(":idComputadorBd",    $BdidComputador);
+                    $prepara->bindParam(":numCirBd", $BdnumCir);
+                    $prepara->bindParam(":numPatrimonioBd", $BdnumPatrimonio);
+                    $prepara->bindParam(":numPatReitoriaBd", $BdnumPatReitoria);
+                    $prepara->bindParam(":nomeComputadorBd", $BdnomeComputador);
+                    $prepara->bindParam(":dataCadastroBd", $BddataCadastro);
+                    $prepara->bindParam(":respCadastroBd", $BdrespCadastro);                    
+                    $prepara->bindParam(":dataAltCadastroBd", $BddataAltCadastro);
+                    $prepara->bindParam(":respAltCadastroBd", $BdrespAltCadastro);
+                    $prepara->bindParam(":sistemaOperaBd", $BdsistemaOpera);
+                    $prepara->bindParam(":modelMaquinaBd", $BdmodelMaquina);
+                    $prepara->bindParam(":memoriaBd", $Bdmemoria);
+                    $prepara->bindParam(":numIpBd", $BdnumIp);
+                    $prepara->bindParam(":numMacBd", $BdnumMac);
+                    $prepara->bindParam(":capHDBd", $BdcapHD);
+                    $prepara->bindParam(":tipoHDBd", $BdtipoHD);
+                    $prepara->bindParam(":statusCompBd", $BdstatusComp);
+                    $prepara->bindParam(":obsBd", $Bdobs);
+                    $prepara->bindParam(":idFuncionarioBd", $BdidFuncionario);
+                    $prepara->bindParam(":idSetorBd", $BdidSetor);
+                    $prepara->bindParam(":idTipoProcessadorBd", $BdidTipoProcessador);
+
+                    $prepara->execute();                        
+                    $conn = null;
+                }
             //FIM DAS FUNÇÕES RELACIONADAS AO COMPUTADOR
 
             //INÍCIO DAS FUNÇÕES RELACIONADAS A IMPRESSORA 

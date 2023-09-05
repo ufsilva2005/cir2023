@@ -7,27 +7,28 @@
 			private $numPatReitoria;
 			private $nomeComputador;
 			private $dataCadastro;
-			private $respCadastro;
-			private $respAltCadastro;
+			private $respCadastro;			
 			private $dataAltCadastro;
+			private $respAltCadastro;
 			private $sistemaOpera;
 			private $modelMaquina;
-			private $tipProcessador;
 			private $memoria;
 			private $numIp;
 			private $numMac;
 			private $capHD;
+			private $tipoHD; 
 			private $statusComp;
 			private $obs;
 			private $idFuncionario;
 			private $idSetor;
+			private $idTipoProcessador;
 		
 			
 			// Recebe  parametros 
 			public function __construct ($idComputador = "", $numCir = null, $numPatrimonio = null, $numPatReitoria = null, 
-			$nomeComputador = null, $dataCadastro = null, $respCadastro = null, $respAltCadastro = null, $dataAltCadastro= null, 
-			$sistemaOpera = null, $modelMaquina = null, $tipProcessador = null, $memoria = null, $numIp = null, $numMac = null, $capHD = null, 
-			$statusComp = null, $obs = null, $idFuncionario = null, $idSetor = null) 
+			$nomeComputador = null, $dataCadastro = null, $respCadastro = null, $dataAltCadastro= null, $respAltCadastro = null, 
+			$sistemaOpera = null, $modelMaquina = null, $memoria = null, $numIp = null, $numMac = null, $capHD = null, $tipoHD = null,
+			$statusComp = null, $obs = null, $idFuncionario = null, $idSetor = null,$idTipoProcessador = null) 
 			
 				{
 					$this->idComputador		= $idComputador;
@@ -36,20 +37,21 @@
 					$this->numPatReitoria   = $numPatReitoria;
 					$this->nomeComputador	= $nomeComputador;
 					$this->dataCadastro		= $dataCadastro;
-					$this->respCadastro		= $respCadastro;
-					$this->respAltCadastro  = $respAltCadastro;
+					$this->respCadastro		= $respCadastro;					
                     $this->dataAltCadastro  = $dataAltCadastro;
+					$this->respAltCadastro  = $respAltCadastro;
 					$this->sistemaOpera		= $sistemaOpera;
 					$this->modelMaquina		= $modelMaquina;
-					$this->tipProcessador	= $tipProcessador;
 					$this->memoria			= $memoria;
 					$this->numIp			= $numIp;
 					$this->numMac			= $numMac;
 					$this->capHD			= $capHD;
+					$this->tipoHD			= $tipoHD;
 					$this->statusComp		= $statusComp;
 					$this->obs				= $obs;
 					$this->idFuncionario  	= $idFuncionario;
 					$this->idSetor			= $idSetor;
+					$this->idTipoProcessador	= $idTipoProcessador;
 				}
 				
 			///metodos get e metodos set
@@ -161,17 +163,7 @@
 			public function setModelMaquina($modelMaquina) 
 				{     
 					$this->modelMaquina = $modelMaquina;
-				}
-			
-			//TIPO DO PROCESSADOR
-			public function getTipProcessador() 
-				{     
-					return $this->tipProcessador;
-				}
-			public function setTipProcessador($tipProcessador) 
-				{     
-					$this->tipProcessador = $tipProcessador;
-				}
+				}		
 			
 			//INFORMACOES SOBRE A MEMORIA
 			public function getMemoria() 
@@ -211,6 +203,16 @@
 			public function setCapHD($capHD) 
 				{     
 					$this->capHD = $capHD;
+				}
+
+			//TIPO DO HD
+			public function getTipoHD() 
+				{     
+					return $this->tipoHD;
+				}
+			public function setTipoHD($tipoHD) 
+				{     
+					$this->tipoHD = $tipoHD;
 				}
 				
 			//STATUS DO COMPUTADOR
@@ -252,6 +254,16 @@
 				{     
 					$this->idSetor = $idSetor;
 				}
+
+			//TIPO DO PROCESSADOR
+			public function getIdTipoProcessador() 
+				{     
+					return $this->idTipoProcessador;
+				}
+			public function setIdTipoProcessador($idTipoProcessador) 
+				{     
+					$this->idTipoProcessador = $idTipoProcessador;
+				}
 				
 			// Método para exibir
 			public function exibir() 
@@ -279,9 +291,7 @@
 					echo $this->sistemaOpera . '<br>';
 					echo '</br>Modelo -> ';
 					echo $this->modelMaquina . '<br>';
-					echo '</br>Processador -> ';
-					echo $this->tipProcessador . '<br>';
-					echo '</br>Memória ->';
+					echo '</br>Modelo -> ';
 					echo $this->memoria	. '<br>';
 					echo '</br>Nº Ip -> ';
 					echo $this->numIp . '<br>';
@@ -289,6 +299,8 @@
 					echo $this->numMac . '<br>';
 					echo '</br>HD -> ';
 					echo $this->capHD . '<br>';
+					echo '</br>tipoHD -> ';
+					echo $this->tipoHD . '<br>';
 					echo '</br>Status -> ';
 					echo $this->statusComp . '<br>';
 					echo '</br>Obs -> ';
@@ -297,6 +309,8 @@
 					echo $this->idFuncionario . '<br>';					
 					echo '</br>Id do Setor-> ';
 					echo $this->idSetor . '<br>';
+					echo '</br>Processador -> ';
+					echo $this->idTipoProcessador . '<br>';
 				}
 		}
 ?>

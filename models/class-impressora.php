@@ -7,6 +7,7 @@
 			private $ipImpressora;
 			private $macImpressora;
 			private $tipoToner;
+			private $colorida;
 			private $statusImpressora;
 			private $conexaoImp;
 			private $modeloImpressora;
@@ -20,7 +21,7 @@
 			
 			// Recebe  parametros 
 			public function __construct ($idImpressora="", $nomeImpressora = null,  $numSerie = null, $ipImpressora = null, 
-			$macImpressora = null, $tipoToner = null, $statusImpressora = null, $conexaoImp = null, $modeloImpressora = null, $dataCadastro = null, $respCadastro = null, 
+			$macImpressora = null, $tipoToner = null, $colorida = null, $statusImpressora = null, $conexaoImp = null, $modeloImpressora = null, $dataCadastro = null, $respCadastro = null, 
 			$dataAltCadastro = null, $respAltCadastro = null, $obsImpressora = null, $idFuncionario = null, $idSetor = null) 
 			
                 {
@@ -30,6 +31,7 @@
 					$this->ipImpressora		= $ipImpressora;
 					$this->macImpressora    = $macImpressora;
 					$this->tipoToner		= $tipoToner;
+					$this->colorida			= $colorida;
 					$this->statusImpressora = $statusImpressora;
 					$this->conexaoImp 		= $conexaoImp;
 					$this->modeloImpressora = $modeloImpressora;
@@ -101,6 +103,16 @@
 			public function setTipoToner($tipoToner) 
 				{     
 					$this->tipoToner = $tipoToner;
+				}
+
+			 //TIPO DE TONER
+			public function getColorida() 
+				{     
+					return $this->colorida;
+				}
+			public function setColorida($colorida) 
+				{     
+					$this->colorida = $colorida;
 				}
 				
 			//Status DA IMPRESSORA

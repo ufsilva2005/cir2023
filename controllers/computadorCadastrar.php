@@ -1,10 +1,9 @@
 <?php
 	session_start();
 	include "../funcao/funcao.php";
-	//include "../dao/DAO-controleCir.php";
-	//include "../models/class-setor.php";
-	//include "../models/class-computador.php";
-	
+	include "../dao/DAO-controleCir.php";
+	include "../models/class-setor.php";
+	include "../models/class-computador.php";	
 		
 	//recebe dados da view
 	$dadosComputador = $_POST['dadosComputador'];
@@ -12,20 +11,6 @@
 	$dataCadastro    = $dataCadastro = formatarData($_SESSION['data']); 	
 	$respCadastro = $_SESSION['respCadastro'];
 	$idFuncionario = $_SESSION['idFuncionario'] ;
-
-	//PEGAR ID DO RESPONSAVEL PELO CADASTRO
-	/*$nomeTabela = "funcionario"; 
-	$opcao1 = "nomeFuncionario"; 
-	$valor1 = $respCadastro; 
-	$responsavelDAO = new ControleCirDAO();
-	foreach ($responsavelDAO->Verificar($nomeTabela, $opcao1, $valor1) as $responsavel)
-		{ 
-			$verificaResponsavel = $responsavel->idFuncionario;				          
-		}
-	if($verificaResponsavel == "")
-		{
-			$idFuncionario = 0;
-		}*/
 
 	//informacoes da maquina
 	$idComputador = "";
@@ -35,7 +20,7 @@
 	$nomeComputador  = $_POST['nomeCir'];
 	$sistemaOpera  = $dadosComputador[2];
 	$modelMaquina =  $_POST['modelo'];
-	$tipoProcessador = $_POST['listaProcessador'];
+	$idTipoProcessador = $_POST['listaProcessador'];
 	$memoria  = $dadosComputador[3];
 	$numIp  = $dadosComputador[4];
 	$numMac  = $dadosComputador[5];
@@ -45,25 +30,6 @@
 	$obs  = converteMaiuscula($dadosComputador[9]);
 	$respAltCadastro = "";
     $dataAltCadastro = "0000-00-00";
-
-	echo "<br>numCir => " . $numCir;	
-	echo "<br>numPatReitoria => " . $numPatReitoria;	
-	echo "<br>numPatrimonio => " . $numPatrimonio;
-	echo "<br>nomeComputador => " . $nomeComputador;
-	echo "<br>sistemaOpera => " . $sistemaOpera;	
-	echo "<br>modelMaquina => " . $modelMaquina;	
-	echo "<br>tipoProcessador => " . $tipoProcessador;
-	echo "<br>memoria => " . $memoria;
-	echo "<br>numIp => " . $numIp;	
-	echo "<br>numMac => " . $numMac;	
-	echo "<br>capHD => " . $capHD;
-	echo "<br>tipoHD => " . $tipoHD;
-	echo "<br>statusComp => " . $statusComp;
-	echo "<br>obs => " . $obs;
-	echo "<br>respAltCadastro => " . $respAltCadastro;
-	echo "<br>dataAltCadastro => " . $dataAltCadastro;
-
-
 		
 	//informaçoes do local	
 	$idSetor = "";
@@ -72,16 +38,7 @@
 	$ramalComp = $localComputador[2];
 	$respSetor = converteMaiuscula($localComputador[3]);
 	$nomeLocal = converteMaiuscula($_POST['localComputador1']);
-
-	echo "<br>";
-	echo "<br>idSetor => " . $idSetor;	
-	echo "<br>nomeDivisao => " . $nomeDivisao;	
-	echo "<br>localizacao => " . $localizacao;
-	echo "<br>ramalComp => " . $ramalComp;
-	echo "<br>respSetor => " . $respSetor;	
-	echo "<br>nomeLocal => " . $nomeLocal;	
-
-	/*	
+	
 	//verificar se local existe
 	$setorExisteDAO = new ControleCirDAO();
 	foreach ($setorExisteDAO->VerificarSetor($nomeDivisao,$localizacao,$nomeLocal) as $local)
@@ -89,16 +46,16 @@
 			$verificaSetor = $local->idSetor;				          
 		}
 	  	
-	//echo "<br>verificaSetor => " . $verificaSetor;
+	//echo "<br>verificaSetor => " . $verificaSetor . "<br>";
 	
 	if ($verificaSetor != 0)
 		{	
 			$idSetor = $verificaSetor;
 			//echo "<br>idSetor => " . $idSetor . "<br>";
 			$computador = new Computador($idComputador, $numCir, $numPatrimonio, $numPatReitoria, $nomeComputador, $dataCadastro,
-			$respCadastro, $respAltCadastro, $dataAltCadastro, $sistemaOpera, $modelMaquina, $tipProcessador, $memoria, $numIp, $numMac, 
-			$capHD, $statusComp, $obs, $idFuncionario, $idSetor);					
-			//$computador->exibir();
+			$_SESSION['nomeFuncionario'], $dataAltCadastro, $respAltCadastro, $sistemaOpera, $modelMaquina, $memoria, $numIp, $numMac, $capHD, 
+			$tipoHD, $statusComp, $obs, $idFuncionario, $idSetor, $idTipoProcessador);					
+			$computador->exibir();
 			
 			$computadorDAO = new ControleCirDAO();
 			$computadorDAO->CadastrarComp($computador);	
@@ -114,7 +71,8 @@
 			foreach ($divisaoDAO->Verificar($nomeTabela, $opcao1, $valor1) as $divisao)
 				{ 
 					$idDivisao = $divisao->idDivisao;				          
-				}			
+				}	
+
 			//echo "<br>verificaDivisao => " . $idDivisao . "<br>";
 
 			$local1 = new Setor($idSetor, $idDivisao, $localizacao, $ramalComp, $respSetor, $nomeLocal);			
@@ -125,11 +83,11 @@
 			session_start();
 			$idSetor = $_SESSION['localid'];
 			//$idSetor = 1;
-
+			echo "<br>";
 			$computador = new Computador($idComputador, $numCir, $numPatrimonio, $numPatReitoria, $nomeComputador, $dataCadastro,
-			$respCadastro, $respAltCadastro, $dataAltCadastro, $sistemaOpera, $modelMaquina, $tipProcessador, $memoria, $numIp, $numMac, 
-			$capHD, $statusComp, $obs, $idFuncionario, $idSetor);
-			//$computador->exibir();
+			$_SESSION['nomeFuncionario'], $dataAltCadastro,  $respAltCadastro, $sistemaOpera, $modelMaquina, $memoria, $numIp, $numMac, $capHD, 
+			$tipoHD, $statusComp, $obs, $idFuncionario, $idSetor, $idTipoProcessador);
+			$computador->exibir();
 			
 			$computadorDAO = new ControleCirDAO();
 			$computadorDAO->CadastrarComp($computador);		
@@ -137,7 +95,6 @@
 		}
 		
 
-	header("Location: ../views/cadastrarComputador.php");
-*/
+	//header("Location: ../views/cadastrarComputador.php");
 ?>
  
