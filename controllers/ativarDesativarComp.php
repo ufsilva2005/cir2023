@@ -15,6 +15,26 @@
 	$idComputador = $_GET['id'];
 	$dateAltCadastro = date('Y-m-d');
 
+	if($op1 == 1 || $op1 == 3 || $op1 == 5)  
+		{
+            $op2 = $op1;
+			$statusComputador = "ativo";
+            $statusComputador1 = "ATIVO";
+			$hitorico1 = $texto . "STATUS ALTERADO DE INATIVO PARA => " . $statusComputador1 . " \n";
+		}
+	elseif($op1 == 2 || $op1 == 4 || $op1 == 6)  
+		{
+            $op2 = $op1;
+			$statusComputador = "inativo";
+             $statusComputador1 = "INATIVO";
+			$hitorico1 = $texto . "STATUS ALTERADO DE ATIVO PARA => ". $statusComputador1 . " \n";
+		}
+	else  
+		{
+            header("Location: ../template/menuPrincipal.php");  
+		}
+
+
     echo "<br>tipoP => " . $tipoP; 
     echo "<br>valorP => " . $valorP; 
     echo "<br>atiDes => " . $atiDes;  
@@ -22,25 +42,9 @@
     echo "<br>op1 => " . $op1;  
     echo "<br>idComputador => " . $idComputador;  
     echo "<br>dateAltCadastro => " . $dateAltCadastro; 
-    /*
+    echo "<br>hitorico1 => " . $hitorico1; 
 
-	if($op1 == 1 || $op1 == 3 || $op1 == 5)  
-		{
-            $op2 = $op1;
-			$statusComputador = "ativo";
-			$hitorico1 = $texto . "STATUS ALTERADO DE INATIVO PARA => ". $statusComputador . " \n";
-		}
-	elseif($op1 == 2 || $op1 == 4 || $op1 == 6)  
-		{
-            $op2 = $op1;
-			$statusComputador = "inativo";
-			$hitorico1 = $texto . "STATUS ALTERADO DE ATIVO PARA => ". $statusComputador . " \n";
-		}
-	else  
-		{
-            header("Location: ../template/menuPrincipal.php");  
-		}
-
+          /*
 	//criar historico e salvar
     //nome dos arquivos historico
     $data2 = soNumero($dateAltCadastro);
