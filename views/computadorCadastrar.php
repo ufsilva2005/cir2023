@@ -10,6 +10,8 @@
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
 
     include "../scripts/validarNumImp.php";
+    include "../scripts/validarNumCir.php"; 
+    include "../scripts/validarNomeCir.php";
     include "../scripts/mascara.php";
     include_once("../dao/conexao.php"); 
 ?>
@@ -41,7 +43,7 @@
                 <h3 class="text-success">Cadastro de Computador</h3>
                 <div class="panel-content">
                     <div class="col-md-12">
-                    <form  method="post" action="../controllers/computadorCadastrar.php">
+                    <form name="cadastro" id="cadastro" method="post" action="../controllers/computadorCadastrar.php">
                                     <fieldset>	
                                         <div class="row">		
                                             <label>
