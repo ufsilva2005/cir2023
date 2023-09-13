@@ -75,32 +75,32 @@
 												<td><?php echo $statusComp = $comp->statusComp?></td>
 												<td class='operations'>
                                                     <div class="btn-group pull-left" >
-                                                        <a href="./impressoraAlterar.php?action=1&id=<?php echo $comp->idComputador;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>
+                                                        <a href="./computadorAlterar.php?action=10&id=<?php echo $comp->idComputador;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
-                                                    	<a href="./historicoImp.php?action=1&id=<?php echo $comp->idComputador; ?>" class="btn btn-primary">H<i class="icon-remove"></i></a>
+                                                    	<a href="./historicoComp.php?action=10&id=<?php echo $comp->idComputador; ?>" class="btn btn-primary">H<i class="icon-remove"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
-                                                        <a href="./impressoraDetalhes.php?action=1&id=<?php echo $comp->idComputador; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
+                                                        <a href="./computadorDetalhes.php?action=10&id=<?php echo $comp->idComputador; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
 														<?php                                    
                                                             if($statusComp != "ativo") 
                                                                 {
-                                                                    $html = "<a href='../controllers/ativarDesativar.php?action=1&id=$idComputador' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
+                                                                    $html = "<a href='../controllers/ativarDesativarComp.php?action=1&id=$idComputador' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
                                                                     $inativo++;
 																	echo $html;
                                                                 }  
 															else
                                                                 {
-                                                                    $html = "<a href='../controllers/ativarDesativar.php?action=2&id=$idComputador' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
+                                                                    $html = "<a href='../controllers/ativarDesativarComp.php?action=2&id=$idComputador' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
                                                                     $ativo++;
 																	echo $html;
                                                                 }                                    
                                                         ?>  
                                                     </div>
 													<div class="btn-group pull-left">
-                                                        <a href="../gerarPdf/ComputadorImprimirDados.php?action=1&id=<?php echo $comp->idComputador; ?>" class="btn btn-small btn-ufs">P<i class="icon-remove"></i></a>
+                                                        <a href="../gerarPdf/ComputadorImprimirDados.php?action=10&id=<?php echo $comp->idComputador; ?>" class="btn btn-small btn-ufs">P<i class="icon-remove"></i></a>
                                                     </div>
                                                 </td>			
 											<tr>									
@@ -120,11 +120,11 @@
 					<input type="text" class="form-control" value="<?php echo $_SESSION['numUser'];?>" readonly >
 				</div>   
 				<div class="col px-md-1 col-md-2"> 
-					<label for="inputSuccess" class="control-label">Computador ativas:</label>
+					<label for="inputSuccess" class="control-label">Computador ativos:</label>
 					<input type="text" class="form-control" value="<?php echo $ativo;?>" readonly>
 				</div>        
 				<div class="col px-md-1 col-md-2"> 
-					<label for="inputSuccess" class="control-label">Computador desativadas:</label>
+					<label for="inputSuccess" class="control-label">Computador desativados:</label>
 					<input type="text" class="form-control" value="<?php echo $inativo;?>" readonly>
 				</div>  
 				<div class="col px-md-1 col-md-6"> 
