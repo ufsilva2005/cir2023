@@ -34,7 +34,7 @@
                                 <div class="row">
                                     <div class="col px-md-1  col-md-6">
                                         <label for="inputSuccess" class="control-label">Modelo da Impressora:</label>
-                                        <input type="text" class="form-control" name="" id="modeloImpressora">
+                                        <input type="text" class="form-control" name="modeloImpressora" id="modeloImpressora">
                                     </div>
                                 </div>
                                 <hr>

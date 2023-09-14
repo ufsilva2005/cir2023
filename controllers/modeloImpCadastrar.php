@@ -7,8 +7,8 @@
 	//recebe dados da view
     $modeloImpressora =  converteMaiuscula($_POST['modeloImpressora']);
     $statusModelo = "ativo";
-    $idSetor = $verificaSetor;
-    //echo "<br>idSetor => " . $idSetor . "<br>";
+    echo "<br>modeloImpressora => " . $modeloImpressora . "<br>";
+    echo "<br>statusModelo => " . $statusModelo . "<br>";
             
     $modelo = new ModeloImp($idModelo, $statusModelo, $modeloImpressora);
 	echo "<br>dados impressora <br>";		
