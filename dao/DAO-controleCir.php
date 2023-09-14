@@ -151,6 +151,31 @@
                     $conn = null;	
                 }
 
+            public function ListarOpcaoAtivo2($nomeTabela, $tipoOpcao, $valorOpcao, $valorOpcao2,  $status, $valorStatus)  
+                {
+                    $conn = Database::connect();
+                    $conn->exec('SET CHARACTER SET utf8');
+                                    
+                    $sql = "SELECT * FROM $nomeTabela WHERE $tipoOpcao LIKE '$valorOpcao%'
+                    OR $tipoOpcao LIKE '$valorOpcao2%' AND  $status = '$valorStatus'";
+                    try 
+                        {
+                            $listar = $conn->query($sql);
+                            $buscar = $listar->fetchAll(PDO::FETCH_OBJ);
+                            $numRows = $listar->rowCount();
+                        } 
+
+                    catch (PDOException $exc)
+                        {
+                            $buscar = $exc->getTraceAsString();
+                        }
+
+                   
+                    $_SESSION['numRows'] = $numRows;
+                    return $buscar;                        
+                    $conn = null;	
+                }
+
             public function Verificar($nomeTabela, $opcao1, $valor1) 
                 {					
                     $conn = Database::connect();

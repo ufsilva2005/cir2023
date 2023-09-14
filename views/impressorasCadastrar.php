@@ -92,19 +92,20 @@
                                         <select class="form-control" name="tonner1[]" required>
                                             <option value=""> </option>
                                             <?php
-                                            include_once "../dao/DAO-controleCir.php";
-                                            $tonnerDAO = new ControleCirDAO();
-                                            $nomeTabela = "material";
-                                            $tipoOpcao = "descricao";
-                                            $status = "statusMat";
-                                            $valorStatus = "ativo";
-                                            $valorOpcao = "TONNER";
-
-                                            foreach ($tonnerDAO->ListarOpcaoAtivo($nomeTabela, $tipoOpcao, $valorOpcao, $status, $valorStatus) as $res) {
-                                            ?>
-                                                <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
-                                            <?php
-                                            }
+                                                include_once "../dao/DAO-controleCir.php";
+                                                $tonnerDAO = new ControleCirDAO();
+                                                $nomeTabela = "material";
+                                                $tipoOpcao = "descricao";
+                                                $status = "statusMat";
+                                                $valorStatus = "ativo";
+                                                $valorOpcao = "TONNER";
+                                                $valorOpcao2 = "CARTUCHO DE TINTA";
+                                                foreach ($tonnerDAO->ListarOpcaoAtivo2($nomeTabela, $tipoOpcao, $valorOpcao, $valorOpcao2, $status, $valorStatus) as $res) 
+                                                    {
+                                                        ?>
+                                                            <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
+                                                        <?php
+                                                    }
                                             ?>
                                         </select>
                                     </div>
@@ -120,12 +121,13 @@
                                             $status = "statusMat";
                                             $valorStatus = "ativo";
                                             $valorOpcao = "TONNER";
-
-                                            foreach ($tonnerDAO->ListarOpcaoAtivo($nomeTabela, $tipoOpcao, $valorOpcao, $status, $valorStatus) as $res) {
-                                            ?>
-                                                <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
-                                            <?php
-                                            }
+                                            $valorOpcao2 = "CARTUCHO DE TINTA";
+                                            foreach ($tonnerDAO->ListarOpcaoAtivo2($nomeTabela, $tipoOpcao, $valorOpcao, $valorOpcao2, $status, $valorStatus) as $res) 
+                                                {
+                                                    ?>
+                                                        <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
+                                                    <?php
+                                                }
                                             ?>
                                         </select>
                                     </div>
@@ -141,12 +143,13 @@
                                             $status = "statusMat";
                                             $valorStatus = "ativo";
                                             $valorOpcao = "TONNER";
-
-                                            foreach ($tonnerDAO->ListarOpcaoAtivo($nomeTabela, $tipoOpcao, $valorOpcao, $status, $valorStatus) as $res) {
-                                            ?>
-                                                <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
-                                            <?php
-                                            }
+                                            $valorOpcao2 = "CARTUCHO DE TINTA";
+                                            foreach ($tonnerDAO->ListarOpcaoAtivo2($nomeTabela, $tipoOpcao, $valorOpcao, $valorOpcao2, $status, $valorStatus) as $res) 
+                                                {
+                                                    ?>
+                                                        <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
+                                                    <?php
+                                                }
                                             ?>
                                         </select>
                                     </div>
@@ -162,12 +165,13 @@
                                             $status = "statusMat";
                                             $valorStatus = "ativo";
                                             $valorOpcao = "TONNER";
-
-                                            foreach ($tonnerDAO->ListarOpcaoAtivo($nomeTabela, $tipoOpcao, $valorOpcao, $status, $valorStatus) as $res) {
-                                            ?>
-                                                <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
-                                            <?php
-                                            }
+                                            $valorOpcao2 = "CARTUCHO DE TINTA";
+                                            foreach ($tonnerDAO->ListarOpcaoAtivo2($nomeTabela, $tipoOpcao, $valorOpcao, $valorOpcao2, $status, $valorStatus) as $res) 
+                                                {
+                                                    ?>
+                                                        <option value="<?php echo $res->idMaterial; ?>"> <?php echo $res->descricao; ?> </option>
+                                                    <?php
+                                                }
                                             ?>
                                         </select>
                                     </div>

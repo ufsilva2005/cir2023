@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 13-Set-2023 às 16:42
--- Versão do servidor: 10.5.15-MariaDB-0+deb11u1
--- versão do PHP: 8.2.0RC7
+-- Tempo de geração: 14/09/2023 às 11:41
+-- Versão do servidor: 10.3.39-MariaDB-0+deb10u1
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `impressoras`
+-- Estrutura para tabela `impressoras`
 --
 
 CREATE TABLE `impressoras` (
@@ -45,14 +45,14 @@ CREATE TABLE `impressoras` (
   `obsImpressora` varchar(255) DEFAULT NULL,
   `idFuncionario` int(11) DEFAULT NULL,
   `idSetor` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `impressoras`
+-- Despejando dados para a tabela `impressoras`
 --
 
 INSERT INTO `impressoras` (`idImpressora`, `nomeImpressora`, `numSerie`, `ipImpressora`, `macImpressora`, `tipoToner`, `colorida`, `statusImpressora`, `conexaoImp`, `modeloImpressora`, `dataCadastro`, `respCadastro`, `dataAltCadastro`, `respAltCadastro`, `obsImpressora`, `idFuncionario`, `idSetor`) VALUES
-(1, 'PRNMANUT', 'R4P2X12492', '10.13.10.33', '00:17:C8:E7:FC:23', ' a:1:{i:0;s:2:\"28\";}', NULL, 'ativo', 'Rede', 1, '2023-05-31', 'SUZANA COSTA VIRGINIO DE SOUZA', '2023-07-28', 'SUZANA COSTA VIRGINIO DE SOUZA', 'TESTE', 2, 1),
+(1, 'PRNMANUT', 'R4P2X12492', '10.13.10.33', '00:17:C8:E7:FC:23', ' a:1:{i:0;s:2:\"28\";}', NULL, '', 'Rede', 1, '2023-05-31', 'SUZANA COSTA VIRGINIO DE SOUZA', '2023-07-28', 'SUZANA COSTA VIRGINIO DE SOUZA', 'TESTE', 2, 1),
 (2, 'PRNALMOX', 'R4P2X12499', '10.3.0.21', '00:17:C8:E7:FC:77', ' a:1:{i:0;s:2:\"28\";}', NULL, 'ativo', 'Rede', 1, '2023-05-31', 'SUZANA COSTA VIRGINIO DE SOUZA', '2023-07-28', 'SUZANA COSTA VIRGINIO DE SOUZA', 'TESTE', 2, 47),
 (3, '', 'R4P2X12489', '', '', ' a:1:{i:0;s:2:\"28\";}', NULL, 'ativo', 'Rede', 1, '2023-05-31', 'SUZANA COSTA VIRGINIO DE SOUZA', '0000-00-00', '', '', 2, 48),
 (4, '', 'R4P8917950', '', '', ' a:1:{i:0;s:2:\"28\";}', NULL, 'ativo', 'Rede', 1, '2023-05-31', 'SUZANA COSTA VIRGINIO DE SOUZA', '0000-00-00', '', '', 2, 49),
@@ -92,7 +92,7 @@ INSERT INTO `impressoras` (`idImpressora`, `nomeImpressora`, `numSerie`, `ipImpr
 --
 
 --
--- Índices para tabela `impressoras`
+-- Índices de tabela `impressoras`
 --
 ALTER TABLE `impressoras`
   ADD PRIMARY KEY (`idImpressora`),
@@ -100,7 +100,7 @@ ALTER TABLE `impressoras`
   ADD KEY `idSetor` (`idSetor`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -110,11 +110,11 @@ ALTER TABLE `impressoras`
   MODIFY `idImpressora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `impressoras`
+-- Restrições para tabelas `impressoras`
 --
 ALTER TABLE `impressoras`
   ADD CONSTRAINT `impressoras_ibfk_1` FOREIGN KEY (`idFuncionario`) REFERENCES `funcionario` (`idFuncionario`),

@@ -42,6 +42,7 @@
                         <li><a class="dropdown-item" href="../views/impressorasListarAtivas.php?action=1">Listar Ativas</a></li>
                         <li><a class="dropdown-item" href="../views/impressorasListarAtivas.php?action=2">Listar Inativas</a></li>
                         <li><a class="dropdown-item" href="../views/impressorasPesquisar.php">Pesquisar</a></li>
+                        <li><a class="dropdown-item" href="../views/impressorasCadastrarModelo.php">Cadastrar Modelo</a></li>
                     </ul>
                 </div>
 
