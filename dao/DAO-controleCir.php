@@ -666,7 +666,28 @@
 						}
 					return $buscar;
 					$conn = null;	
-				}    
+				}   
+                
+            public function CadastrarModeloImp($modeloImp) 
+                {	
+                    $conn = Database::connect();
+                    
+                    $conn->exec('SET CHARACTER SET utf8');
+                    
+                    $prepara = $conn->prepare("INSERT INTO modeloImpressora(statusModelo, modeloImpressora) 
+                    VALUES(:statusModeloBd, :modeloImpressoraBd)");
+                        
+                    //$BdidModelo	    = $modeloImp->getIdModelo();
+                    $BdstatusModelo  	= $modeloImp->getStatusModelo();                    
+                    $BdmodeloImpressora = $modeloImp->getModeloImpressora();
+                                        
+                    //$prepara->bindParam(":idModeloBd", $BdidModelo);
+                    $prepara->bindParam(":statusModeloBd", $BdstatusModelo);
+                    $prepara->bindParam(":modeloImpressoraBd",  $BdmodeloImpressora);
+
+                    $prepara->execute();                 
+                    $conn = null;
+                }
             //FIM DAS FUNÇÕES RELACIONADAS A IMPRESSORA 
 
             //INÍCIO DAS FUNÇÕES RELACIONADAS AOS MATERIAIS

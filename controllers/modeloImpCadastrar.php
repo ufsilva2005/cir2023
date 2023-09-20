@@ -10,12 +10,12 @@
     echo "<br>modeloImpressora => " . $modeloImpressora . "<br>";
     echo "<br>statusModelo => " . $statusModelo . "<br>";
             
-    $modelo = new ModeloImp($idModelo, $statusModelo, $modeloImpressora);
+    $modeloImp = new ModeloImp($idModelo, $statusModelo, $modeloImpressora);
 	echo "<br>dados impressora <br>";		
-	$modelo->exibir();
-	//echo "<br>";
-	//$impressoraDAO = new ControleCirDAO();
-	//$impressoraDAO->CadastrarImpre($impressora);
+	$modeloImp->exibir();
+	echo "<br>";
+	$modeloImpDAO = new ControleCirDAO();
+	$modeloImpDAO->CadastrarModeloImp($modeloImp);
 			
-	//header("Location: ../views/impressorasCadastrar.php");    
+	header("Location: ../views/impressorasCadastrarModelo.php");    
 ?>
