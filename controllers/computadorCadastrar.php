@@ -16,7 +16,6 @@
 	$localComputador = $_POST['localComputador'];
 	$dataCadastro    = $dataCadastro = formatarData($_SESSION['data']); 	
 	$respCadastro = $_SESSION['respCadastro'];
-	$idFuncionario = $_SESSION['idFuncionario'] ;
 
 	//informaçoes do local	
 	$idSetor = "";
@@ -71,11 +70,39 @@
 		}
 	else
 		{
-			echo "<br>" . $action;
-			echo "<br>nomeDivisao => ". $_SESSION['nomeDivisao'];
+			echo "<br>";
+			//echo "<br>nomeDivisao => ". $_SESSION['nomeDivisao'];
 			$capHd2 = $_SESSION['capHd1'];
             array_shift($capHd2);
             print_r($capHd2); 
+
+			$tipoHD = serialize($capHd2); 
+			
+			//informaçoes do local	
+			$idSetor = "";
+			$nomeDivisao = 	$_SESSION['nomeDivisao'];
+			$localizacao = $_SESSION['localizacao'];
+			$ramalComp = $_SESSION['ramalComp'];
+			$respSetor = $_SESSION['respSetor'];
+			$nomeLocal = $_SESSION['nomeLocal'];
+
+			//informações do computador
+			$numCir = $_SESSION['numCir'];
+			$numPatrimonio = $_SESSION['numCirnumPatrimonio']; 
+			$numPatReitoria = $_SESSION['numPatReitoria']; 
+			$nomeComputador = $_SESSION['nomeComputador']; 
+			$dataAltCadastro = "0000-00-00"; 
+			$respAltCadastro = ""; 
+			$sistemaOpera = $_SESSION['sistemaOpera']; 
+			$modelMaquina = $_SESSION['modelMaquina']; 
+			$memoria = $_SESSION['memoria']; 
+			$numIp = $_SESSION['numIp']; 
+			$numMac = $_SESSION['numMac']; 
+			$statusComp = $_SESSION['statusComp']; 
+			$obs = $_SESSION['obs']; 			
+			$idFuncionario = $_SESSION['idFuncionario'] ;
+			//$idSetor = $_SESSION['numCir']; 
+			$idTipoProcessador = $_SESSION['idTipoProcessador']; 
 
 			if($numPatReitoria  == "")
 				{
@@ -87,18 +114,6 @@
 					$numPatrimonio = null;
 				}
 
-			
-			//informaçoes do local	
-			$idSetor = "";
-			$nomeDivisao = 	$_SESSION['nomeDivisao'];
-			$localizacao = $_SESSION['localizacao'];
-			$ramalComp = $_SESSION['ramalComp'];
-			$respSetor = $_SESSION['respSetor'];
-			$nomeLocal = $_SESSION['nomeLocal'];
-
-			echo "<br>nomeDivisao => " . $nomeDivisao;
-			echo "<br>localizacao => " . $localizacao;
-			echo "<br>nomeLocal => " . $nomeLocal;
 
 			//verificar se local existe
 			$setorExisteDAO = new ControleCirDAO();
@@ -109,8 +124,59 @@
 				
 			echo "<br>verificaSetor => " . $verificaSetor . "<br>";
 
-			echo "<script type='text/javascript'>alert('Cadastro Realizado ! ');</script>";
-			echo "<script>location = '../views/computadorCadastrar.php';</script>";   
+			if ($verificaSetor != 0)
+				{	
+					$idSetor = $verificaSetor;
+					echo "<br>idSetor 01 => " . $idSetor . "<br>";
+					$computador = new Computador($idComputador, $numCir, $numPatrimonio, $numPatReitoria, $nomeComputador, $dataCadastro,
+					$_SESSION['nomeFuncionario'], $dataAltCadastro, $respAltCadastro, $sistemaOpera, $modelMaquina, $memoria, $numIp, $numMac, $tipoHD, 
+					$statusComp, $obs, $idFuncionario, $idSetor, $idTipoProcessador);					
+					$computador->exibir();			
+					//$computadorDAO = new ControleCirDAO();
+					//$computadorDAO->CadastrarComp($computador);	
+
+					//echo "<br>idSetor 001 => " . $idSetor . "<br>";
+
+					//echo "<script type='text/javascript'>alert('Cadastro Realizado ! ');</script>";
+					//echo "<script>location = '../views/computadorCadastrar.php';</script>";   
+				}
+			else 
+				{
+					//PEGAR ID DA DIVISÃO
+					$nomeTabela = "divisao"; 
+					$opcao1 = "divisao"; 
+					$valor1 = $nomeDivisao; 
+					$divisaoDAO = new ControleCirDAO();
+					foreach ($divisaoDAO->Verificar($nomeTabela, $opcao1, $valor1) as $divisao)
+						{ 
+							$idDivisao = $divisao->idDivisao;				          
+						}	
+
+					echo "<br>verificaDivisao => " . $idDivisao . "<br>";
+
+					$local1 = new Setor($idSetor, $idDivisao, $localizacao, $ramalComp, $respSetor, $nomeLocal);			
+					$local1->exibir();
+					//$local = new ControleCirDAO();	
+					//$local->CadastrarSetor($local1);
+
+					echo "<br>idSetor 02 => " . $idSetor . "<br>";
+					
+					//session_start();
+					$idSetor = $_SESSION['localid'];
+					//$idSetor = 1;
+					echo "<br>";
+					$computador = new Computador($idComputador, $numCir, $numPatrimonio, $numPatReitoria, $nomeComputador, $dataCadastro,
+					$_SESSION['nomeFuncionario'], $dataAltCadastro,  $respAltCadastro, $sistemaOpera, $modelMaquina, $memoria, $numIp, $numMac, 
+					$tipoHD, $statusComp, $obs, $idFuncionario, $idSetor, $idTipoProcessador);
+					$computador->exibir();
+					
+					//$computadorDAO = new ControleCirDAO();
+					//$computadorDAO->CadastrarComp($computador);		
+					//echo "<script type='text/javascript'>alert('Cadastro Realizado ! ');</script>";
+				}
+
+			//echo "<script type='text/javascript'>alert('Cadastro Realizado ! ');</script>";
+			//echo "<script>location = '../views/computadorCadastrar.php';</script>";   
 		}
 
 

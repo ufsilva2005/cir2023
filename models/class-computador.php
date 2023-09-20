@@ -15,7 +15,6 @@
 			private $memoria;
 			private $numIp;
 			private $numMac;
-			private $capHD;
 			private $tipoHD; 
 			private $statusComp;
 			private $obs;
@@ -27,7 +26,7 @@
 			// Recebe  parametros 
 			public function __construct ($idComputador = "", $numCir = null, $numPatrimonio = null, $numPatReitoria = null, 
 			$nomeComputador = null, $dataCadastro = null, $respCadastro = null, $dataAltCadastro= null, $respAltCadastro = null, 
-			$sistemaOpera = null, $modelMaquina = null, $memoria = null, $numIp = null, $numMac = null, $capHD = null, $tipoHD = null,
+			$sistemaOpera = null, $modelMaquina = null, $memoria = null, $numIp = null, $numMac = null,  $tipoHD = null,
 			$statusComp = null, $obs = null, $idFuncionario = null, $idSetor = null,$idTipoProcessador = null) 
 			
 				{
@@ -45,13 +44,12 @@
 					$this->memoria			= $memoria;
 					$this->numIp			= $numIp;
 					$this->numMac			= $numMac;
-					$this->capHD			= $capHD;
 					$this->tipoHD			= $tipoHD;
 					$this->statusComp		= $statusComp;
 					$this->obs				= $obs;
 					$this->idFuncionario  	= $idFuncionario;
 					$this->idSetor			= $idSetor;
-					$this->idTipoProcessador	= $idTipoProcessador;
+					$this->idTipoProcessador = $idTipoProcessador;
 				}
 				
 			///metodos get e metodos set
@@ -195,16 +193,6 @@
 					$this->numMac = $numMac;
 				}
 				
-			//CAPACIDADE DO HD
-			public function getCapHD() 
-				{     
-					return $this->capHD;
-				}
-			public function setCapHD($capHD) 
-				{     
-					$this->capHD = $capHD;
-				}
-
 			//TIPO DO HD
 			public function getTipoHD() 
 				{     
@@ -297,8 +285,6 @@
 					echo $this->numIp . '<br>';
 					echo '</br>Nº Mac -> ';
 					echo $this->numMac . '<br>';
-					echo '</br>HD -> ';
-					echo $this->capHD . '<br>';
 					echo '</br>tipoHD -> ';
 					echo $this->tipoHD . '<br>';
 					echo '</br>Status -> ';
