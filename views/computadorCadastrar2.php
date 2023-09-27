@@ -2,10 +2,10 @@
     session_start();
     include "../template/menuPrincipal.php";
 
-    //if ($_SESSION['computador'] != "sim") {
-        //echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
-        //echo "<script>location = '../template/menuPrincipal.php';</script>";
-    //}
+    if ($_SESSION['computador'] != "sim") {
+        echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
+        echo "<script>location = '../template/menuPrincipal.php';</script>";
+    }
 
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  

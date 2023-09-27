@@ -2,7 +2,7 @@
 	include "../template/menuPrincipal.php";
     include "../scripts/mascara.php"; 
    
-    if($_SESSION['impressora'] != "sim")
+    if($_SESSION['computador'] != "sim")
         {
             echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
             echo "<script>location = '../template/menuPrincipal.php';</script>";  
@@ -75,13 +75,13 @@
 												<td><?php echo $statusComp = $comp->statusComp?></td>
 												<td class='operations'>
                                                     <div class="btn-group pull-left" >
-                                                        <a href="./computadorAlterar.php?action=10&id=<?php echo $comp->idComputador;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>
+                                                        <a href="./computadorAlterar.php?action=1&id=<?php echo $comp->idComputador;?> " class="btn btn-small btn-warning table-edit">A<i class="icon-edit"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
-                                                    	<a href="./historicoComp.php?action=10&id=<?php echo $comp->idComputador; ?>" class="btn btn-primary">H<i class="icon-remove"></i></a>
+                                                    	<a href="./historicoComp.php?action=1&id=<?php echo $comp->idComputador; ?>" class="btn btn-primary">H<i class="icon-remove"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
-                                                        <a href="./computadorDetalhes.php?action=10&id=<?php echo $comp->idComputador; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
+                                                        <a href="./computadorDetalhes.php?action=1&id=<?php echo $comp->idComputador; ?>" class="btn btn-info">D<i class="icon-remove"></i></a>
                                                     </div>
                                                     <div class="btn-group pull-left">
 														<?php                                    
@@ -100,7 +100,7 @@
                                                         ?>  
                                                     </div>
 													<div class="btn-group pull-left">
-                                                        <a href="../gerarPdf/ComputadorImprimirDados.php?action=10&id=<?php echo $comp->idComputador; ?>" class="btn btn-small btn-ufs">P<i class="icon-remove"></i></a>
+                                                        <a href="../gerarPdf/ComputadorImprimirDados.php?action=1&id=<?php echo $comp->idComputador; ?>" class="btn btn-small btn-ufs">P<i class="icon-remove"></i></a>
                                                     </div>
                                                 </td>			
 											<tr>									

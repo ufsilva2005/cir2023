@@ -173,12 +173,13 @@
 					$computadorDAO = new ControleCirDAO();
 					$computadorDAO->CadastrarComp($computador);		
 					echo "<script type='text/javascript'>alert('Cadastro Realizado ! ');</script>";
+					echo "<script>location = '../views/computadorCadastrar.php';</script>";   
 				}
 
 			//echo "<script type='text/javascript'>alert('Cadastro Realizado ! ');</script>";
 			//echo "<script>location = '../views/computadorCadastrar.php';</script>";   
 		}
 
-	header("Location: ../views/computadorCadastrar.php");
+	//header("Location: ../views/computadorCadastrar.php");
 ?>
  
