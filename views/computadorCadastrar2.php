@@ -181,7 +181,7 @@
                                                             
                                                             <div class='col px-md-1 col-md-4'>   
                                                                 <div class="modal-footer">
-                                                                    <button class="btn btn-small btn-warning" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Teminar</button>
+                                                                    <button class="btn btn-small btn-warning" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Terminar</button>
                                                                 </div>
                                                             </div>
                                                         </div>                                        
@@ -189,12 +189,7 @@
                                                 </form>  
                                                 <?php 
                                                     $_SESSION['i'] = $_SESSION['i']+1;
-                                                ?>    
-                                                <div class='col px-md-1 col-md-4'>   
-                                                    <div class="modal-footer">
-                                                        <button class="btn btn-small btn-warning" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Teminar</button>
-                                                    </div>
-                                                </div>   
+                                                ?>   
                                             </div>            
                                         </div>
                                     </div>

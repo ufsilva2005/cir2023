@@ -16,6 +16,7 @@
 			private $numIp;
 			private $numMac;
 			private $tipoHD; 
+			private $nomeUsuario;
 			private $statusComp;
 			private $obs;
 			private $idFuncionario;
@@ -27,7 +28,7 @@
 			public function __construct ($idComputador = "", $numCir = null, $numPatrimonio = null, $numPatReitoria = null, 
 			$nomeComputador = null, $dataCadastro = null, $respCadastro = null, $dataAltCadastro= null, $respAltCadastro = null, 
 			$sistemaOpera = null, $modelMaquina = null, $memoria = null, $numIp = null, $numMac = null,  $tipoHD = null,
-			$statusComp = null, $obs = null, $idFuncionario = null, $idSetor = null,$idTipoProcessador = null) 
+			$nomeUsuario = null, $statusComp = null, $obs = null, $idFuncionario = null, $idSetor = null,$idTipoProcessador = null) 
 			
 				{
 					$this->idComputador		= $idComputador;
@@ -45,6 +46,7 @@
 					$this->numIp			= $numIp;
 					$this->numMac			= $numMac;
 					$this->tipoHD			= $tipoHD;
+					$this->nomeUsuario      = $nomeUsuario;
 					$this->statusComp		= $statusComp;
 					$this->obs				= $obs;
 					$this->idFuncionario  	= $idFuncionario;
@@ -203,6 +205,17 @@
 					$this->tipoHD = $tipoHD;
 				}
 				
+			//USUÁRIO
+			public function getNomeUsuario() 
+				{     
+					return $this->nomeUsuario;
+				}
+			public function setNomeUsuario($nomeUsuario) 
+				{     
+					$this->nomeUsuario = $nomeUsuario;
+				}
+				
+
 			//STATUS DO COMPUTADOR
 			public function getStatusComp() 
 				{     
@@ -287,6 +300,8 @@
 					echo $this->numMac . '<br>';
 					echo '</br>tipoHD -> ';
 					echo $this->tipoHD . '<br>';
+					echo '</br>usuário -> ';
+					echo $this->nomeUsuario . '<br>';
 					echo '</br>Status -> ';
 					echo $this->statusComp . '<br>';
 					echo '</br>Obs -> ';

@@ -423,10 +423,10 @@
                     $conn->exec('SET CHARACTER SET utf8');                
                     $prepara = $conn->prepare("INSERT INTO computador (numCir, numPatrimonio, numPatReitoria, nomeComputador, 
                     dataCadastro, respCadastro, dataAltCadastro, respAltCadastro, sistemaOpera, modelMaquina, memoria, numIp, numMac, 
-                    capHD, tipoHD, statusComp,	obs, idFuncionario, idSetor, idTipoProcessador)
+                    tipoHD, nomeUsuario, statusComp,	obs, idFuncionario, idSetor, idTipoProcessador)
                     VALUES(:numCirBd, :numPatrimonioBd, :numPatReitoriaBd, :nomeComputadorBd, :dataCadastroBd, :respCadastroBd, 
                     :dataAltCadastroBd, :respAltCadastroBd, :sistemaOperaBd, :modelMaquinaBd, :memoriaBd, :numIpBd, :numMacBd,
-                    :capHDBd, :tipoHDBd, :statusCompBd, :obsBd, :idFuncionarioBd, :idSetorBd, :idTipoProcessadorBd)");
+                    :tipoHDBd, :nomeUsuarioBd, :statusCompBd, :obsBd, :idFuncionarioBd, :idSetorBd, :idTipoProcessadorBd)");
                     
                     //$BdidComputador		= $computador->getIdComputador();
                     $BdnumCir  			 = $computador->getNumCir();
@@ -441,9 +441,9 @@
                     $BdmodelMaquina  	 = $computador->getModelMaquina();
                     $Bdmemoria 			 = $computador->getMemoria();
                     $BdnumIp  			 = $computador->getNumIp();
-                    $BdnumMac 			 = $computador->getNumMac();
-                    $BdcapHD  			 = $computador->getCapHD();
+                    $BdnumMac 			 = $computador->getNumMac();                   
                     $BdtipoHD  			 = $computador->getTipoHD();
+                    $BdnomeUsuario  	 = $computador->getNomeUsuario();
                     $BdstatusComp 		 = $computador->getStatusComp();
                     $Bdobs  			 = $computador->getObs();
                     $BdidFuncionario 	 = $computador->getIdFuncionario();
@@ -463,9 +463,9 @@
                     $prepara->bindParam(":modelMaquinaBd", $BdmodelMaquina);
                     $prepara->bindParam(":memoriaBd", $Bdmemoria);
                     $prepara->bindParam(":numIpBd", $BdnumIp);
-                    $prepara->bindParam(":numMacBd", $BdnumMac);
-                    $prepara->bindParam(":capHDBd", $BdcapHD);
+                    $prepara->bindParam(":numMacBd", $BdnumMac);                   
                     $prepara->bindParam(":tipoHDBd", $BdtipoHD);
+                    $prepara->bindParam(":nomeUsuarioBd", $BdnomeUsuario);
                     $prepara->bindParam(":statusCompBd", $BdstatusComp);
                     $prepara->bindParam(":obsBd", $Bdobs);
                     $prepara->bindParam(":idFuncionarioBd", $BdidFuncionario);

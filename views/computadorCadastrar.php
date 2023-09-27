@@ -13,6 +13,7 @@
     include "../scripts/validarNumImp.php";
     include "../scripts/validarNumCir.php"; 
     include "../scripts/validarNomeCir.php";
+    include "../scripts/validarMac.php"; 
     include "../scripts/mascara.php";
     include_once("../dao/conexao.php"); 
 ?>
@@ -205,12 +206,12 @@
                                                                     
                                     <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Número MAC:</label>
-                                        <input type="text" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" onchange="try{setCustomValidity('')}catch(e){}"  class="form-control" name="dadosComputador[]" >
+                                        <input type="text" class="form-control" name="numMac" id="numMac" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" onchange="try{setCustomValidity('')}catch(e){}" >
                                     </div>	
 
                                     <div class="col px-md-1 col-md-6">
                                         <label for="inputSuccess" class="control-label">Nome Usuário:</label> <br>
-                                        <input type="text" class="form-control" id="nomeUsuario" name="nomeUsuario">    
+                                        <input type="text" class="form-control" name="nomeUsuario">    
                                     </div>
                                       
                                     <div class="py-md-4 col-md-2">
