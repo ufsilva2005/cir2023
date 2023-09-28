@@ -57,7 +57,7 @@
                                 <div class="row">																						
                                     <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Divisão:</label>
-                                        <select class="form-control" name = "localComputador[]" >
+                                        <select class="form-control" name = "localComputador[]" required>
                                             <option> </option>
                                             <option>CAE</option>
                                             <option>CIR</option>
@@ -111,7 +111,7 @@
                                 <div class="row">
                                     <div class="col px-md-1 col-md-6">
                                         <label for="inputSuccess" class="control-label">Local do Computador:</label>
-                                        <input type="text" class="form-control" name="localComputador1" id="localComputador1" />
+                                        <input type="text" class="form-control" name="localComputador1" id="localComputador1" required/>
                                     </div>
                                                 
                                     <div class="col px-md-1 col-md-6">
@@ -131,7 +131,7 @@
                                 <div class="row">
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label" >Número da Cir:</label>
-                                        <input type="text" class="form-control" name = "numCir" id = "numCir" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000"  >
+                                        <input type="text" class="form-control" name = "numCir" id = "numCir" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="0000000000" required >
                                     </div>  
                                                     
                                     <div class="col px-md-1 col-md-3">
@@ -146,7 +146,7 @@
 
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Nome do Computador:</label>
-                                        <input type="text" class="form-control" id = "nomeCir" name = "nomeCir" >
+                                        <input type="text" class="form-control" id = "nomeCir" name = "nomeCir" required >
                                     </div>												                                      
                                 </div>		
                                                 
@@ -184,7 +184,7 @@
 
                                     <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Memória:</label>
-                                        <select class="form-control" name="dadosComputador[]">
+                                        <select class="form-control" name="dadosComputador[]" required>
                                             <option> </option>
                                             <option>512 Mb</option>
                                             <option>1 Gb</option>
@@ -206,7 +206,7 @@
                                                                     
                                     <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Número MAC:</label>
-                                        <input type="text" class="form-control" name="numMac" id="numMac" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" onchange="try{setCustomValidity('')}catch(e){}" >
+                                        <input type="text" class="form-control" name="numMac" id="numMac" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" onchange="try{setCustomValidity('')}catch(e){}" required>
                                     </div>	
 
                                     <div class="col px-md-1 col-md-6">

@@ -43,7 +43,7 @@
 	$respAltCadastro = "";
     $dataAltCadastro = "0000-00-00";
 
-	//echo $action;
+	echo $action;
 	
 	if($action == 1)
 		{
@@ -72,7 +72,7 @@
 		{
 			//echo "<br>nomeDivisao => ". $_SESSION['nomeDivisao'];
 			$capHd2 = $_SESSION['capHd1'];
-            array_shift($capHd2);
+            //array_shift($capHd2);
             //print_r($capHd2); 
 
 			$tipoHD = serialize($capHd2); 
@@ -176,8 +176,8 @@
 					echo "<script>location = '../views/computadorCadastrar.php';</script>";   
 				}
 
-			//echo "<script type='text/javascript'>alert('Cadastro Realizado ! ');</script>";
-			//echo "<script>location = '../views/computadorCadastrar.php';</script>";   
+			echo "<script type='text/javascript'>alert('Cadastro Realizado ! ');</script>";
+			echo "<script>location = '../views/computadorCadastrar.php';</script>";   
 		}
 
 	//header("Location: ../views/computadorCadastrar.php");

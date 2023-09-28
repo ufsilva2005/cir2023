@@ -33,13 +33,8 @@
             $numIp = $comp->numIp;
 			$numMac = $comp->numMac;
 			$tipoHD = $comp->tipoHD;
-            /*$tipoHD = new ControleCirDAO();   
-			$nomeTabela = "material";
-			$tipoOpcao = "idMaterial";								
-			foreach ($tipoHD->ListarOpcao2($nomeTabela, $tipoOpcao, $tipoTonerBd) as $res)
-				{
-					$tipoToner = $res->descricao;
-				}*/     
+			$tipoHD =  unserialize($tipoHD);
+            
             $nomeUsuario = $comp->nomeUsuario;
 			$statusComp = $comp->statusComp;
 			$obs = $comp->obs;   

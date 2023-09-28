@@ -26,7 +26,7 @@
     </style>
 
     <script src="../js/jQuery1.12.js"></script>
-	<script src="../js/Bootstrap3.7.js"></script>
+	<script src="../bootstrap3-typeahead.min.js"></script>
 
     <body>
         <nav class="fixed-top navbar navbar-dark bg-primary">

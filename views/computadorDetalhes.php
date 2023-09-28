@@ -7,7 +7,7 @@
         echo "<script>location = '../template/menuPrincipal.php';</script>";
     }
     require_once '../controllers/computadorBuscar.php';
-
+    include_once "../dao/DAO-controleCir.php";
     //echo $idComputador;
 ?>
 
@@ -132,7 +132,34 @@
                                 </div>
 
                                 <hr>                               
-                                                
+                                <div class="col-md-12">	
+                                    <table class="table table-striped table-bordered table-condensed">
+                                        <thead>
+                                            <tr>
+                                                HD's no Computador                                       
+                                            </tr>
+                                        </thead>
+                                        <tbody> 
+                                            <td>
+                                                <?php
+                                                    $t = sizeof($tipoHD);
+                                                    $nomeTabela = "hdTipos";
+                                                    $tipoOpcao = "id";                                 
+                                                    for ($i = 0; $i < $t; $i++) 
+                                                        {
+                                                            $id = $tipoHD[$i];
+                                                            $tipoHDDAO = new ControleCirDAO();
+                                                            foreach ($tipoHDDAO->ListarOpcao($nomeTabela, $tipoOpcao, $id)as $resp)
+                                                                { 
+                                                                    $x = $i + 1;
+                                                                    echo "&emsp; hd(" . $x .") =>" . $descricao = $resp->descricao;  
+                                                                } 
+                                                        }          
+                                                ?>    
+                                            </td>
+                                        </tbody>
+                                    </table>
+                                </div>
                                 <hr>
                                     
                                 <div class="row">	
