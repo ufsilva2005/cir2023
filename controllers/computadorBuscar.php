@@ -33,45 +33,39 @@
             $numIp = $comp->numIp;
 			$numMac = $comp->numMac;
 			$tipoHD = $comp->tipoHD;
-			$tipoHD =  unserialize($tipoHD);
-            
+			$tipoHD =  unserialize($tipoHD);           
             $nomeUsuario = $comp->nomeUsuario;
 			$statusComp = $comp->statusComp;
-			$obs = $comp->obs;   
+			$obs = $comp->obs;   			
             $idFuncionario = $comp->idFuncionario;
+			$respCadastro = $comp->respCadastro;
 			$idSetor = $comp->idSetor;
 			$idTipoProcessador = $comp->idTipoProcessador;
-
-			/*
-			$statusImpressora = $comp->statusImpressora;
-			$conexaoImp = $comp->conexaoImp;
-			$modeloImpressoraBd = $comp->modeloImpressora;
-			$modeloDAO = new ControleCirDAO();   
-			$nomeTabela = "modeloImpressora";
-			$tipoOpcao = "idModelo";								
-			foreach ($modeloDAO->ListarOpcao($nomeTabela, $tipoOpcao, $modeloImpressoraBd) as $res)
-				{
-					$idModelo = $res->idModelo;
-					$modeloImpressora = $res->modeloImpressora;
-				}       
-			$dataCadastroA = $comp->dataCadastro;	
-			$respCadastro = $comp->respCadastro;
-			$idFuncionario = $comp->idFuncionario;
-			$obsImpressora = $comp->obsImpressora;
-			$respAltCadastro = $comp->respAltCadastro;							
-			$dataAltCadastro = $comp->dataAltCadastro;
-            $idSetor = $comp->idSetor; 
-
 			$setorDAO = new ControleCirDAO();
 			foreach($setorDAO->Buscalocal($idSetor) as $Setor)
 				{ 	
-					$divisao1 = $Setor->divisao;
-					$idDivisao1 = $Setor->idDivisao;
-					$localizacao1 = $Setor->localizacao;
-					$nomeLocal1 = $Setor->nomeLocal;
-					$ramal1 = $Setor->ramal;
-					$respSetComp1 = $Setor->respSetor;	
-				}*/
+					$idDivisao = $Setor->idDivisao;
+					$localizacao = $Setor->localizacao;
+					$nomeLocal = $Setor->nomeLocal;
+					$ramal = $Setor->ramal;
+					$respSetor = $Setor->respSetor;	
+				}
+
+			$nomeTabela = "tipoProcessadores";
+			$opcao1 = "idTipoProcessador";
+			$processDAO = new ControleCirDAO();
+			foreach($processDAO->Verificar($nomeTabela, $opcao1, $idTipoProcessador) as $proc)
+				{ 	
+					$desProcessador = $proc->descricao;
+				}
+
+			$nomeTabela = "divisao";
+			$opcao1 = "idDivisao";
+			$divisaoDAO = new ControleCirDAO();
+			foreach($divisaoDAO->Verificar($nomeTabela, $opcao1, $idDivisao) as $div)
+				{ 	
+					$nomeDivisao = $div->divisao;
+				}
 		}
         
 ?>

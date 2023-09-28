@@ -41,7 +41,7 @@
                                                                         
                                     <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Ramal:</label>
-                                        <input type="text" class="form-control" value="<?= $ramalComp ?>" disabled>
+                                        <input type="text" class="form-control" value="<?= $ramal ?>" disabled>
                                     </div>
                                                                     
                                     <div class="col px-md-1 col-md-6">
@@ -105,7 +105,7 @@
                                                                         
                                     <div class="col px-md-1 col-md-5">
                                         <label for="inputSuccess" class="control-label">Tipo de Processador:</label>
-                                        <input type="text" class="form-control" value="<?= $idTipoProcessador ?>" disabled>
+                                        <input type="text" class="form-control" value="<?= $desProcessador ?>" disabled>
                                     </div>
 
                                     <div class="col px-md-1 col-md-2">
@@ -133,14 +133,14 @@
 
                                 <hr>                               
                                 <div class="col-md-12">	
-                                    <table class="table table-striped table-bordered table-condensed">
+                                    <table class="table table-striped table-bordered table-condensed table-hover table-light">
                                         <thead>
                                             <tr>
-                                                HD's no Computador                                       
+                                                HD's no Computador:                                    
                                             </tr>
                                         </thead>
                                         <tbody> 
-                                            <td>
+                                            <td class="align-left">
                                                 <?php
                                                     $t = sizeof($tipoHD);
                                                     $nomeTabela = "hdTipos";
@@ -176,7 +176,7 @@
 
                                     <div class="col px-md-1 col-md-10">
                                         <label for="inputSuccess" class="control-label">Responsável pelo Cadastro:</label>
-                                        <input type="text" class="form-control" value="<?= $nomeFuncionario ?>" disabled>
+                                        <input type="text" class="form-control" value="<?= $respCadastro ?>" disabled>
                                     </div>
                                 </div> 
 
@@ -184,12 +184,8 @@
                                                 
                                 <div id="actions" class="row">
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary">Salvar</button>
-                                        <button class="btn" type="reset">Cancelar</button>													
-                                    </div>
-                                                    
-                                    <div class="col px-md-1 col-md-12" id="MostraPesq">	</div>
-                                    <div class="col px-md-1 col-md-12" id="MostraPesq1"> </div>					
+                                         <a href="../views/computadorListar.php" ><button type="button" class="btn btn-outline-warning">Voltar</button></a>
+                                    </div>				
                                 </div>                                           
                             </fieldset>
                         <!--/form-->  
