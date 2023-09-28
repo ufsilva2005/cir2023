@@ -2,7 +2,7 @@
 	session_start();
 	//$tipoP = $_SESSION['tipoP'];
 	//$valorP = $_SESSION['valorP'];
-	//$atiDes = $_SESSION['atiDes'];
+	$atiDes = $_SESSION['atiDes'];
 	$texto = "ALTERAÇÃO DE STATUS - ";
 
 	include "../dao/DAO-controleCir.php";
@@ -85,6 +85,6 @@
 		}
 	else
 		{	
-			header("Location: ../views/computadorsListarAtivas.php?action=$atiDes");
+			header("Location: ../views/compListarAtivoInativo.php?action=$atiDes");
 		}
 ?>

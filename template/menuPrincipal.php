@@ -51,7 +51,10 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="../views/computadorCadastrar.php">Cadastrar</a></li>
                         <li><a class="dropdown-item" href="../views/computadorListar.php">Listar Todos</a></li>
+                         <li><a class="dropdown-item" href="../views/compListarAtivoInativo.php?action=1">Listar Ativos</a></li>
+                        <li><a class="dropdown-item" href="../views/compListarAtivoInativo.php?action=2">Listar Inativos</a></li>
                         <li><a class="dropdown-item" href="../views/naoImplementada.php">Pesquisar</a></li>
+                        <li><a class="dropdown-item" href="../views/naoImplementada.php">Cadastrar Processador</a></li>
                     </ul>
                 </div>
 
