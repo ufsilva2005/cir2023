@@ -116,54 +116,52 @@
 			</nav>
 	
 
-		<div class="fixed-bottom p-1 px-md-5 col-md-12 bg-ufs text-black1">
-			<div class="row">
-				<div class="col px-md-1 col-md-2"> 
-					<label for="inputSuccess" class="control-label">Total de Impressoras:</label>
-					<input type="text" class="form-control" value="<?php echo $_SESSION['numUser'];?>" readonly >
-				</div>   
-				<div class="col px-md-1 col-md-2"> 
-					<label for="inputSuccess" class="control-label">Impressoras ativas:</label>
-					<input type="text" class="form-control" value="<?php echo $ativo;?>" readonly>
-				</div>        
-				<div class="col px-md-1 col-md-2"> 
-					<label for="inputSuccess" class="control-label">Impressoras desativadas:</label>
-					<input type="text" class="form-control" value="<?php echo $inativo;?>" readonly>
-				</div>  
-				<div class="col px-md-1 col-md-6"> 
-					<label for="inputSuccess" class="control-label">Menu Opção:</label>
-							<table class="table table-borderless">
-								<thead>
-									<tr>
-										<th>
-											<div class="btn-group pull-left" >
-												<a class="btn btn-small btn-warning table-edit">Alterar<i class="icon-edit"></i></a>
-											</div>
-											
-											<div class="btn-group pull-left">
-												<a class="btn btn-primary">Historico<i class="icon-remove"></i></a>
-											</div>
+			<div class="fixed-bottom p-1 px-md-5 col-md-12 bg-ufs text-black1">
+				<div class="row">
+					<div class="col px-md-1 col-md-2"> 
+						<label for="inputSuccess" class="control-label">Total de Impressoras:</label>
+						<input type="text" class="form-control" value="<?php echo $_SESSION['numUser'];?>" readonly >
+					</div>   
+					<div class="col px-md-1 col-md-2"> 
+						<label for="inputSuccess" class="control-label">Impressoras ativas:</label>
+						<input type="text" class="form-control" value="<?php echo $ativo;?>" readonly>
+					</div>        
+					<div class="col px-md-1 col-md-2"> 
+						<label for="inputSuccess" class="control-label">Impressoras desativadas:</label>
+						<input type="text" class="form-control" value="<?php echo $inativo;?>" readonly>
+					</div>  
+					<div class="col px-md-1 col-md-6"> 
+						<label for="inputSuccess" class="control-label">Menu Opção:</label>
+						<table class="table table-borderless">
+							<thead>
+								<tr>
+									<th>
+										<div class="btn-group pull-left" >
+											<a class="btn btn-small btn-warning table-edit">Alterar<i class="icon-edit"></i></a>
+										</div>
 												
-											<div class="btn-group pull-left">
-												<a class="btn btn-info">Detalhes<i class="icon-remove"></i></a>
-											</div>
-												
-											<div class="btn-group pull-left">
-												<a class="btn btn-small btn-success">atIvar<i class="icon-remove"></i></a>
-												<a class="btn btn-small btn-danger">destIvar<i class="icon-remove"></i></a>
-											</div>
+										<div class="btn-group pull-left">
+											<a class="btn btn-primary">Historico<i class="icon-remove"></i></a>
+										</div>
+													
+										<div class="btn-group pull-left">
+											<a class="btn btn-info">Detalhes<i class="icon-remove"></i></a>
+										</div>
+													
+										<div class="btn-group pull-left">
+											<a class="btn btn-small btn-success">atIvar<i class="icon-remove"></i></a>
+											<a class="btn btn-small btn-danger">destIvar<i class="icon-remove"></i></a>
+										</div>
 
-											<div class="btn-group pull-left">
-												<a class="btn btn-small btn-ufs">imPrimir<i class="icon-remove"></i></a>
-											</div>
-										</th>
-									</tr>
-
-								</thead>   
-							</table>    
-                           
-                        
-				</div>  				  
+										<div class="btn-group pull-left">
+											<a class="btn btn-small btn-ufs">imPrimir<i class="icon-remove"></i></a>
+										</div>
+									</th>
+								</tr>
+							</thead>   
+						</table>  
+					</div>  	
+				</div> 			  
 			</div>         
 		</div>		
 	</body>

@@ -11,6 +11,8 @@
             $valorPesquisa = $_SESSION['valorP1'] ;  
    			$tipoPesquisa = $_SESSION['tipoP1'];   
         }
+
+    $_SESSION['numUser'] = "";
     //echo "<br><br>";
     //echo "<br>valorPesquisa => " . $valorPesquisa;  
     //echo "<br>tipoPesquisa => " . $tipoPesquisa;  

@@ -20,7 +20,7 @@
         {
             $valorOpcao	= "inativo";
         }
-
+ 	$_SESSION['numUser'] = "";
     //$idFuncionario = $_SESSION['idFuncionario'];  
     //$nomeFuncionario = $_SESSION['nomeFuncionario'];  
 ?>	
@@ -143,37 +143,34 @@
 				</div>  
 				<div class="col px-md-1 col-md-6"> 
 					<label for="inputSuccess" class="control-label">Menu Opção:</label>
-							<table class="table table-borderless">
-								<thead>
-									<tr>
-										<th>
-											<div class="btn-group pull-left" >
-												<a class="btn btn-small btn-warning table-edit">Alterar<i class="icon-edit"></i></a>
-											</div>
+					<table class="table table-borderless">
+						<thead>
+							<tr>
+								<th>
+									<div class="btn-group pull-left" >
+										<a class="btn btn-small btn-warning table-edit">Alterar<i class="icon-edit"></i></a>
+									</div>
 											
-											<div class="btn-group pull-left">
-												<a class="btn btn-primary">Historico<i class="icon-remove"></i></a>
-											</div>
+									<div class="btn-group pull-left">
+										<a class="btn btn-primary">Historico<i class="icon-remove"></i></a>
+									</div>
+											
+									<div class="btn-group pull-left">
+										<a class="btn btn-info">Detalhes<i class="icon-remove"></i></a>
+									</div>
 												
-											<div class="btn-group pull-left">
-												<a class="btn btn-info">Detalhes<i class="icon-remove"></i></a>
-											</div>
-												
-											<div class="btn-group pull-left">
-												<a class="btn btn-small btn-success">atIvar<i class="icon-remove"></i></a>
-												<a class="btn btn-small btn-danger">destIvar<i class="icon-remove"></i></a>
-											</div>
+									<div class="btn-group pull-left">
+										<a class="btn btn-small btn-success">atIvar<i class="icon-remove"></i></a>
+										<a class="btn btn-small btn-danger">destIvar<i class="icon-remove"></i></a>
+									</div>
 
-											<div class="btn-group pull-left">
-												<a class="btn btn-small btn-ufs">imPrimir<i class="icon-remove"></i></a>
-											</div>
-										</th>
-									</tr>
-
-								</thead>   
-							</table>    
-                           
-                        
+									<div class="btn-group pull-left">
+										<a class="btn btn-small btn-ufs">imPrimir<i class="icon-remove"></i></a>
+									</div>
+								</th>
+							</tr>
+						</thead>   
+					</table> 
 				</div>  				  
 			</div>         
 		</div>		
