@@ -31,21 +31,21 @@
 		{
 			//echo "<br>nomeCir => " . $nomeCirComp;
 			$valorPesquisa = $nomeCirComp;
-			$tipoPesquisa = "nomeCirComp";
+			$tipoPesquisa = "nomeComputador";
 			$_SESSION['tipoPesquisa'] = $tipoPesquisa;
 		}
 	elseif($numCirComp == "" && $divisaoComp == "" && $nomeCirComp == "" && $ipComputador != "" && $macComputador == "")
 		{
 			//echo "<br>numIp => " . $ipComputador;
 			$valorPesquisa = $ipComputador;
-			$tipoPesquisa = "ipComputador";
+			$tipoPesquisa = "numIp";
 			$_SESSION['tipoPesquisa'] = $tipoPesquisa;
 		}
 	elseif($numCirComp == "" && $divisaoComp == "" && $nomeCirComp == "" && $ipComputador == "" && $macComputador != "")
 		{
 			//echo "<br>numMac => " . $macComputador;
 			$valorPesquisa = $macComputador;
-			$tipoPesquisa = "macComputador";
+			$tipoPesquisa = "numMac";
 			$_SESSION['tipoPesquisa'] = $tipoPesquisa;
 		}
 	else

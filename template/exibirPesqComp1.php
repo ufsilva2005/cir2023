@@ -11,8 +11,8 @@
             $tipoPesquisa =  $_SESSION['tipoP1'];
             $valorPesquisa = $_SESSION['valorP1'];
         }
-    $_SESSION['tipoP'] = $tipoPesquisa;
-    $_SESSION['valorP'] = $valorPesquisa;
+    echo $_SESSION['tipoP'] = $tipoPesquisa;
+    echo $_SESSION['valorP'] = $valorPesquisa;
 ?>
 
                                 <table class="table table-striped table-bordered table-condensed">
