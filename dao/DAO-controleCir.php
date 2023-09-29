@@ -494,7 +494,32 @@
 						}
 					return $buscar;
 					$conn = null;	
-				}   
+				}  
+                
+            public function BuscaPorDivComp($valorPesquisa)  
+                {
+                    $conn = Database::connect();
+                    $conn->exec('SET CHARACTER SET utf8');
+                                    
+                    $sql = "SELECT * FROM divisao d, setor s, computador c 
+                            WHERE d.divisao = '$valorPesquisa'
+                            AND d.idDivisao = s.idDivisao
+                            AND s.idSetor = c.idSetor";
+                    try 
+                        {
+                            $listar = $conn->query($sql);
+                            $buscar = $listar->fetchAll(PDO::FETCH_OBJ);
+                            $numRows = $listar->rowCount();
+                        } 
+
+                    catch (PDOException $exc)
+                        {
+                            $buscar = $exc->getTraceAsString();
+                        }
+                    $_SESSION['numRows'] = $numRows;
+                    return $buscar;                        
+                    $conn = null;	
+                }
             //FIM DAS FUNÇÕES RELACIONADAS AO COMPUTADOR
 
             //INÍCIO DAS FUNÇÕES RELACIONADAS A IMPRESSORA 
