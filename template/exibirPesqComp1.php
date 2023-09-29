@@ -78,13 +78,13 @@
 														<?php                                    
                                                             if($statusComp != "ativo") 
                                                                 {
-                                                                    $html = "<a href='../controllers/ativarDesativarComp.php?action=1&id=$idComputador' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
+                                                                    $html = "<a href='../controllers/ativarDesativarComp.php?action=3&id=$idComputador' class='btn btn-small btn-success'>I<i class='icon-remove'></i></a>";
                                                                     $inativo++;
 																	echo $html;
                                                                 }  
 															else
                                                                 {
-                                                                    $html = "<a href='../controllers/ativarDesativarComp.php?action=2&id=$idComputador' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
+                                                                    $html = "<a href='../controllers/ativarDesativarComp.php?action=4&id=$idComputador' class='btn btn-small btn-danger'>I<i class='icon-remove'></i></a>";
                                                                     $ativo++;
 																	echo $html;
                                                                 }                                    
