@@ -18,7 +18,29 @@ $_SESSION['idSetor'] = $idSetor;
 $_SESSION['idFuncionario'] = $idFuncionario;
 ?>
 
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.min.3-1.js"></script>
+        <script src="../js/bootstrap3-typeahead.min.js"></script>  
+        <script src="../js/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#termo_busca').keyup(function() {
+                    $.ajax({
+                        type: 'POST',
+                        url: '../scripts/buscaProcessador.php',
+                        data: {
+                            nome: $("#termo_busca").val()
+                        },
+                        success: function(data) {
+                            $('#listaProcessador').html(data);
+                        }
+                    });
+                });
+
+            });
+        </script>
+
+         <script src="../js/bootstrap.min.js"></script>
+
 
         <hr>
         <nav class="navbar navbar-dark">
@@ -79,24 +101,24 @@ $_SESSION['idFuncionario'] = $idFuncionario;
                                                                         
                                     <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Ramal:</label>
-                                        <input type="text" class="form-control" value="<?= $ramal ?>" >
+                                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $ramal ?>" >
                                     </div>
                                                                     
                                     <div class="col px-md-1 col-md-6">
                                         <label for="inputSuccess" class="control-label">Responsável pelo Setor:</label>
-                                        <input type="text" class="form-control" value="<?= $respSetor ?>" >
+                                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $respSetor ?>" >
                                     </div>
                                 </div>
                                             
                                 <div class="row">
                                     <div class="col px-md-1 col-md-6">
                                         <label for="inputSuccess" class="control-label">Local do Computador:</label>
-                                        <input type="text" class="form-control" value="<?= $nomeLocal ?>" >
+                                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $nomeLocal ?>" >
                                     </div>
                                                 
                                     <div class="col px-md-1 col-md-6">
                                         <label for="inputSuccess" class="control-label">Observação:</label>
-                                        <input type="text" class="form-control" value="<?= $obs ?>" >
+                                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $obs ?>" >
                                     </div>
                                 </div>
 
@@ -111,61 +133,92 @@ $_SESSION['idFuncionario'] = $idFuncionario;
                                 <div class="row">
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label" >Número da Cir:</label>
-                                        <input type="text" class="form-control" value="<?= $numCir ?>" >
+                                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $numCir ?>" >
                                     </div>  
                                                     
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Patrimônio Reitoria:</label>
-                                        <input type="text" class="form-control" value="<?= $numPatReitoria ?>" >
+                                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $numPatReitoria ?>" >
                                     </div>
 
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Patrimônio HU:</label>
-                                        <input type="text" class="form-control" value="<?= $numPatrimonio ?>" >
+                                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $numPatrimonio ?>" >
                                     </div>
 
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Nome do Computador:</label>
-                                        <input type="text" class="form-control" value="<?= $nomeComputador ?>" >
+                                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $nomeComputador ?>" >
                                     </div>												                                      
                                 </div>		
                                                 
                                 <div class="row">
                                     <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Sistema Operacional:</label>
-                                        <input type="text" class="form-control" value="<?= $sistemaOpera ?>" >
+                                        <select class="form-control" id="local" name="local">
+                                            <option><?= $sistemaOpera;
+                                                    $_SESSION['antSistemaOpera'] = $sistemaOpera ?></option>
+                                            <option> </option>
+                                            <option>WINDOWS XP</option>
+                                            <option>WINDOWS VISTA</option>
+                                            <option>WINDOWS 7</option>
+                                            <option>WINDOWS 8</option>
+                                            <option>WINDOWS 10</option>
+                                            <option>WINDOWS 11</option>
+                                            <option>MAC OS</option>
+                                            <option>LINUX</option>
+                                            <option>OPEN BSD</option>
+                                            <option>NOVELL</option>
+                                        </select>
                                     </div>
 
-                                    <div class="col px-md-1 col-md-3">
+                                    <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Modelo/Marca:</label>
-                                       <input type="text" class="form-control" value="<?= $modelMaquina ?>" >
+                                       <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $modelMaquina ?>" >
+                                    </div>
+                                            
+                                    <div class="col px-md-1  col-md-2">
+                                        <label for="inputSuccess" class="control-label">Pesquisar Processador:</label>
+                                        <input type="text" class="form-control" id="termo_busca" name="termo_busca">               
                                     </div>
                                                                         
-                                    <div class="col px-md-1 col-md-5">
-                                        <label for="inputSuccess" class="control-label">Tipo de Processador:</label>
-                                        <input type="text" class="form-control" value="<?= $desProcessador ?>" >
+                                    <div class="col px-md-1 col-md-4">
+                                        <label for="inputSuccess" class="control-label">Tipo de Processador => <?= $desProcessador ?></label>
+                                        <select class="form-control" name="listaProcessador" id="listaProcessador" onclick="if( $('#listaProcessador').html() == '' ){ alert('Tipo de Processador Não encontrado.\n Comunique ao Administrador do Sistema.');}"></select>
                                     </div>
 
                                     <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Memória:</label>
-                                        <input type="text" class="form-control" value="<?= $memoria ?>" >
+                                        <select class="form-control" id="local" name="local">
+                                            <option><?= $memoria;
+                                                    $_SESSION['antMemoria'] = $memoria ?></option>
+                                            <option> </option>
+                                            <option>512 Mb</option>
+                                            <option>1 Gb</option>
+                                            <option>2 Gb</option>
+                                            <option>3 Gb</option>
+                                            <option>4 Gb</option>
+                                            <option>8 Gb</option>
+                                            <option>16 Gb</option>
+                                            <option>32 Gb</option>
+                                        </select>
                                     </div>
                                 </div>
                                                 
                                 <div class="row">
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Número de IP:</label>
-                                        <input type="text" class="form-control" value="<?= $numIp ?>" >
+                                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $numIp ?>" >
                                     </div>
                                                                     
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Número MAC:</label>
-                                        <input type="text" class="form-control" value="<?= $numMac ?>" >
+                                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $numMac ?>" >
                                     </div>	
 
                                     <div class="col px-md-1 col-md-6">
                                         <label for="inputSuccess" class="control-label">Nome Usuário:</label> <br>
-                                        <input type="text" class="form-control" value="<?= $nomeUsuario ?>" >    
+                                        <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $nomeUsuario ?>" >    
                                     </div>
                                 </div>
 
@@ -199,6 +252,35 @@ $_SESSION['idFuncionario'] = $idFuncionario;
                                     </table>
                                 </div>
                                 <hr>
+
+                                <hr>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+  Abrir modal de demonstração
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Salvar mudanças</button>
+      </div>
+    </div>
+  </div>
+</div>
+                                <hr>
+
+                                
                                     
                                 <div class="row">	
                                     <label>
@@ -255,15 +337,6 @@ $_SESSION['idFuncionario'] = $idFuncionario;
                     </footer>
                 </div>
             </div>
-        </nav>
-        <?php
-        $i = 0;
-			if($i == 0){ ?>
-				<script>
-					$(document).ready(function(){
-						$('#exampleModalToggle').modal('show');
-					});
-				</script>
-			<?php } ?>
+        </nav>        
     </body>
 </html>
