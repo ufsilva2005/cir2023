@@ -72,7 +72,7 @@
 		{
 			//echo "<br>nomeDivisao => ". $_SESSION['nomeDivisao'];
 			$capHd2 = $_SESSION['capHd1'];
-            //array_shift($capHd2);
+            array_shift($capHd2);
             //print_r($capHd2); 
 
 			$tipoHD = serialize($capHd2); 

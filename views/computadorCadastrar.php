@@ -160,6 +160,7 @@
                                             <option>WINDOWS 7</option>
                                             <option>WINDOWS 8</option>
                                             <option>WINDOWS 10</option>
+                                            <option>WINDOWS 11</option>
                                             <option>MAC OS</option>
                                             <option>LINUX</option>
                                             <option>OPEN BSD</option>

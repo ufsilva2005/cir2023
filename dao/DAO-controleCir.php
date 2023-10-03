@@ -520,6 +520,27 @@
                     return $buscar;                        
                     $conn = null;	
                 }
+
+            public function CadastrarTipoProce($modeloProce) 
+                {	
+                    $conn = Database::connect();
+                    
+                    $conn->exec('SET CHARACTER SET utf8');
+                    
+                    $prepara = $conn->prepare("INSERT INTO tipoProcessadores(descricao, statusTipo) 
+                    VALUES(:descricaoBd, :statusTipoBd)");
+                        
+                    //$BdidTipoProcessador = $modeloProce->getIdTipoProcessador();
+                    $Bddescricao  = $modeloProce->getDescricao();
+                    $BdstatusTipo = $modeloProce->getStatusTipo();  
+                                        
+                    //$prepara->bindParam(":idTipoProcessadorBd", $BdidTipoProcessador;
+                    $prepara->bindParam(":descricaoBd",  $Bddescricao);
+                    $prepara->bindParam(":statusTipoBd", $BdstatusTipo);
+
+                    $prepara->execute();                 
+                    $conn = null;
+                }
             //FIM DAS FUNÇÕES RELACIONADAS AO COMPUTADOR
 
             //INÍCIO DAS FUNÇÕES RELACIONADAS A IMPRESSORA 
