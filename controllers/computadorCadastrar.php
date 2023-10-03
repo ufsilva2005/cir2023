@@ -87,7 +87,7 @@
 
 			//informações do computador
 			$numCir = $_SESSION['numCir'];
-			$numPatrimonio = $_SESSION['numCirnumPatrimonio']; 
+			$numPatrimonio = $_SESSION['numPatrimonio']; 
 			$numPatReitoria = $_SESSION['numPatReitoria']; 
 			$nomeComputador = $_SESSION['nomeComputador']; 
 			$dataAltCadastro = "0000-00-00"; 

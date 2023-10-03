@@ -10,8 +10,8 @@
 	//recebe dados da view
     $tipoProcessador =  converteMaiuscula($_POST['tipoProcessador']);
     $statusModelo = "ativo";
-    echo "<br>tipoProcessador => " . $tipoProcessador . "<br>";
-    echo "<br>statusModelo => " . $statusModelo . "<br>";
+    //echo "<br>tipoProcessador => " . $tipoProcessador . "<br>";
+    //echo "<br>statusModelo => " . $statusModelo . "<br>";
 
     //verificar se PROCESSADOR existe
     $nomeTabela = "tipoProcessadores";
@@ -27,9 +27,9 @@
     if($verificaProce == 0)
         {
             $modeloProce = new ModeloProce($idModelo, $tipoProcessador, $statusModelo);
-            echo "<br>dados impressora <br>";		
-            $modeloProce->exibir();
-            echo "<br>";
+            //echo "<br>dados processador <br>";		
+            //$modeloProce->exibir();
+            //echo "<br>";
             $modeloProceDAO = new ControleCirDAO();
             $modeloProceDAO->CadastrarTipoProce($modeloProce);
             header("Location: ../views/computadorCadastrarProce.php");
