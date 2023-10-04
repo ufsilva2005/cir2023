@@ -37,14 +37,37 @@
 	$memoria  = $dadosComputador[4];
 	$numIp  = $dadosComputador[5];
 	$numMac  = converteMaiuscula($_POST['numMac']);
-    //$nomeUsuario = nomeUsuario
-	//$statusComp  = "ativo";
+   	$altHd = $_POST['altHd'];
 	$nomeUsuario =  converteMaiuscula($_POST['nomeUsuario']);
 	$obs  = converteMaiuscula($dadosComputador[0]);
 	$respAltCadastro = $_SESSION['nomeFuncionario'];
     $dataAltCadastro = $_SESSION['data'];
 
+	echo "<br>informações atuais da maquina";
+	echo "<br>" . $nomeDivisao;
+	echo "<br>" . $localizacao;
+	echo "<br>" . $ramalComp;
+	echo "<br>" . $respSetor;
+	echo "<br>" . $nomeLocal;
+	echo "<br>" . $numCir;
+	echo "<br>" . $numPatReitoria;
+	echo "<br>" . $numPatrimonio;
+	echo "<br>" . $nomeComputador;
+	echo "<br>" . $sistemaOpera;
+	echo "<br>" . $modelMaquina;
+	echo "<br>" . $idTipoProcessador;
+	echo "<br>" . $memoria;
+	echo "<br>" . $numIp;
+	echo "<br>" . $numMac;
+	echo "<br>" . $altHd;
+	echo "<br>" . $nomeUsuario;
+	echo "<br>" . $obs;
+	echo "<br>" . $respAltCadastro;
+	echo "<br>" . $dataAltCadastro;
+
+
 	//informações antigas da maquina
+	echo "<br>informações antigas da maquina";
 	echo "<br>" . $_SESSION['antDivisao']; 
 	echo "<br>" . $_SESSION['antLocalizacao']; 
 	echo "<br>" . $_SESSION['antRamal']; 
@@ -62,7 +85,7 @@
 	echo "<br>" . $_SESSION['antNumIp']; 
 	echo "<br>" . $_SESSION['antNumMac']; 
 	echo "<br>" . $_SESSION['antNomeUsuario']; 
-	$_SESSION['antTipoHD']; 
+	echo "<br>" . $_SESSION['antTipoHD']; 
 	//$_SESSION['']; 
 	//$_SESSION['']; 
 	//$_SESSION['']; 
@@ -213,8 +236,6 @@
 
 			echo "<script type='text/javascript'>alert('Cadastro Realizado ! ');</script>";
 			echo "<script>location = '../views/computadorCadastrar.php';</script>";   
-		}
-
 	//header("Location: ../views/computadorCadastrar.php");*/
 ?>
  

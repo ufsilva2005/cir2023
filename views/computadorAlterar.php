@@ -12,7 +12,7 @@
     include "../scripts/validarNomeCir.php";
     include "../scripts/validarMac.php"; 
     include "../scripts/mascara.php";
-        
+
     require_once '../controllers/computadorBuscar.php';
     $_SESSION['idSetor'] = $idSetor;
     $_SESSION['idFuncionario'] = $idFuncionario;
@@ -49,7 +49,7 @@
                 <h3 class="text-success">Cadastro de Computador</h3>
                 <div class="panel-content">
                     <div class="col-md-12">
-                        <!--form name="cadastro" id="cadastro" method="post" action="./computadorCadastrar2.php"-->
+                        <form name="cadastro" id="cadastro" method="post" action="./computadorAlterar2.php">
                             <fieldset>	
                                 <div class="row">		
                                     <label>
@@ -59,7 +59,7 @@
                                 <div class="row">																						
                                     <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Divisão:</label>
-                                        <select class="form-control" name="localComputador[]">
+                                        <select class="form-control"  name="localComputador[]">
                                             <option value="<?php echo $idDivisao;
                                                             $_SESSION['antDivisao'] = $idDivisao; ?>"> <?php echo $nomeDivisao; ?></option>
                                             <option> </option>
@@ -78,7 +78,7 @@
                                                                     
                                     <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Localização:</label>
-                                        <select class="form-control" name="localComputador[]">
+                                        <select class="form-control"  name="localComputador[]">
                                             <option><?= $localizacao;
                                                     $_SESSION['antLocalizacao'] = $localizacao ?></option>
                                             <option> </option>
@@ -133,22 +133,25 @@
                                 <div class="row">
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label" >Número da Cir:</label>
-                                        <input type="text" class="form-control"  name = "numCir" id = "numCir" value="<?= $numCir ; $_SESSION['antNumCir']=$numCir; ?>" >
+                                        <input type="text" class="form-control" name = "numCir" id = "numCir" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" 
+                                        onchange="try{setCustomValidity('')}catch(e){}"  value="<?= $numCir ; $_SESSION['antNumCir']=$numCir; ?>" >
                                     </div>  
                                                     
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Patrimônio Reitoria:</label>
-                                        <input type="text" class="form-control"  name="dadosComputador[]" value="<?= $numPatReitoria ; $_SESSION['antNumPatReitoria']=$numPatReitoria; ?>" >
+                                        <input type="text" class="form-control"  name="dadosComputador[]" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" 
+                                        onchange="try{setCustomValidity('')}catch(e){}"  value="<?= $numPatReitoria ; $_SESSION['antNumPatReitoria']=$numPatReitoria; ?>" >
                                     </div>
 
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Patrimônio HU:</label>
-                                        <input type="text" class="form-control"  name="dadosComputador[]" value="<?= $numPatrimonio ; $_SESSION['antNumPatrimonio']=$numPatrimonio; ?>" >
+                                        <input type="text" class="form-control"  name="dadosComputador[]" pattern="[0-9]+$" oninvalid="setCustomValidity('Somente Numeros!')" 
+                                        onchange="try{setCustomValidity('')}catch(e){}" value="<?= $numPatrimonio ; $_SESSION['antNumPatrimonio']=$numPatrimonio; ?>" >
                                     </div>
 
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Nome do Computador:</label>
-                                        <input type="text" class="form-control" id = "nomeCir" name = "nomeCir" value="<?= $nomeComputador ; $_SESSION['antNomeComputador']=$nomeComputador; ?>" >
+                                        <input type="text" class="form-control"  id = "nomeCir" name = "nomeCir" value="<?= $nomeComputador ; $_SESSION['antNomeComputador']=$nomeComputador; ?>" >
                                     </div>												                                      
                                 </div>		
                                                 
@@ -208,14 +211,16 @@
                                 <div class="row">
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Número de IP:</label>
-                                        <input type="text" class="form-control"  name="dadosComputador[]" value="<?= $numIp ; $_SESSION['antNumIp']=$numIp; ?>" >
+                                        <input type="text" class="form-control"  name="dadosComputador[]" pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$"
+                                        placeholder="000.000.000.000" oninvalid="setCustomValidity('Endereco ip invalido!')" onchange="try{setCustomValidity('')}catch(e){}"
+                                        value="<?= $numIp ; $_SESSION['antNumIp']=$numIp; ?>" >
                                     </div>
                                                                     
                                     <div class="col px-md-1 col-md-3">
                                         <label for="inputSuccess" class="control-label">Número MAC:</label>
-                                        <input type="text" class="form-control"   name="numMac" id="numMac" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" 
-                                        pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" onchange="try{setCustomValidity('')}catch(e){}" 
-                                        value="<?= $numMac ; $_SESSION['antNumMac']=$numMac; ?>" >
+                                        <input type="text" class="form-control" name="numMac" id="numMac" maxlength="17" OnKeyPress="formatar('##:##:##:##:##:##', this)" 
+                                        pattern="([a-fA-F0-9]{2}[:]){5}([a-fA-F0-9]{2})$" oninvalid="setCustomValidity('Numero Mac inválido!')" 
+                                        onchange="try{setCustomValidity('')}catch(e){}" value="<?= $numMac ; $_SESSION['antNumMac']=$numMac; ?>" >
                                     </div>	
 
                                     <div class="col px-md-1 col-md-6">
@@ -255,13 +260,22 @@
                                         </table>
                                     </div>
 
-                                    <div class="py-md-4 col-md-2">
-                                        <a href="./computadorAlterar2.php?action=1" class="btn btn-ufs">ALTERAR HD<i class="icon-remove"></i></a>		
+                                     <div class="col px-md-1 col-md-3">
+                                        <label for="inputSuccess" class="control-label">opção:</label> <br>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="altHd" id="status1" value="0" >
+                                            <label class="form-check-label" for="status1">Alterar HD</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="altHd" id="status2" value="1">
+                                            <label class="form-check-label" for="status2">Adicionar HD</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="altHd" id="status3" value="2" checked>
+                                            <label class="form-check-label" for="status3">Nada</label>
+                                        </div>
                                     </div>
-                                   
-                                     <div class="py-md-4 col-md-2">                                        
-                                        <a href="./computadorAlterar2.php?action=2" class="btn btn-ufs">INSERIR HD<i class="icon-remove"></i></a>	
-                                    </div>
+                                  
                                 </div>
                                 <hr>                                    
                                 <div class="row">	
@@ -278,7 +292,7 @@
 
                                     <div class="col px-md-1 col-md-10">
                                         <label for="inputSuccess" class="control-label">Responsável pelo Cadastro:</label>
-                                        <input type="text" class="form-control" value="<?= $respCadastro ; $_SESSION['antRamal']=$ramal; ?>" disabled>
+                                        <input type="text" class="form-control" value="<?= $respCadastro; ?>" disabled>
                                     </div>
                                 </div> 
 
@@ -303,14 +317,22 @@
                                     </div>
                                 </div>
                                 <hr>
-                                                
+                               <p></p>
+
                                 <div id="actions" class="row">
-                                    <div class="col-md-12">
-                                         <a href="../views/computadorListar.php" ><button type="button" class="btn btn-outline-warning">Voltar</button></a>
-                                    </div>				
-                                </div>                                           
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-success">Salvar</button>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <a href="../template/menuPrincipal.php"><button type="button" class="btn btn-outline-warning">Voltar</button></a>
+                                    </div>
+
+                                    <div class="col px-md-1 col-md-12" id="MostraPesq"> </div>
+                                    <div class="col px-md-1 col-md-12" id="MostraPesq1"> </div>
+                                </div>
                             </fieldset>
-                        <!--/form-->  
+                        </form>
                     </div>
                     <p></p>
                     <p></p>
