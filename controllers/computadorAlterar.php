@@ -31,7 +31,7 @@
 
 	//informações novas da maquina
 	//$idComputador = "";
-	$numCirAltAlt  = $_POST['numCirAlt'];		
+	$numCirAlt  = $_POST['numCir'];		
 	$numPatReitoriaAlt  = $dadosComputador[1];
 	$numPatrimonioAlt  = $dadosComputador[2];
 	$nomeComputadorAlt = $_POST['nomeCir'];
@@ -48,7 +48,7 @@
 	$respAltCadastro = $_SESSION['nomeFuncionario'];
     $dataAltCadastro = $_SESSION['data'];
 
-	echo "<br>informações atuais da maquina";
+	/*echo "<br>informações atuais da maquina";
 	echo "<br>" . $nomenumIpAlt;
 	echo "<br>" . $localizacaoAlt;
 	echo "<br>" . $ramalCompAlt;
@@ -91,29 +91,35 @@
 	echo "<br>" . $_SESSION['antNumIp']; 
 	echo "<br>" . $_SESSION['antNumMac']; 
 	echo "<br>" . $_SESSION['antNomeUsuario']; 	
-	echo "<br>" ;
-	print_r($_SESSION['antTipoHD']); 
-	
+	echo "<br>" ;*/
+	//print_r($_SESSION['antTipoHD']); 
+
+	//echo "<br>antNumCir => " . $_SESSION['antNumCir']; 
+	//echo "<br>numCirAlt => " . $numCirAlt; 
 
 	//verificar se houve alterações nos dados
-	  if ($numCirAlt == "" || $numCirAlt ==  $_SESSION['antnumCir']) 
+	  if ($numCirAlt == "" || $numCirAlt ==  $_SESSION['antNumCir']) 
         {
-            $numCirBd =  $_SESSION['antnumCir']; 
+            $numCirBd =  $_SESSION['antNumCir']; 
+			$_SESSION['numCir'] = $numCirBd;
         }
     else
         {
             $numCirBd = $numCirAlt;  
+			$_SESSION['numCir'] = $numCirBd;
             $aux++;
-            $hitorico .= 'Nº DO COMPUTADOR ALTERADO DE: '. $_SESSION['antnumCir'] .' PARA => '. $numCirbD . ' \n';
+            $hitorico .= 'Nº DO COMPUTADOR ALTERADO DE: '. $_SESSION['antNumCir'] .' PARA => '. $numCirbD . ' \n';
         }
 
     if ($numPatReitoriaAlt == "" || $numPatReitoriaAlt == $_SESSION['antNumPatReitoria']) 
         {
             $numPatReitoriaBd = $_SESSION['antNumPatReitoria'];
+			$_SESSION['numPatReitoria'] = $numPatReitoriaBd;
         }   
      else
         {
             $numPatReitoriaBd = $numPatReitoriaAlt;  
+			$_SESSION['numPatReitoria'] = $numPatReitoriaBd;
             $aux++;
             $hitorico .= 'Nº DE PATRIMÔNIO DA RIETORIA ALTERADO DE: '. $_SESSION['antNumPatReitoria'].' PARA => '. $numPatReitoriaBd . ' \n';
         }
@@ -121,10 +127,12 @@
     if ($numPatrimonioAlt == "" || $numPatrimonioAlt == $_SESSION['antNumPatrimonio'])
         {
             $numPatrimonioBd = $_SESSION['antNumPatrimonio'];
+			$_SESSION['numPatrimonio'] = $numPatrimonioBd;
         }
     else
         {
             $numPatrimonioBd = $numPatrimonioAlt;  
+			$_SESSION['numPatrimonio'] = $numPatrimonioBd;
             $aux++;
             $hitorico .= 'Nº PATRIMÔNIO DO HU ALTERADO DE: '. $_SESSION['antNumPatrimonio'] .' PARA => '. $numPatrimonioBd . ' \n';
         }
@@ -132,10 +140,12 @@
     if ($nomeComputadorAlt == "" || $nomeComputadorAlt == $_SESSION['antNomeComputador'])
         {
             $nomeComputadorBd = $_SESSION['antNomeComputador'];
+			$_SESSION['nomeComputador'] = $nomeComputadorBd;
         }
     else
         {
             $nomeComputadorBd = $nomeComputadorAlt;  
+			$_SESSION['nomeComputador'] = $nomeComputadorBd;
             $aux++;
             $hitorico .= 'NOME DO COMPUTADOR ALTERADO DE: '. $_SESSION['antNomeComputador'] .' PARA => '. $nomeComputadorBd . ' \n';
         }
@@ -143,10 +153,12 @@
     if ($sistemaOperaAlt == "" || $sistemaOperaAlt == $_SESSION['antSistemaOpera']) 
         {
             $sistemaOperaBd = $_SESSION['antSistemaOpera'];
+			$_SESSION['sistemaOpera'] = $sistemaOperaBd;
         }
     else
         {
             $sistemaOperaBd = $sistemaOperaAlt; 
+			$_SESSION['sistemaOpera'] = $sistemaOperaBd;
             $aux++;
             $hitorico .= 'SISTEMA OPERACIONAL ALTERADO DE: '. $_SESSION['antSistemaOpera'] .' PARA => '. $sistemaOperaBd . ' \n';
         }
@@ -154,10 +166,12 @@
     if ($modelMaquinaAlt == "" || $modelMaquinaAlt == $_SESSION['antModelMaquina']) 
         {
             $modelMaquinaBd = $_SESSION['antModelMaquina'];
+			$_SESSION['modelMaquina'] = $modelMaquinaBd;
         }   
      else
         {
             $modelMaquinaBd = $modelMaquinaAlt;  
+			$_SESSION['modelMaquina'] = $modelMaquinaBd;
             $aux++;
             $hitorico .= 'MODELO DO COMPUTADOR ALTERADO DE: '. $_SESSION['antModelMaquina'] .' PARA => '. $modelMaquinaBd . ' \n';
         }
@@ -165,10 +179,12 @@
       if ($idTipoProcessadorAlt == "" || $idTipoProcessadorAlt == $_SESSION['antIdTipoProcessador'] ) 
         {
             $idTipoProcessadorBd = $_SESSION['antIdTipoProcessador'];
+			$_SESSION['idTipoProcessador'] = $idTipoProcessadorBd;
         }   
      else
         {
             $idTipoProcessadorBd = $idTipoProcessadorAlt;  
+			$_SESSION['idTipoProcessador'] = $idTipoProcessadorBd;
             $aux++;
             $hitorico .= 'TIPO DE PROCESSADOR ALTERADO DE: '. $_SESSION['antIdTipoProcessador']  .' PARA => '. $idTipoProcessadorBd . ' \n';
         }
@@ -176,10 +192,12 @@
     if ($memoriaAlt == "" || $memoriaAlt == $_SESSION['antMemoria'])
         {
             $memoriaBd = $_SESSION['antMemoria'];
+			$_SESSION['memoria'] = $memoriaBd; 
         }
     else
         {
-            $memoriaBd = $memoriaAlt;        
+            $memoriaBd = $memoriaAlt;   
+			$_SESSION['memoria'] = $memoriaBd;     
             $aux++;
             $hitorico .= 'MEMÓRIA DA COMPUTADOR ALTERADA DE: '. $_SESSION['antMemoria'] .' PARA => '. $memoriaBd . ' \n';
         }
@@ -187,10 +205,12 @@
     if ($numIpAlt == "" || $numIpAlt == $_SESSION['antNumIp'])
         {
             $numIpBd = $_SESSION['antNumIp'];
+			$_SESSION['numIp'] = $numIpBd;
         }
     else
         {
             $numIpBd = $numIpAlt;  
+			$_SESSION['numIp'] = $numIpBd;
             $auxLocal++;
             $hitorico .= 'Nº IP DO COMPUTADOR ALTERADO DE: '. $_SESSION['antNumIp'] .' PARA => '. $numIpBd . ' \n';
         }
@@ -198,10 +218,12 @@
 	if ($numMacAlt == "" || $numMacAlt == $_SESSION['antNumMac'])
         {
             $numMacBd = $_SESSION['antNumMac'];
+			$_SESSION['numMac'] = $numMacBd;
         }
     else
         {
             $numMacBd = $numMacAlt;  
+			$_SESSION['numMac'] = $numMacBd;
             $auxLocal++;
             $hitorico .= 'Nº MAC ALTERADO DE: '. $_SESSION['antNumMac'] .' PARA => '. $numMacBd . ' \n';
         }
@@ -209,46 +231,54 @@
 	if ($nomeUsuarioAlt == "" || $nomeUsuarioAlt == $_SESSION['antNomeUsuario'])
 			{
 				$nomeUsuarioBd = $_SESSION['antNomeUsuario'];
+				$_SESSION['nomeUsuario'] = $nomeUsuarioBd;
 			}
     else
         {
             $nomeUsuarioBd = $nomeUsuarioAlt;  
+			$_SESSION['nomeUsuario'] = $nomeUsuarioBd;
             $auxLocal++;
             $hitorico .= 'NOME DO USUÁRIO ALTERADO DE: '. $_SESSION['antNomeUsuario'] .' PARA => '. $nomeUsuarioBd . ' \n';
         }
 
+	
 	//local
     if ($divisaoAlt == "" || $divisaoAlt == $_SESSION['antDivisao'])
         {
             $divisaoBd = $_SESSION['antDivisao'];
+			$_SESSION['idDivisao'] = $divisaoBd;
         }
     else
         {
             $divisaoBd = $divisaoAlt;  
-            $divisao0DAO = new ControleCirDAO();   
+           	$_SESSION['idDivisao'] = $divisaoBd;
+
+			$divisao0DAO = new ControleCirDAO();   
             $nomeTabela = "divisao";
             $tipoOpcao = "idDivisao";
-            foreach ($divisao0DAO->ListarOpcao2($nomeTabela, $tipoOpcao, $_SESSION['antDivisao']) as $res)
+            foreach ($divisao0DAO->ListarOpcao($nomeTabela, $tipoOpcao, $_SESSION['antDivisao']) as $res)
                 {
                     $descricaoAnt = $res->divisao;
                 }
             $divisao1DAO = new ControleCirDAO();   
-            foreach ($divisao1DAO->ListarOpcao2($nomeTabela, $tipoOpcao, $divisaoBd) as $res)
+            foreach ($divisao1DAO->ListarOpcao($nomeTabela, $tipoOpcao, $divisaoBd) as $res)
                 {
                     $descricaoAlt = $res->divisao;
                 }	
 
-            $auxLocal++;
+			$auxLocal++;
             $hitorico .= 'DIVSÃO DO COMPUTADOR ALTERADO DE: '. $descricaoAnt .' PARA => '. $descricaoAlt . ' \n';
         }
        
     if ($localizacaoAlt == "" || $localizacaoAlt == $_SESSION['antLocalizacao']) 
         {
             $localizacaoBd = $_SESSION['antLocalizacao'];
+			$_SESSION['localizacao'] = $localizacaoBd;
         }
     else
         {
             $localizacaoBd = $localizacaoAlt;  
+			$_SESSION['localizacao'] = $localizacaoBd;
             $auxLocal++;
             $hitorico .= 'LOCAL ALTERADO DE: '. $_SESSION['antLocalizacao'] .' PARA => '. $localizacaoBd . ' \n';
         }
@@ -256,10 +286,12 @@
     if ($ramalCompAlt == "" || $ramalCompAlt == $_SESSION['antRamal']) 
         {
             $ramalBd = $_SESSION['antRamal'];
+			$_SESSION['ramalComp'] = $ramalBd;
         }   
      else
         {
             $ramalBd = $ramalCompAlt;  
+			$_SESSION['ramalComp'] = $ramalBd;
             $auxLocal++;
             $hitorico .= 'RAMAL ALTERADO DE: '. $_SESSION['antRamal'] .' PARA => '. $ramalBd . ' \n';
         }
@@ -267,10 +299,12 @@
     if ($respSetorAlt == "" || $respSetorAlt == $_SESSION['antRespSetor'])
         {
             $respSetBd = $_SESSION['antRespSetor'];
+			$_SESSION['respSetor'] = $respSetBd;
         }
     else
         {
-            $respSetBd = $respSetorAlt;  
+            $respSetBd = $respSetorAlt; 
+			$_SESSION['respSetor'] = $respSetBd; 
             $auxLocal++;
             $hitorico .= 'RESPONSÁVEL PELO SETOR ALTERADO DE: '. $_SESSION['antRespSetor'] .' PARA => '. $respSetBd . ' \n';
         }
@@ -278,10 +312,12 @@
     if ($nomeLocalAlt == "" || $nomeLocalAlt == $_SESSION['antNomeLocal'])
         {
             $nomeLocalBd = $_SESSION['antNomeLocal'];
+			$_SESSION['nomeLocal'] = $nomeLocalBd;
         }
     else
         {
             $nomeLocalBd = $nomeLocalAlt;  
+			$_SESSION['nomeLocal'] = $nomeLocalBd;
             $auxLocal++;
             $hitorico .= 'NOME DO LOCAL ALTERADO DE: '. $_SESSION['antNomeLocal'] .' PARA => '. $nomeLocalBd . ' \n';
         }
@@ -289,7 +325,7 @@
 	//echo "<br>aux =>" . $aux;
 	//echo "<br>auxLocal =>" . $auxLocal;
 	//echo "<br>altHd => " . $altHd; 
-	echo "<br>hitorico =>" . $hitorico;
+	//echo "<br>hitorico =>" . $hitorico;
 
 	if($aux == 0 && $auxLocal == 0 && $altHd == 0)
 		{
@@ -303,29 +339,40 @@
 			$idComp = $_SESSION['idCompAlt'];
 			echo "<br>altHd => " . $altHd; 
 			echo "<br>aux => " . $aux; 
-			echo "<br>auxLocal => " . $auxLocal;     
+			echo "<br>auxLocal => " . $auxLocal;   
+			echo "<br>antTipoHD => "; 
+			print_r($_SESSION['antTipoHD']); 
+			echo "<br>antDivisao => " . $_SESSION['antDivisao']; 
+			echo "<br>Divisao alt => " . $divisaoAlt;   
+			echo "<br>DivisaoBd => " . $divisaoBd;
 		}
-	elseif($aux == 0 && $auxLocal == 0 && $altHd == 2)
+	/*elseif($aux == 0 && $auxLocal == 0 && $altHd == 2)
 		{
 			$idComp = $_SESSION['idCompAlt'];
 			echo "<br>altHd => " . $altHd;
 			echo "<br>aux => " . $aux; 
 			echo "<br>auxLocal => " . $auxLocal;  
-		}
+		}*/
 	elseif($aux != 0 || $auxLocal != 0 && $altHd == 1)
 		{
 			$idComp = $_SESSION['idCompAlt'];
 			echo "<br>altHd => " . $altHd;  
 			echo "<br>aux => " . $aux; 
 			echo "<br>auxLocal => " . $auxLocal;    
+			echo "<br>antTipoHD => "; 
+			print_r($_SESSION['antTipoHD']); 
+			echo "<br>antDivisao => " . $_SESSION['antDivisao']; 
+			echo "<br>Divisao alt => " . $divisaoAlt; 
+			echo "<br>hitorico =>" . $hitorico;
+			echo "<br>DivisaoBd => " . $divisaoBd;
 		}
-	elseif($aux != 0 || $auxLocal != 0 && $altHd == 2)
+	/*elseif($aux != 0 || $auxLocal != 0 && $altHd == 2)
 		{
 			$idComp = $_SESSION['idCompAlt'];
 			echo "<br>altHd => " . $altHd; 
 			echo "<br>aux => " . $aux; 
 			echo "<br>auxLocal => " . $auxLocal;     
-		}
+		}*/
 	else
 		{
 			echo "<script type='text/javascript'>alert('error');</script>";

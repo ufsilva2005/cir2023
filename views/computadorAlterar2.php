@@ -1,6 +1,6 @@
 <?php
     session_start();
-    //include "../template/menuPrincipal.php";
+    include "../template/menuPrincipal.php";
 
     if ($_SESSION['computador'] != "sim") {
         echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
@@ -8,10 +8,10 @@
     }
     require_once '../controllers/computadorAlterar.php';
     include_once "../dao/DAO-controleCir.php";
-    echo "<br>"  . $action;
-    echo "<br>";
-    print_r($_SESSION['antTipoHD']);
-    echo "<br>"  . $_SESSION['antMemoria']; 
+    //echo "<br>"  . $action;
+    //echo "<br>";
+    //print_r($_SESSION['antTipoHD']);
+    //echo "<br>"  . $_SESSION['antMemoria']; 
 ?>
 
 <hr>
@@ -31,7 +31,18 @@
                                 <div class="row">																						
                                     <div class="col px-md-1 col-md-2">
                                         <label for="inputSuccess" class="control-label">Divisão:</label>
-                                        <input type="text" class="form-control" value="<?= $_SESSION['nomeDivisao'] ?>" disabled>
+
+                                        <?php
+                                            $divisao0DAO = new ControleCirDAO();   
+                                            $nomeTabela = "divisao";
+                                            $tipoOpcao = "idDivisao";
+                                            foreach ($divisao0DAO->ListarOpcao($nomeTabela, $tipoOpcao, $divisaoBd) as $res)
+                                                {
+                                                    $descricaoAnt = $res->divisao;
+                                                }
+                                        ?>
+
+                                        <input type="text" class="form-control" value="<?= $descricaoAnt ?>" disabled>
                                     </div>
                                                                     
                                     <div class="col px-md-1 col-md-2">
@@ -105,7 +116,16 @@
                                                                         
                                     <div class="col px-md-1 col-md-5">
                                         <label for="inputSuccess" class="control-label">Tipo de Processador:</label>
-                                        <input type="text" class="form-control" value="<?= $_SESSION['idTipoProcessador'] ?>" disabled>
+                                        <?php
+                                            $nomeTabela = "tipoProcessadores";
+                                            $opcao1 = "idTipoProcessador";
+                                            $processDAO = new ControleCirDAO();
+                                            foreach($processDAO->Verificar($nomeTabela, $opcao1, $idTipoProcessadorBd) as $proc)
+                                                { 	
+                                                    $desProcessador = $proc->descricao;
+                                                }
+                                        ?>
+                                        <input type="text" class="form-control" value="<?= $desProcessador ?>" disabled>
                                     </div>
 
                                     <div class="col px-md-1 col-md-2">
@@ -147,7 +167,7 @@
                                                     $capHd[$_SESSION['i']] = $_POST['capHd'];
                                                     $_SESSION['capHd'] = $capHd;
                                                 ?>                      
-                                                <form id="hd" class="form-horizontal" action="./computadorCadastrar2.php" method="POST">
+                                                <form id="hd" class="form-horizontal" action="./computadorAlterar2.php" method="POST">
                                                     <div class="row">  
                                                         <div class="col px-md-1 col-md-12">                                   
                                                             <label for="inputSuccess" class="control-label">capacidade do hd:</label>
