@@ -230,7 +230,7 @@
                                 </div>
 
                                 <div class="row">                           
-                                    <div class="col-md-7">	
+                                    <div class="col-md-8">	
                                         <table class="table table-striped table-bordered table-condensed table-hover table-light">
                                             <thead>
                                                 <tr>
@@ -260,15 +260,22 @@
                                         </table>
                                     </div>
 
-                                   
-                                    <div class="py-md-4 col-md-3">
-                                        <button type="submit" class="btn btn-ufs">Alterar HD</button>	
+                                     <div class="col px-md-1 col-md-3">
+                                        <label for="inputSuccess" class="control-label">opção:</label> <br>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="altHd" id="status1" value="2" >
+                                            <label class="form-check-label" for="status1">Alterar HD</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="altHd" id="status2" value="1">
+                                            <label class="form-check-label" for="status2">Adicionar HD</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="altHd" id="status3" value="0" checked>
+                                            <label class="form-check-label" for="status3">Nada</label>
+                                        </div>
                                     </div>
                                   
-                                    <div class="py-md-4 px-md-4 col-md-2">
-                                        <a href="../template/menuPrincipal.php"><button type="button" class="btn btn-outline-warning">Voltar</button></a>
-                                    </div>
-
                                 </div>
                                 <hr>                                    
                                 <div class="row">	
@@ -313,6 +320,14 @@
                                <p></p>
 
                                 <div id="actions" class="row">
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-success">Salvar</button>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <a href="../template/menuPrincipal.php"><button type="button" class="btn btn-outline-warning">Voltar</button></a>
+                                    </div>
+
                                     <div class="col px-md-1 col-md-12" id="MostraPesq"> </div>
                                     <div class="col px-md-1 col-md-12" id="MostraPesq1"> </div>
                                 </div>

@@ -41,8 +41,7 @@
 	$memoriaAlt  = $dadosComputador[4];
 	$numIpAlt  = $dadosComputador[5];
 	$numMacAlt  = converteMaiuscula($_POST['numMac']);
-   	$altHd = 1;
-	//$altHd = $_POST['altHd'];
+   	$altHd = $_POST['altHd'];
 	$nomeUsuarioAlt =  converteMaiuscula($_POST['nomeUsuario']);
 	$obs  = converteMaiuscula($dadosComputador[0]);
 	$respAltCadastro = $_SESSION['nomeFuncionario'];

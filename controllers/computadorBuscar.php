@@ -18,7 +18,7 @@
 	$compAltDAO = new ControleCirDAO();
 	foreach($compAltDAO->Verificar($nomeTabela, $opcao1, $valor1) as $comp)
 		{ 	
-			$idComputador = $comp->idComputador;
+			//$idComputador = $comp->idComputador;
 			$numCir = $comp->numCir;
 			$numPatrimonio = $comp->numPatrimonio;
             $numPatReitoria = $comp->numPatReitoria;
