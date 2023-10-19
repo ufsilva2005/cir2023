@@ -30,7 +30,7 @@
 	$nomeLocalAlt = converteMaiuscula($_POST['localComputador1']);
 
 	//informações novas da maquina
-	//$idComputador = "";
+	//$idComp = "";
 	$numCirAlt  = $_POST['numCir'];		
 	$numPatReitoriaAlt  = $dadosComputador[1];
 	$numPatrimonioAlt  = $dadosComputador[2];
@@ -41,61 +41,12 @@
 	$memoriaAlt  = $dadosComputador[4];
 	$numIpAlt  = $dadosComputador[5];
 	$numMacAlt  = converteMaiuscula($_POST['numMac']);
-   	$altHd = 1;
+   	//$altHd = 1;
 	//$altHd = $_POST['altHd'];
 	$nomeUsuarioAlt =  converteMaiuscula($_POST['nomeUsuario']);
 	$obs  = converteMaiuscula($dadosComputador[0]);
 	$respAltCadastro = $_SESSION['nomeFuncionario'];
     $dataAltCadastro = $_SESSION['data'];
-
-	/*echo "<br>informações atuais da maquina";
-	echo "<br>" . $nomenumIpAlt;
-	echo "<br>" . $localizacaoAlt;
-	echo "<br>" . $ramalCompAlt;
-	echo "<br>" . $respSetorAlt;
-	echo "<br>" . $nomeLocalAlt;
-	echo "<br>" . $numCirAlt;
-	echo "<br>" . $numPatReitoriaAlt;
-	echo "<br>" . $numPatrimonioAlt;
-	echo "<br>" . $nomeComputadorAlt;
-	echo "<br>" . $sistemaOperaAlt;
-	echo "<br>" . $modelMaquinaAlt;
-	echo "<br>" . $idTipoProcessadorAlt;
-	echo "<br>" . $memoriaAlt;
-	echo "<br>" . $numIpAlt;
-	echo "<br>" . $numMacAlt;
-	echo "<br>" . $altHd;
-	echo "<br>" . $nomeUsuarioAlt;
-	echo "<br>" . $obs;
-	echo "<br>" . $respAltCadastro;
-	echo "<br>" . $dataAltCadastro;
-
-
-	//informações antigas da maquina
-	echo "<br>informações antigas da maquina";
-	echo "<br>" . $_SESSION['idCompAlt'];
-	echo "<br>" . $_SESSION['antDivisao']; 
-	echo "<br>" . $_SESSION['antLocalizacao']; 
-	echo "<br>" . $_SESSION['antRamal']; 
-	echo "<br>" . $_SESSION['antRespSetor'];
-	echo "<br>" . $_SESSION['antNomeLocal']; 
-	echo "<br>" . $_SESSION['antObs']; 
-	echo "<br>" . $_SESSION['antnumCir']; 
-	echo "<br>" . $_SESSION['antNumPatReitoria']; 
-	echo "<br>" . $_SESSION['antNumPatrimonio']; 
-	echo "<br>" . $_SESSION['antNomeComputador']; 
-	echo "<br>" . $_SESSION['antSistemaOpera']; 
-	echo "<br>" . $_SESSION['antModelMaquina']; 
-	echo "<br>" . $_SESSION['antIdTipoProcessador']; 
-	echo "<br>" . $_SESSION['antMemoria']; 
-	echo "<br>" . $_SESSION['antNumIp']; 
-	echo "<br>" . $_SESSION['antNumMac']; 
-	echo "<br>" . $_SESSION['antNomeUsuario']; 	
-	echo "<br>" ;*/
-	//print_r($_SESSION['antTipoHD']); 
-
-	//echo "<br>antNumCir => " . $_SESSION['antNumCir']; 
-	//echo "<br>numCirAlt => " . $numCirAlt; 
 
 	//verificar se houve alterações nos dados
 	  if ($numCirAlt == "" || $numCirAlt ==  $_SESSION['antNumCir']) 
@@ -322,41 +273,25 @@
             $hitorico .= 'NOME DO LOCAL ALTERADO DE: '. $_SESSION['antNomeLocal'] .' PARA => '. $nomeLocalBd . ' \n';
         }
 
-	//echo "<br>aux =>" . $aux;
-	//echo "<br>auxLocal =>" . $auxLocal;
-	//echo "<br>altHd => " . $altHd; 
-	//echo "<br>hitorico =>" . $hitorico;
-
-	if($aux == 0 && $auxLocal == 0 && $altHd == 0)
+	if($aux == 0 && $auxLocal == 0)
 		{
-			$idComp = $_SESSION['idCompAlt'];
+			//$idComp = $_SESSION['idCompAlt'];
 			echo "<script type='text/javascript'>alert('NENHUMA ALTERAÇÃO EFETUADA');</script>";
             echo "<script>location = '../views/computadorAlterar.php?action=1&id=$idComp';</script>";     
 		}
 
-	elseif($aux == 0 && $auxLocal == 0 && $altHd == 1)
+	elseif($aux != 0 && $auxLocal == 0)
 		{
-			$idComp = $_SESSION['idCompAlt'];
-			echo "<br>altHd => " . $altHd; 
-			echo "<br>aux => " . $aux; 
-			echo "<br>auxLocal => " . $auxLocal;   
-			echo "<br>antTipoHD => "; 
-			print_r($_SESSION['antTipoHD']); 
-			echo "<br>antDivisao => " . $_SESSION['antDivisao']; 
-			echo "<br>Divisao alt => " . $divisaoAlt;   
-			echo "<br>DivisaoBd => " . $divisaoBd;
-		}
-	/*elseif($aux == 0 && $auxLocal == 0 && $altHd == 2)
-		{
-			$idComp = $_SESSION['idCompAlt'];
-			echo "<br>altHd => " . $altHd;
-			echo "<br>aux => " . $aux; 
-			echo "<br>auxLocal => " . $auxLocal;  
-		}*/
-	elseif($aux != 0 || $auxLocal != 0 && $altHd == 1)
-		{
-			$idComp = $_SESSION['idCompAlt'];
-			echo "<br>altHd => " . $altHd;  
+			//$idComp = $_SESSION['idCompAlt'];
+			echo "<br>dados do computar alterados" ; 
+			
+			$computador = new Computador($_SESSION['idCompAlt'], $numCirBd, $numPatrimonioBd, $numPatReitoriaBd, $nomeComputadorBd, $dataCadastro,
+			$respCadastro, $dataAltCadastro, $_SESSION['nomeFuncionario'],  $sistemaOperaBd, $modelMaquinaBd, $memoriaBd, $numIpBd, $numMacBd, 
+			$_SESSION['antTipoHD'], $nomeUsuarioBd, $statusComp, $obs, $_SESSION['idFuncionario'], $_SESSION['idSetor'], $idTipoProcessadorBd);
+			$computador->exibir();
+			//$computadorDAO = new ControleCirDAO();
+			//$computadorDAO->CadastrarComp($computador);	
+
 			echo "<br>aux => " . $aux; 
 			echo "<br>auxLocal => " . $auxLocal;    
 			echo "<br>antTipoHD => "; 
@@ -366,13 +301,61 @@
 			echo "<br>hitorico =>" . $hitorico;
 			echo "<br>DivisaoBd => " . $divisaoBd;
 		}
-	/*elseif($aux != 0 || $auxLocal != 0 && $altHd == 2)
+
+	elseif($aux == 0 && $auxLocal != 0)
 		{
-			$idComp = $_SESSION['idCompAlt'];
-			echo "<br>altHd => " . $altHd; 
+			//$idComp = $_SESSION['idCompAlt'];
+			echo "<br>setor alterado";  
+			echo "<br>divisaoBd => " . $divisaoBd; 
+			echo "<br>localizacaoBd => " . $localizacaoBd; 
+			echo "<br>nomeLocalBd =>" . $nomeLocalBd;
+
+			//verificar se local existe
+			$setorExisteDAO = new ControleCirDAO();
+			foreach ($setorExisteDAO->VerificarSetor2($divisaoBd,$localizacaoBd,$nomeLocalBd) as $local)
+				{ 
+					$verificaSetor = $local->idSetor;				          
+				}
+				
+			echo "<br>verificaSetor => " . $verificaSetor . "<br>";
+			if($verificaSetor == "")
+				{
+					$local1 = new Setor($idSetor, $divisaoBd, $localizacaoBd, $ramalBd, $respSetBd, $nomeLocalBd);			
+					$local1->exibir();
+					//$local = new ControleCirDAO();	
+					//$local->CadastrarSetor($local1);
+					//echo "<br>idSetor 02 => " . $idSetor . "<br>";
+				}
+			
+			else
+				{
+					$computador = new Computador($_SESSION['idCompAlt'], $numCirBd, $numPatrimonioBd, $numPatReitoriaBd, $nomeComputadorBd, $dataCadastro,
+					$respCadastro, $dataAltCadastro, $_SESSION['nomeFuncionario'],  $sistemaOperaBd, $modelMaquinaBd, $memoriaBd, $numIpBd, $numMacBd, 
+					$_SESSION['antTipoHD'], $nomeUsuarioBd, $statusComp, $obs, $_SESSION['idFuncionario'], $verificaSetor, $idTipoProcessadorBd);
+					$computador->exibir();
+					//$computadorDAO = new ControleCirDAO();
+					//$computadorDAO->CadastrarComp($computador);	
+				}
+					
+		
+			echo "<br>antTipoHD => "; 
+			print_r($_SESSION['antTipoHD']); 
+		}
+
+	elseif($aux != 0 && $auxLocal != 0)
+		{
+			//$idComp = $_SESSION['idCompAlt'];
+			echo "<br>computador e setor alterados";  
 			echo "<br>aux => " . $aux; 
-			echo "<br>auxLocal => " . $auxLocal;     
-		}*/
+			echo "<br>auxLocal => " . $auxLocal;    
+			echo "<br>antTipoHD => "; 
+			print_r($_SESSION['antTipoHD']); 
+			echo "<br>antDivisao => " . $_SESSION['antDivisao']; 
+			echo "<br>Divisao alt => " . $divisaoAlt; 
+			echo "<br>hitorico =>" . $hitorico;
+			echo "<br>DivisaoBd => " . $divisaoBd;
+		}
+
 	else
 		{
 			echo "<script type='text/javascript'>alert('error');</script>";
@@ -463,7 +446,7 @@
 				{	
 					$idSetor = $verificaSetor;
 					//echo "<br>idSetor 01 => " . $idSetor . "<br>";
-					$computador = new Computador($idComputador, $numCirAlt, $numPatrimonio, $numPatReitoria, $nomeComputador, $dataCadastro,
+					$computador = new Computador($idComp, $numCirAlt, $numPatrimonio, $numPatReitoria, $nomeComputador, $dataCadastro,
 					$_SESSION['nomeFuncionario'], $dataAltCadastro, $respAltCadastro, $sistemaOpera, $modelMaquina, $memoria, $numIp, $numMac, 
 					$tipoHD, $nomeUsuario, $statusComp, $obs, $idFuncionario, $idSetor, $idTipoProcessador);					
 					//$computador->exibir();			
@@ -500,7 +483,7 @@
 					$idSetor = $_SESSION['localid'];
 					//$idSetor = 1;
 					//echo "<br>";
-					$computador = new Computador($idComputador, $numCirAlt, $numPatrimonio, $numPatReitoria, $nomeComputador, $dataCadastro,
+					$computador = new Computador($idComp, $numCirAlt, $numPatrimonio, $numPatReitoria, $nomeComputador, $dataCadastro,
 					$_SESSION['nomeFuncionario'], $dataAltCadastro, $respAltCadastro, $sistemaOpera, $modelMaquina, $memoria, $numIp, $numMac, 
 					$tipoHD, $nomeUsuario, $statusComp, $obs, $idFuncionario, $idSetor, $idTipoProcessador);
 					//$computador->exibir();

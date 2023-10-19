@@ -363,6 +363,35 @@
                     $conn = null;	
                 }
 
+            public function VerificarSetor2($divisaoBd,$localizacao,$nomeLocal) 
+                {					
+                    $conn = Database::connect();                    
+                    $conn->exec('SET CHARACTER SET utf8');
+                    
+                    $sql = "SELECT * FROM setor s, divisao d
+                    WHERE d.idDivisao = '$divisaoBd'
+                    AND d.idDivisao = s.idDivisao
+                    AND s.nomeLocal = '$nomeLocal'
+                    AND s.localizacao = '$localizacao'";
+                    
+                    try 
+                        {
+                            $listar = $conn->query($sql);
+                            $buscar = $listar->fetchAll(PDO::FETCH_OBJ);  
+                            //$numRows = $listar->rowCount();
+                        } 
+                    catch (PDOException $exc)
+                        {
+                            $buscar = $exc->getTraceAsString();
+                        }     
+                        
+                    //session_start();
+                    //$_SESSION['msg1'] = $RESPOSTA1;
+                    //$_SESSION['numRows'] = $numRows;
+                    return $buscar; 
+                    $conn = null;	
+                }
+
             public function CadastrarSetor($local) 
                 {	
                     $conn = Database::connect();                                

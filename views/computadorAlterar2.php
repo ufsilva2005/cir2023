@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "../template/menuPrincipal.php";
+    //include "../template/menuPrincipal.php";
 
     if ($_SESSION['computador'] != "sim") {
         echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
