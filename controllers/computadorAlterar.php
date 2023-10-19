@@ -13,6 +13,8 @@
 	$aux = 0;
 	$auxLocal = 0;
 	$hitorico = "";
+	$_SESSION['altHd'] = 0;
+	$altHd = 0;
 
 	//recebe dados da view
 	$action =  $_GET['action'];
@@ -273,14 +275,14 @@
             $hitorico .= 'NOME DO LOCAL ALTERADO DE: '. $_SESSION['antNomeLocal'] .' PARA => '. $nomeLocalBd . ' \n';
         }
 
-	if($aux == 0 && $auxLocal == 0)
+	/*if($aux == 0 && $auxLocal == 0)
 		{
 			//$idComp = $_SESSION['idCompAlt'];
 			echo "<script type='text/javascript'>alert('NENHUMA ALTERAÇÃO EFETUADA');</script>";
             echo "<script>location = '../views/computadorAlterar.php?action=1&id=$idComp';</script>";     
-		}
+		}*/
 
-	elseif($aux != 0 && $auxLocal == 0)
+	if($aux != 0 && $auxLocal == 0)
 		{
 			//$idComp = $_SESSION['idCompAlt'];
 			echo "<br>dados do computar alterados" ; 
@@ -358,8 +360,8 @@
 
 	else
 		{
-			echo "<script type='text/javascript'>alert('error');</script>";
-			echo "<script>location = '../index.php';</script>";    
+			$altHd = 0;
+			//$altHd = $_POST['altHd'];
 		}
 
 /*	
