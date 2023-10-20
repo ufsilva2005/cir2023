@@ -6,12 +6,16 @@
         echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
         echo "<script>location = '../template/menuPrincipal.php';</script>";
     }
-    require_once '../controllers/computadorAltHd.php';
+    //require_once '../controllers/computadorAltHd.php';
     include_once "../dao/DAO-controleCir.php";
     //echo "<br>"  . $action;
     //echo "<br>";
     //print_r($_SESSION['antTipoHD']);
     //echo "<br>"  . $_SESSION['antMemoria']; 
+
+    echo "<br> antigo hd 0 => ";
+    print_r( $_SESSION['antTipoHD']);
+
 ?>
 
 <hr>
@@ -36,7 +40,7 @@
                                             $divisao0DAO = new ControleCirDAO();   
                                             $nomeTabela = "divisao";
                                             $tipoOpcao = "idDivisao";
-                                            foreach ($divisao0DAO->ListarOpcao($nomeTabela, $tipoOpcao, $divisaoBd) as $res)
+                                            foreach ($divisao0DAO->ListarOpcao($nomeTabela, $tipoOpcao, $_SESSION['idDivisao']) as $res)
                                                 {
                                                     $descricaoAnt = $res->divisao;
                                                 }
@@ -120,7 +124,7 @@
                                             $nomeTabela = "tipoProcessadores";
                                             $opcao1 = "idTipoProcessador";
                                             $processDAO = new ControleCirDAO();
-                                            foreach($processDAO->Verificar($nomeTabela, $opcao1, $idTipoProcessadorBd) as $proc)
+                                            foreach($processDAO->Verificar($nomeTabela, $opcao1, $_SESSION['idTipoProcessador']) as $proc)
                                                 { 	
                                                     $desProcessador = $proc->descricao;
                                                 }
@@ -162,11 +166,19 @@
                                             </div>
                                             <div class="modal-body">                
                                                 <?php 
-                                                    //session_start();
+                                                    echo "<br> antigo hd 1";
+                                                    print_r( $_SESSION['antTipoHD']);
+                                                    session_start();
                                                     //$altHd = $_SESSION['altHd'];
-                                                    $capHd = $_SESSION['capHd'];
-                                                    $capHd[$_SESSION['i']] = $_POST['capHd'];
-                                                    $_SESSION['capHd'] = $capHd;
+                                                    $capHd = $_SESSION['antTipoHD'];
+                                                    echo "<br> antigo hd 2";
+                                                    print_r( $capHd);
+                                                    $capHd[$_SESSION['i']] = $_POST['antTipoHD'];
+                                                    $_SESSION['antTipoHD'] = $capHd;
+
+                                                    echo "<br> antigo hd 3";
+                                                    print_r( $_SESSION['antTipoHD']);
+
                                                 ?>                      
                                                 <form id="hd" class="form-horizontal" action="./computadorAlterar2.php" method="POST">
                                                     <div class="row"> 
@@ -248,8 +260,8 @@
                                             <div class="modal-body">
                                                 <?php 
                                                     //session_start();   
-                                                    $capHd1 = $_SESSION['capHd'];
-                                                    $_SESSION['capHd1'] = $capHd1;
+                                                    $capHd1 = $_SESSION['antTipoHD'];
+                                                    $_SESSION['antTipoHD'] = $capHd1;
                                                     array_shift($capHd1);
                                                     //print_r($capHd1);                                                     
                                                     include_once "../dao/DAO-controleCir.php";

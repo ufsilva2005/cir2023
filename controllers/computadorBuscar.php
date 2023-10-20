@@ -5,6 +5,14 @@
 		{
             header("Location: ../index.php");
 		}
+	$altHd = 0;
+	$_SESSION['altHd'] = $altHd;
+	//$_SESSION['capHd'] == "";
+	//$capHd = array();    
+    //$i=0;
+    //$_SESSION['i'] = $i;
+    //$_SESSION['antTipoHD'] = $capHd;
+
     $idComputador =  $_GET['id'];
     //$idComputador;
 	$_SESSION['idCompAlt'] = $idComputador;     

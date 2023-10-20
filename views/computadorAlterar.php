@@ -49,7 +49,7 @@
                 <h3 class="text-success">Cadastro de Computador</h3>
                 <div class="panel-content">
                     <div class="col-md-12">
-                        <form name="cadastro" id="cadastro" method="post" action="./computadorAlterar2.php">
+                        <form name="cadastro" id="cadastro" method="post" action="../controllers/computadorAlterar.php">
                             <fieldset>	
                                 <div class="row">		
                                     <label>

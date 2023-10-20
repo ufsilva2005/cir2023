@@ -364,6 +364,11 @@
 			//$altHd = $_POST['altHd'];
 		}
 
+		//colocar as sessions aqui depois de salvar as alterações no banco
+		//criar o array e as variaveis de controle aqui
+
+	header("Location: ../views/computadorAlterar2.php");
+
 /*	
 	if($action == 1)
 		{

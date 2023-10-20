@@ -1,9 +1,9 @@
 <?php
-	session_start();
+	/*session_start();
 	include "../funcao/funcao.php";
 	include "../dao/DAO-controleCir.php";
 	include "../models/class-setor.php";
-	include "../models/class-computador.php";	
+	include "../models/class-computador.php";*/	
 		
 
     //$altHd = "";
@@ -11,6 +11,11 @@
     $i=0;
     $_SESSION['i'] = $i;
     $_SESSION['capHd'] = $capHd;*/
+
+    $capHd = array();    
+    $i=0;
+    $_SESSION['i'] = $i;
+    $_SESSION['antTipoHD'] = $capHd;
 
 	//recebe dados da view
 	$altHd =  $_POST['altHd'];
@@ -23,7 +28,7 @@
             $altHd = $_SESSION['altHd'];
         }
     echo "<hr><hr>";    
-    echo "<br>altHd2 => " . $altHd;
+    echo "<br>altHd 2 => " . $altHd;
     if($altHd == "")
         {
 
