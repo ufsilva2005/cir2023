@@ -4,12 +4,30 @@
 	include "../dao/DAO-controleCir.php";
 	include "../models/class-setor.php";
 	include "../models/class-computador.php";	
+
+	switch (get_post_action('save', 'submit', 'publish')) {
+    case 'save':
+		echo "<br>DivisaoBd 0 => ";
+        break;
+
+    case 'submit':
+		echo "<br>DivisaoBd 1 => ";
+        break;
+
+    case 'publish':
+        echo "<br>DivisaoBd 2 => ";
+        break;
+
+    default:
+        //no action sent
+}
 		
 	/*$capHd = array();    
     $i=0;
     $_SESSION['i'] = $i;
     $_SESSION['capHd'] = $capHd;*/
 
+/*
 	$aux = 0;
 	$auxLocal = 0;
 	$hitorico = "";
@@ -274,6 +292,7 @@
             $auxLocal++;
             $hitorico .= 'NOME DO LOCAL ALTERADO DE: '. $_SESSION['antNomeLocal'] .' PARA => '. $nomeLocalBd . ' \n';
         }
+	*/
 
 	/*if($aux == 0 && $auxLocal == 0)
 		{
@@ -282,6 +301,7 @@
             echo "<script>location = '../views/computadorAlterar.php?action=1&id=$idComp';</script>";     
 		}*/
 
+		/*
 	if($aux != 0 && $auxLocal == 0)
 		{
 			//$idComp = $_SESSION['idCompAlt'];
@@ -355,7 +375,7 @@
 			echo "<br>antDivisao => " . $_SESSION['antDivisao']; 
 			echo "<br>Divisao alt => " . $divisaoAlt; 
 			echo "<br>hitorico =>" . $hitorico;
-			echo "<br>DivisaoBd => " . $divisaoBd;
+			
 		}
 
 	else
@@ -364,10 +384,12 @@
 			//$altHd = $_POST['altHd'];
 		}
 
+	echo "<br>action =>" . $action;
+
 		//colocar as sessions aqui depois de salvar as alterações no banco
 		//criar o array e as variaveis de controle aqui
 
-	header("Location: ../views/computadorAlterar2.php");
+	//header("Location: ../views/computadorAlterar2.php");
 
 /*	
 	if($action == 1)

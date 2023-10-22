@@ -230,7 +230,7 @@
                                 </div>
 
                                 <div class="row">                           
-                                    <div class="col-md-7">	
+                                    <div class="col-md-12">	
                                         <table class="table table-striped table-bordered table-condensed table-hover table-light">
                                             <thead>
                                                 <tr>
@@ -259,18 +259,38 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                </div>
 
-                                   
+                                <div class="row"> 
+
+                                     <input type="submit" name="save" value="Salvar e continuar editando" />
+                                    <input type="submit" name="submit" value="Salvar" />
+                                    <input type="submit" name="publish" value="Publicar" />
+
                                     <div class="py-md-4 col-md-3">
-                                        <button type="submit" class="btn btn-ufs">Alterar HD</button>	
+                                        <button type="submit" class="btn btn-ufs">Finalizar</button>	
+                                    </div>
+
+                                    <div class="py-md-4 col-md-3">
+                                        <div class="btn-group pull-left" >
+                                            <a href="../controllers/computadorAlterar.php?action=2" class="btn btn-small  btn-primary" >inserir HD<i class="icon-edit"></i></a>
+                                        </div>
+                                     </div>                  
+
+                                    <div class="py-md-4 col-md-3">
+                                        <div class="btn-group pull-left">
+                                            <a href="../controllers/computadorAlterar.php?action=3"  class="btn btn-small btn-warning table-edit">Alterar HD<i class="icon-remove"></i></a>
+                                        </div>
                                     </div>
                                   
-                                    <div class="py-md-4 px-md-4 col-md-2">
-                                        <a href="../template/menuPrincipal.php"><button type="button" class="btn btn-outline-warning">Voltar</button></a>
+                                    <div class="py-md-4 col-md-3">
+                                        <div class="btn-group pull-left">
+                                            <a href="../template/menuPrincipal.php"><button type="button" class="btn btn-outline-warning">Voltar</button></a>
+                                        </div>
                                     </div>
 
                                 </div>
-                                <hr>                                    
+
                                 <div class="row">	
                                     <label>
                                         <h5 class="text-primary">3-> Informações do responsavel pelo cadastro</h5>
