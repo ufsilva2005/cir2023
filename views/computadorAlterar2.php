@@ -6,16 +6,13 @@
         echo "<script type='text/javascript'>alert('USUÁRIO NÃO AUTORIZADO');</script>";
         echo "<script>location = '../template/menuPrincipal.php';</script>";
     }
-    //require_once '../controllers/computadorAltHd.php';
+   
     include_once "../dao/DAO-controleCir.php";
+    $action =  $_GET['action'];
+    if($action != "")
+    {$_SESSION['action']= $action;} 
     //echo "<br>"  . $action;
-    //echo "<br>";
-    //print_r($_SESSION['antTipoHD']);
-    //echo "<br>"  . $_SESSION['antMemoria']; 
-
-    echo "<br> antigo hd 0 => ";
-    print_r( $_SESSION['antTipoHD']);
-
+    //echo "<br>"  . $_SESSION['action'];
 ?>
 
 <hr>
@@ -168,6 +165,18 @@
                                             <div class="modal-body">                
                                                 <?php 
                                                     //session_start();
+                                                    echo "<br> valor antTipoHD => ";
+                                                    print_r($_SESSION['antTipoHD']);
+                                                    echo "<br> novo hd 1 => ";
+                                                    print_r( $_SESSION['capHd']);
+                                                    echo "<br> valor de i => ";
+                                                    print_r( $_SESSION['i']);
+                                                    echo "<br> valor de post capHd => ";
+                                                    print_r( $_SESSION['capHd']);
+                                                    echo "<br> valor da ação => ";
+                                                    print_r($_SESSION['action']);
+
+
                                                     $capHd = $_SESSION['capHd'];
                                                     $capHd[$_SESSION['i']] = $_POST['capHd'];
                                                     $_SESSION['capHd'] = $capHd;
@@ -226,10 +235,32 @@
                                                     //session_start();   
                                                     $capHd1 = $_SESSION['capHd'];
                                                     $_SESSION['capHd1'] = $capHd1;
-                                                    array_shift($capHd1);
+                                                    if($_SESSION['action'] == 1)
+                                                        {
+                                                            echo "<br> valor de post capHd => ";
+                                                            print_r($_SESSION['capHd']);
+                                                            echo "<br> valor antTipoHD => ";
+                                                            print_r($_SESSION['antTipoHD']);
+                                                            array_shift($capHd1);
+                                                            echo "<br>capHd1 => ";
+                                                            print_r( $capHd1);
+                                                            $capHd1 = array_merge($_SESSION['antTipoHD'],$capHd1); 
+                                                            echo "<br>result => ";
+                                                            print_r($capHd1);
+                                                        }
+                                                    else
+                                                        {
+                                                            array_shift($capHd1);
+                                                            echo "<br> antigo hd 7 => ";
+                                                            print_r( $capHd1);
+                                                            echo "<br> valor de i => ";
+                                                            print_r( $_SESSION['i']);
+                                                        }
+
                                                     //print_r($capHd1);                                                     
                                                     include_once "../dao/DAO-controleCir.php";
                                                     $t = sizeof($capHd1);
+                                                    echo "<br> valor T => " . $t . "<br>";
                                                     for ($i = 0; $i < $t; $i++) 
                                                         {
                                                             $id = $capHd1[$i];

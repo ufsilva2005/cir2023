@@ -375,7 +375,7 @@
 	else
 		{
 			$altHd = 0;
-			//$altHd = $_POST['altHd'];
+			//header("Location: ../views/computadorAlterar2.php");
 		}
 
 	//header("Location: ../views/computadorAlterar2.php");
@@ -384,24 +384,31 @@
 		{
 			case 'save':
 				echo "<br>OPÇÃO FINALIZAR";
+				echo "<br>aux => " . $aux . "<br>auxLocal => " . $auxLocal;				
 				break;
 
 			case 'submit':
 				echo "<br>OPÇÃO INSERIR HD";
-				echo "<br> antigo hd 1";
-                                                    print_r( $_SESSION['antTipoHD']);
-                                                    session_start();
-                                                    //$altHd = $_SESSION['altHd'];
-													header("Location: ../views/computadorAlterar2.php");
+				//echo "<br> antigo hd 0 => ";
+                //print_r($_SESSION['antTipoHD']);
+				$capHd = array();    
+				$i=0;
+				$_SESSION['i'] = $i;
+				$_SESSION['capHd'] = $capHd;
+				//echo "<br> antigo hd 1 => ";
+				//print_r( $_SESSION['capHd']);
+				header("Location: ../views/computadorAlterar2.php?action=1");
 				break;
 
 			case 'publish':
 				echo "<br>OPÇÃO ALTERAR HD";
-				 echo "<br> antigo hd 1";
-                                                    print_r( $_SESSION['antTipoHD']);
-                                                    session_start();
-                                                    //$altHd = $_SESSION['altHd'];
-													header("Location: ../views/computadorAlterar2.php");
+				$capHd = array();    
+				$i=0;
+				$_SESSION['i'] = $i;
+				$_SESSION['capHd'] = $capHd;
+				//echo "<br> antigo hd 2 =>";
+				//print_r( $_SESSION['capHd']);
+				header("Location: ../views/computadorAlterar2.php?action=2");
 				break;
 
 			default:
