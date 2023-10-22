@@ -157,7 +157,6 @@
 
                                 <hr>
 
-
                                 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
@@ -167,16 +166,53 @@
                                             </div>
                                             <div class="modal-body">                
                                                 <?php 
-                                                    //session_start();
-                                                    $capHd = $_SESSION['capHd'];
-                                                    $capHd[$_SESSION['i']] = $_POST['capHd'];
-                                                    $_SESSION['capHd'] = $capHd;
+                                                    echo "<br> antigo hd 1";
+                                                    print_r( $_SESSION['antTipoHD']);
+                                                    session_start();
+                                                    //$altHd = $_SESSION['altHd'];
+                                                    $capHd = $_SESSION['antTipoHD'];
+                                                    echo "<br> antigo hd 2";
+                                                    print_r( $capHd);
+                                                    $capHd[$_SESSION['i']] = $_POST['antTipoHD'];
+                                                    $_SESSION['antTipoHD'] = $capHd;
+
+                                                    echo "<br> antigo hd 3";
+                                                    print_r( $_SESSION['antTipoHD']);
+
                                                 ?>                      
                                                 <form id="hd" class="form-horizontal" action="./computadorAlterar2.php" method="POST">
-                                                    <div class="row">  
+                                                    <div class="row"> 
+                                                        <?php
+                                                            if( $_SESSION['altHd'] == "")
+                                                                {
+                                                                    $html = "
+                                                                            <div class='col px-md-1 col-md-12'>
+                                                                                <label for='inputSuccess' class='control-label'>opção:</label> <br>
+                                                                                <div class='form-check form-check-inline'>
+                                                                                    <input class='form-check-input' type='radio' name='altHd' id='status1' value='3' >
+                                                                                    <label class='form-check-label' for='status1'>Alterar HD</label>
+                                                                                </div>
+                                                                                <div class='form-check form-check-inline'>
+                                                                                    <input class='form-check-input' type='radio' name='altHd' id='status2' value='2'>
+                                                                                    <label class='form-check-label' for='status2'>Adicionar HD</label>
+                                                                                </div>
+                                                                                <div class='form-check form-check-inline'>
+                                                                                    <input class='form-check-input' type='radio' name='altHd' id='status3' value='1' checked>
+                                                                                    <label class='form-check-label' for='status3'>Não Alterar HD</label>
+                                                                                </div>
+                                                                            </div>";
+                                                                }
+                                                            else 
+                                                                {
+                                                                    $html = "";
+                                                                }
+                                                            echo $html;
+                                                            echo "altHd => " . $altHd;
+                                                        ?>
+
                                                         <div class="col px-md-1 col-md-12">                                   
                                                             <label for="inputSuccess" class="control-label">capacidade do hd:</label>
-                                                            <select class="form-control" name="capHd" required>
+                                                            <select class="form-control" name="capHd" >
                                                                 <option value=""> </option>
                                                                 <?php
                                                                     include_once "../dao/DAO-controleCir.php";
@@ -224,8 +260,8 @@
                                             <div class="modal-body">
                                                 <?php 
                                                     //session_start();   
-                                                    $capHd1 = $_SESSION['capHd'];
-                                                    $_SESSION['capHd1'] = $capHd1;
+                                                    $capHd1 = $_SESSION['antTipoHD'];
+                                                    $_SESSION['antTipoHD'] = $capHd1;
                                                     array_shift($capHd1);
                                                     //print_r($capHd1);                                                     
                                                     include_once "../dao/DAO-controleCir.php";
@@ -244,13 +280,13 @@
                                                 ?>                   
                                             </div>
                                             <div class="modal-footer">
-                                                <a class='btn btn-small btn-warning' type='submit' href="../controllers/computadorAltHd">salvar</a>  
+                                                <a class='btn btn-small btn-warning' type='submit' href="../controllers/computadorUpHd.php?action=2">salvar</a>  
                                                 <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Inserir outro HD</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                               
+                                                
                                 <hr>
                                     
                                 <div class="row">	
