@@ -263,24 +263,20 @@
 
                                 <div class="row"> 
 
-                                     <input type="submit" name="save" value="Salvar e continuar editando" />
+                                    <!--input type="submit" name="save" value="Salvar e continuar editando" />
                                     <input type="submit" name="submit" value="Salvar" />
-                                    <input type="submit" name="publish" value="Publicar" />
+                                    <input type="submit" name="publish" value="Publicar" /-->
 
                                     <div class="py-md-4 col-md-3">
-                                        <button type="submit" class="btn btn-ufs">Finalizar</button>	
+                                        <button type="submit" class="btn btn-ufs"  name="save">Finalizar</button>	
                                     </div>
 
-                                    <div class="py-md-4 col-md-3">
-                                        <div class="btn-group pull-left" >
-                                            <a href="../controllers/computadorAlterar.php?action=2" class="btn btn-small  btn-primary" >inserir HD<i class="icon-edit"></i></a>
-                                        </div>
-                                     </div>                  
+                                     <div class="py-md-4 col-md-3">
+                                        <button type="submit" class="btn btn-small  btn-primary" name="submit">inserir HD</button>	
+                                    </div>
 
-                                    <div class="py-md-4 col-md-3">
-                                        <div class="btn-group pull-left">
-                                            <a href="../controllers/computadorAlterar.php?action=3"  class="btn btn-small btn-warning table-edit">Alterar HD<i class="icon-remove"></i></a>
-                                        </div>
+                                     <div class="py-md-4 col-md-3">
+                                        <button type="submit" class="btn btn-small btn-warning table-edit" name="publish">Alterar HD</button>	
                                     </div>
                                   
                                     <div class="py-md-4 col-md-3">
