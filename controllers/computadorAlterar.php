@@ -277,6 +277,8 @@
             $auxLocal++;
             $hitorico .= 'NOME DO LOCAL ALTERADO DE: '. $_SESSION['antNomeLocal'] .' PARA => '. $nomeLocalBd . ' \n';
         }
+
+		echo "<br>aux => " . $aux . "<br>auxLocal => " . $auxLocal .  "<br>historico => " . $hitorico;	
 			
 	if($aux != 0 && $auxLocal == 0)
 		{
@@ -308,16 +310,21 @@
 				{
 					$local1 = new Setor($idSetor, $divisaoBd, $localizacaoBd, $ramalBd, $respSetBd, $nomeLocalBd);			
 					$local1->exibir();
-					//$local = new ControleCirDAO();	
-					//$local->CadastrarSetor($local1);
+					$local = new ControleCirDAO();	
+					$local->CadastrarSetor($local1);
 					//echo "<br>idSetor 02 => " . $idSetor . "<br>";
+					$verificaSetor = $_SESSION['localid'];
 
 					//FAZER UPDATE APENAS NO ID SETOR, PARA ISSO ALTERAR A FUCÇÃO ABAIXO
-					$verificaSetor = $_SESSION['localid'];
-					$computador = new Computador($_SESSION['idCompAlt'], $numCirBd, $numPatrimonioBd, $numPatReitoriaBd, $nomeComputadorBd, $dataCadastro,
-					$respCadastro, $dataAltCadastro, $_SESSION['nomeFuncionario'],  $sistemaOperaBd, $modelMaquinaBd, $memoriaBd, $numIpBd, $numMacBd, 
-					$_SESSION['antTipoHD'], $nomeUsuarioBd, $statusComp, $obs, $_SESSION['idFuncionario'], $verificaSetor, $idTipoProcessadorBd);
-					$computador->exibir();
+
+					$computadorDAO = new ControleCirDAO();
+                    $computadorDAO->ComputadorUpdateSetor($_SESSION['idCompAlt'],$verificaSetor);
+
+					
+					//$computador = new Computador($_SESSION['idCompAlt'], $numCirBd, $numPatrimonioBd, $numPatReitoriaBd, $nomeComputadorBd, $dataCadastro,
+					//$respCadastro, $dataAltCadastro, $_SESSION['nomeFuncionario'],  $sistemaOperaBd, $modelMaquinaBd, $memoriaBd, $numIpBd, $numMacBd, 
+					//$_SESSION['antTipoHD'], $nomeUsuarioBd, $statusComp, $obs, $_SESSION['idFuncionario'], $verificaSetor, $idTipoProcessadorBd);
+					//$computador->exibir();
 					//$computadorDAO = new ControleCirDAO();
 					//$computadorDAO->CadastrarComp($computador);	
 				}
@@ -325,10 +332,13 @@
 			else
 				{
 					//FAZER UPDATE APENAS NO ID SETOR, PARA ISSO ALTERAR A FUCÇÃO ABAIXO
-					$computador = new Computador($_SESSION['idCompAlt'], $numCirBd, $numPatrimonioBd, $numPatReitoriaBd, $nomeComputadorBd, $dataCadastro,
-					$respCadastro, $dataAltCadastro, $_SESSION['nomeFuncionario'],  $sistemaOperaBd, $modelMaquinaBd, $memoriaBd, $numIpBd, $numMacBd, 
-					$_SESSION['antTipoHD'], $nomeUsuarioBd, $statusComp, $obs, $_SESSION['idFuncionario'], $verificaSetor, $idTipoProcessadorBd);
-					$computador->exibir();
+					$computadorDAO = new ControleCirDAO();
+                    $computadorDAO->ComputadorUpdateSetor($_SESSION['idCompAlt'],$verificaSetor);
+
+					//$computador = new Computador($_SESSION['idCompAlt'], $numCirBd, $numPatrimonioBd, $numPatReitoriaBd, $nomeComputadorBd, $dataCadastro,
+					//$respCadastro, $dataAltCadastro, $_SESSION['nomeFuncionario'],  $sistemaOperaBd, $modelMaquinaBd, $memoriaBd, $numIpBd, $numMacBd, 
+					//$_SESSION['antTipoHD'], $nomeUsuarioBd, $statusComp, $obs, $_SESSION['idFuncionario'], $verificaSetor, $idTipoProcessadorBd);
+					//$computador->exibir();
 					//$computadorDAO = new ControleCirDAO();
 					//$computadorDAO->CadastrarComp($computador);	
 				}

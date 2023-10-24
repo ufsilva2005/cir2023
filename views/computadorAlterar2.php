@@ -153,6 +153,7 @@
                                 </div>
 
                                 <hr>
+                                   
 
 
                                 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -165,18 +166,24 @@
                                             <div class="modal-body">                
                                                 <?php 
                                                     //session_start();
-                                                    echo "<br> valor antTipoHD => ";
-                                                    print_r($_SESSION['antTipoHD']);
-                                                    echo "<br> novo hd 1 => ";
-                                                    print_r( $_SESSION['capHd']);
-                                                    echo "<br> valor de i => ";
-                                                    print_r( $_SESSION['i']);
-                                                    echo "<br> valor de post capHd => ";
-                                                    print_r( $_SESSION['capHd']);
-                                                    echo "<br> valor da ação => ";
-                                                    print_r($_SESSION['action']);
-
-
+                                                    echo "<br>HD's na maquina => ";     
+                                                    include_once "../dao/DAO-controleCir.php";
+                                                    $teste = $_SESSION['antTipoHD']; 
+                                                    $t = sizeof($teste);
+                                                    $nomeTabela = "hdTipos";
+                                                    $tipoOpcao = "id";                                 
+                                                    for ($i = 0; $i < $t; $i++) 
+                                                        {
+                                                            $id = $teste[$i];
+                                                            $tipoHDDAO = new ControleCirDAO();
+                                                            foreach ($tipoHDDAO->ListarOpcao($nomeTabela, $tipoOpcao, $id)as $resp)
+                                                                { 
+                                                                    $x = $i + 1;
+                                                                    echo "&emsp; hd(" . $x .") =>" . $descricao = $resp->descricao;  
+                                                                } 
+                                                        }          
+                                                   
+                                                    echo "<hr>";
                                                     $capHd = $_SESSION['capHd'];
                                                     $capHd[$_SESSION['i']] = $_POST['capHd'];
                                                     $_SESSION['capHd'] = $capHd;
@@ -184,7 +191,7 @@
                                                 <form id="hd" class="form-horizontal" action="./computadorAlterar2.php" method="POST">
                                                     <div class="row">  
                                                         <div class="col px-md-1 col-md-12">                                   
-                                                            <label for="inputSuccess" class="control-label">capacidade do hd:</label>
+                                                            <label for="inputSuccess" class="control-label">Selecione o HD:</label>
                                                             <select class="form-control" name="capHd" required>
                                                                 <option value=""> </option>
                                                                 <?php

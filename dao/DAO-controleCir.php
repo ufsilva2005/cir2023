@@ -570,6 +570,25 @@
                     $prepara->execute();                 
                     $conn = null;
                 }
+
+            public function ComputadorUpdateSetor($idComputador,$idSetor)
+                {
+                    $conn = Database::connect();                    
+                    $conn->exec('SET CHARACTER SET utf8');                    
+                    $sql = "UPDATE computador SET idSetor = '$idSetor' WHERE idComputador = '$idComputador'";
+                    
+                    try 
+                        {
+                            $listar = $conn->query($sql);
+                            $buscar = $listar->fetchAll(PDO::FETCH_OBJ);
+                        } 
+                    catch (PDOException $exc)
+                        {
+                            $buscar = $exc->getTraceAsString();
+                        }
+                    return $buscar;
+                    $conn = null;	
+                }
             //FIM DAS FUNÇÕES RELACIONADAS AO COMPUTADOR
 
             //INÍCIO DAS FUNÇÕES RELACIONADAS A IMPRESSORA 
