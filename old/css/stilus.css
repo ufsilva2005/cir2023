@@ -1,0 +1,124 @@
+/*$color--white=#FFFFFF $color--black=#000000 $color--primary=#2AA1C0 * box-sizing border-box*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 10px;
+    background: #f2f2f2;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    background: #F7F7F7;
+    box-shadow: 20px 48px 20px -32px rgb(167, 160, 160);
+}
+
+.input {
+    position: absolute;
+    opacity: 0;
+}
+
+
+/*.label {
+    width: 100%;
+    padding: 5px 0px;   
+    background: #faf6f6;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 10px;
+    color: #ece4e4;
+    transition: background 0.1s, color 0.1s;
+}
+
+.label:hover {
+    background: #d8d8d8;
+}
+
+.label:active {
+    background: rgb(178, 240, 194);
+}
+
+.input:focus+.label {
+    box-shadow: inset 0px 0px 0px 3px #2aa1c0;
+    z-index: 1;
+}
+
+.input:checked+.label {
+    background: rgb(62, 240, 136);
+    color: #000;
+}
+
+@media (min-width: 600px) {
+    .label {
+        width: 78px;
+        height: 100px;
+    }
+}*/
+
+.panel {
+    display: none;
+    width: 100%;
+    padding: 0px 20px 20px;
+    background: #F7F7F7;
+}
+
+@media (min-width: 600px) {
+    .panel {
+        order: 99;
+    }
+}
+
+.input:checked+.label+.panel {
+    display: block;
+}
+
+
+/*TESTE LABEL 2*/
+
+.label2 {
+    margin: 0 auto 40px;
+    display: center;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 1%;
+    padding: 0px 4px;
+    background: #faf6f6;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 10px;
+    color: #ece4e4;
+    transition: background 0.1s, color 0.1s;
+}
+
+.label2:hover {
+    background: #d8d8d8;
+}
+
+.label2:active {
+    background: rgb(219, 243, 225);
+}
+
+.input:focus+.label2 {
+    box-shadow: inset 0px 0px 0px 3px #9ddae9;
+    z-index: 1;
+}
+
+.input:checked+.label2 {
+    background: rgb(224, 240, 230);
+    color: #000;
+}
+
+@media (min-width: 600px) {
+    .label2 {
+        width: 78px;
+        height: 100px;
+    }
+}
+
+.input:checked+.label2+.panel {
+    display: block;
+}

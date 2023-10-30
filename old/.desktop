@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Link para 
+Type=Link
+URL=file:///var/www/html/cpd/views/cadastrarComputador.php
+Icon=application-x-php
