@@ -290,7 +290,7 @@
 			$_SESSION['antTipoHD'], $nomeUsuarioBd, $statusComp, $obs, $_SESSION['idFuncionario'], $_SESSION['idSetor'], $idTipoProcessadorBd);
 			$computador->exibir();
 			//$computadorDAO = new ControleCirDAO();
-			//$computadorDAO->CadastrarComp($computador);	
+			//$computadorDAO->CoputadorUpdateDados($computador);	
 		}
 
 	elseif($aux == 0 && $auxLocal != 0)
